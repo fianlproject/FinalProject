@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/"
+	xmlns:yt="http://gdata.youtube.com/schemas/2007">
+	<channel xmlns:cfi="http://www.microsoft.com/schemas/rss/core/2005/internal"
+		cfi:lastdownloaderror="None">
+		<title cf:type="text">전자신문-오늘주요</title>
+		<description cf:type="text">전자신문-오늘주요</description>
+		<link>http://pipes.yahoo.com/pipes/pipe.info?_id=0baec250db778c92f54f4369524f0d25</link>
+		<atom:link
+			href="http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss&amp;page=2"
+			rel="next" />
+		<pubDate>Wed, 14 Jan 2015 10:00:58 GMT</pubDate>
+		<lastBuildDate>Wed, 14 Jan 2015 10:00:58 GMT</lastBuildDate>
+		<atom:updated>2015-01-14T10:00:58Z</atom:updated>
+		<generator>http://pipes.yahoo.com/pipes/</generator>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">아이워치에 `소리` 담고, 애플TV에 `3D 인터페이스 인식` 넣고, 착용형 카메라까지... 애플 특허
+				들여다보니</title>
+			<link>http://www.etnews.com/20150114000095</link>
+			<author>김주연</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>김주연</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000095</guid>
+			<pubDate>Wed, 14 Jan 2015 09:10:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:10:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:10:00Z
+			</atom:updated>
+			<cfi:id>18</cfi:id>
+			<cfi:effectiveId>189964858</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">다음카카오 “모바일 결제서 국민 플랫폼 될 것”</title>
+			<link>http://www.etnews.com/20150113000081</link>
+			<guid isPermaLink="false">20150113000081</guid>
+			<pubDate>Wed, 14 Jan 2015 09:09:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:09:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:09:00Z
+			</atom:updated>
+			<cfi:id>17</cfi:id>
+			<cfi:effectiveId>2063843045</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">‘원M2M’과 ‘올조인’이 만났다···모다정보통신, 두 IoT 플랫폼 간 연동기술 최초 개발</title>
+			<link>http://www.etnews.com/20150114000090</link>
+			<author>안호천</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>안호천</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000090</guid>
+			<pubDate>Wed, 14 Jan 2015 09:08:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:08:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:08:00Z
+			</atom:updated>
+			<cfi:id>16</cfi:id>
+			<cfi:effectiveId>2905616983</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">정부, 전세계에 노출된 우리 국민 개인정보 찾아내 삭제한다</title>
+			<link>http://www.etnews.com/20150114000212</link>
+			<author>김용주</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>김용주</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000212</guid>
+			<pubDate>Wed, 14 Jan 2015 09:07:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:07:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:07:00Z
+			</atom:updated>
+			<cfi:id>15</cfi:id>
+			<cfi:effectiveId>759385649</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">전설의 귀환 ‘장병규 대표 성공벤처 로드맵’</title>
+			<link>http://www.etnews.com/20150114000047</link>
+			<author>안수민</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>안수민</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000047</guid>
+			<pubDate>Wed, 14 Jan 2015 09:06:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:06:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:06:00Z
+			</atom:updated>
+			<cfi:id>14</cfi:id>
+			<cfi:effectiveId>2645574639</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">이재용 부회장, 19일 새해 첫 공식행사 등장… 경영화두 제시 주목</title>
+			<link>http://www.etnews.com/20150114000108</link>
+			<author>서형석</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>서형석</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000108</guid>
+			<pubDate>Wed, 14 Jan 2015 09:05:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:05:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:05:00Z
+			</atom:updated>
+			<cfi:id>13</cfi:id>
+			<cfi:effectiveId>3296337380</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">LS전선, DC 80kV 초전도 케이블 시스템 실증 2개월만에 조기 완료… 상용화 준비 이상無</title>
+			<link>http://www.etnews.com/20150113000211</link>
+			<author>박정은</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>박정은</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150113000211</guid>
+			<pubDate>Wed, 14 Jan 2015 09:05:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:05:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:05:00Z
+			</atom:updated>
+			<cfi:id>12</cfi:id>
+			<cfi:effectiveId>1544261228</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">코넥스 `을미년 개점휴업`…일일 거래액 3억원 이하</title>
+			<link>http://www.etnews.com/20150114000148</link>
+			<author>유효정</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>유효정</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000148</guid>
+			<pubDate>Wed, 14 Jan 2015 09:04:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:04:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:04:00Z
+			</atom:updated>
+			<cfi:id>11</cfi:id>
+			<cfi:effectiveId>3108130094</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">지상파, N스크린서도 VoD 가격 인상 요구···콘텐츠 대가 갈등 전방위 확산</title>
+			<link>http://www.etnews.com/20150114000216</link>
+			<author>윤희석</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>윤희석</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000216</guid>
+			<pubDate>Wed, 14 Jan 2015 09:02:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:02:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:02:00Z
+			</atom:updated>
+			<cfi:id>10</cfi:id>
+			<cfi:effectiveId>2528459842</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">씨큐앤비, 디자인·사이즈 변화준 스마트ID카드 개발</title>
+			<link>http://www.etnews.com/20150114000104</link>
+			<author>김순기</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>김순기</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000104</guid>
+			<pubDate>Wed, 14 Jan 2015 09:02:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:02:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:02:00Z
+			</atom:updated>
+			<cfi:id>9</cfi:id>
+			<cfi:effectiveId>1222765361</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">최초 타이젠폰 ‘Z1’베일 벗다···인도서 9만9000원에 출시</title>
+			<link>http://www.etnews.com/20150114000177</link>
+			<author>안호천</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>안호천</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000177</guid>
+			<pubDate>Wed, 14 Jan 2015 09:01:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:01:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:01:00Z
+			</atom:updated>
+			<cfi:id>8</cfi:id>
+			<cfi:effectiveId>4081592588</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">IoT(사물인터넷) 생활속에 스며들다</title>
+			<link>http://www.etnews.com/20150114000236</link>
+			<author>김동욱</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>김동욱</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000236</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>7</cfi:id>
+			<cfi:effectiveId>3046530656</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">정부 에너지 가격 압박하는데…LPG 용기는 쏠쏠한 장사</title>
+			<link>http://www.etnews.com/20150114000232</link>
+			<author>최호</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>최호</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000232</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>6</cfi:id>
+			<cfi:effectiveId>1454550109</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">[기자수첩]미래 에너지 전략 지금이 골든타임</title>
+			<link>http://www.etnews.com/20150114000229</link>
+			<author>조정형</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>조정형</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000229</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>5</cfi:id>
+			<cfi:effectiveId>742144377</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">현대차, 세계적 수준으로 전장품 통합 검사…차세대 `HILs` 본격 도입</title>
+			<link>http://www.etnews.com/20150114000221</link>
+			<author>송준영</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>송준영</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000221</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>4</cfi:id>
+			<cfi:effectiveId>4002763055</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">중소기업 수요기반 R&amp;D 추진…출연연이 해결사로</title>
+			<link>http://www.etnews.com/20150114000219</link>
+			<author>권건호</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>권건호</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000219</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>3</cfi:id>
+			<cfi:effectiveId>175718972</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">IBM, 새 메인프레임 공개...빅데이터 시장 수요 흡수에 초점</title>
+			<link>http://www.etnews.com/20150114000188</link>
+			<author>류경동</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>류경동</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000188</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>2</cfi:id>
+			<cfi:effectiveId>608775641</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">”D램 미세 공정 진화할 때 마다 월 2만5천장 웨이퍼 손실”</title>
+			<link>http://www.etnews.com/20150114000183</link>
+			<author>배옥진</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>배옥진</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000183</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>1</cfi:id>
+			<cfi:effectiveId>4064444181</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+		<item>
+			<title xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+				cf:type="text">[커버스토리]메탈 케이스 스마트폰 디자인 혁신의 가운데 서다</title>
+			<link>http://www.etnews.com/20150114000174</link>
+			<author>이형수</author>
+			<atom:author xmlns:atom="http://www.w3.org/2005/Atom">
+				<atom:name>이형수</atom:name>
+			</atom:author>
+			<guid isPermaLink="false">20150114000174</guid>
+			<pubDate>Wed, 14 Jan 2015 09:00:00 GMT</pubDate>
+			<atom:published xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:published>
+			<atom:updated xmlns:atom="http://www.w3.org/2005/Atom">2015-01-14T09:00:00Z
+			</atom:updated>
+			<cfi:id>0</cfi:id>
+			<cfi:effectiveId>2535944397</cfi:effectiveId>
+			<cfi:read>true</cfi:read>
+			<cfi:downloadurl>http://pipes.yahoo.com/pipes/pipe.run?_id=0baec250db778c92f54f4369524f0d25&amp;_render=rss
+			</cfi:downloadurl>
+			<cfi:lastdownloadtime>2015-01-14T10:10:41.993Z</cfi:lastdownloadtime>
+		</item>
+	</channel>
+</rss>
