@@ -76,16 +76,13 @@
 			<!-- 검색 결과창 -->
 
 			<div class="FrResult">
-				<c:if test="${!empty searchdto.name}">
 					<c:choose>
-						<c:when test="${searchdto.name == 'null'}">
+					<c:when test="${empty searchdto}">
 					검색결과가 없습니다.
 					</c:when>
-						<c:when test="${searchdto.id != JoinDto.id}">
-
+					<c:when test="${!empty searchdto }">
 							<!-- 본인 제외 -->
 							<form method="post" action="pfinal.do?command=invitefriends">
-
 								<table class="table">
 									<thead>
 										<tr>
@@ -94,24 +91,22 @@
 										</tr>
 									</thead>
 
-									<c:forEach var="srv" items="${srv }">
+									<c:forEach var="srv" items="${searchdto }">
+										<c:choose>
+										<c:when test="${srv.id != id }">
 										<tr>
-
 											<td>${srv.id}</td>
-											<td>${srv.name}</td>
-
+											<td>${srv.tel}</td>
 											<td><button type="submit" class="btn">친구 신청</button></td>
 										</tr>
+										<input type="hidden" name="fid" id="fid" value="${srv.id}" />
+										</c:when>
+										</c:choose>
 									</c:forEach>
 								</table>
-								<input type="hidden" name="fid" id="fid" value="${searchdto.id}" />
-
 							</form>
-
 						</c:when>
 					</c:choose>
-				</c:if>
-
 			</div>
 		</div>
 	</div>

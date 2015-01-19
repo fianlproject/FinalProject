@@ -70,7 +70,6 @@
 	         	
 	        	alert(test1+"test");
 	         	
-	        	
 	           }
 	        });
 	    }); // click 끝 

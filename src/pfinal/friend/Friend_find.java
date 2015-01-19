@@ -34,13 +34,12 @@ public class Friend_find implements Command {
 
 		Vector v = new Vector();
 		Vector frv = new Vector();
+		Vector searchv = new Vector();
 		try {
 			pool = DBConnectionMgr.getInstance();
 			System.out.println(frSearch+","+id);
 			if (!frSearch.equals(id)) {
-				String sql = "SELECT * FROM members WHERE id= '"
-						+ frSearch
-						+ "' AND id not in (SELECT friend_id from friendlist where user_id='"
+				String sql = "SELECT * FROM members WHERE id like '%"+frSearch+"%' AND id not in (SELECT friend_id from friendlist where user_id='"
 						+ id + "')";
 				System.out.println("°Ë»ö: " + sql);
 				con = pool.getConnection();
@@ -54,7 +53,9 @@ public class Friend_find implements Command {
 					searchdto.setTel(rs.getString("tel"));
 					searchdto.setGender(rs.getInt("gender"));
 					// System.out.println(dto.getMember_id());
-					req.setAttribute("searchdto", searchdto);
+					searchv.add(searchdto);
+					req.setAttribute("searchdto", searchv);
+					req.setAttribute("dto", searchdto);
 				}
 				sql = "SELECT * FROM members WHERE id IN ("
 						+ "SELECT friend_id FROM friendlist "
