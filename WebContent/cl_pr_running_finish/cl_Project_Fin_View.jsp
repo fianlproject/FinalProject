@@ -25,7 +25,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	이곳은 상세내용 입니다 ㅋ
+<!-- 	이곳은 상세내용 입니다 ㅋ -->
 	<%-- 	<br /> ${dtoGetBoard2.pr_id } --%>
 
 
@@ -36,6 +36,7 @@
 					<div class="content span8">
 							<div class="content-header">
 								<h1 class="header-text">${Dto1.pr_subject}</h1>
+								<div class=".help-text">프리랜서가 평가한 평가 내용입니다.</div>
 							</div>
 							<div class="content-header">
 								<div class="summary">
@@ -63,9 +64,8 @@
 								</div>
 							</div>
 							<c:forEach items="${dtoGetBoard2 }" var="dto4" begin="0" end="0">
-								
+							<c:if test="${dto4.fr_evaluate != null }">
 							<div class="content-header">
-							<div>한마디 : ${dto4.comment} </div>
 								<table id="datatable" style="visibility: hidden;">
 									<thead>
 										<tr>
@@ -74,27 +74,27 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forTokens items="${dto4.evaluate}" delims="," var="eval" varStatus="status">
+										<c:forTokens items="${dto4.fr_evaluate}" delims="," var="eval" varStatus="status">
 											<tr class="test">
 												<c:if test="${status.count == 1 }">
 												<td>전문성</td>
-													<td>${eval}</td>
+												<td>${eval}</td>
 												</c:if>
 												<c:if test="${status.count == 2 }">
 												<td>사전준비</td>
-													<td>${eval}</td>
+												<td>${eval}</td>
 												</c:if>
 												<c:if test="${status.count == 3 }">
 												<td>의사소통</td>
-													<td>${eval}</td>
+												<td>${eval}</td>
 												</c:if>
 												<c:if test="${status.count == 4 }">
 												<td>일정준수</td>
-													<td>${eval}</td>
+												<td>${eval}</td>
 												</c:if>
 												<c:if test="${status.count == 5 }">
 												<td>적극성</td>
-													<td>${eval}</td>
+												<td>${eval}</td>
 												</c:if>
 											
 											</tr>
@@ -103,17 +103,25 @@
 								</table>
 								<div id="container"
 									style="width: 400px; height: 400px; margin: 0 auto"></div>
-							
 							</div>
-						
+							<div class="content-header">
+							<div>한마디 : ${dto4.fr_comment} </div>
+							</div>
+						</c:if>
+						<c:if test="${dto4.fr_evaluate == null }">
+						<div class="content-header">
+							<div>아직 평가 되지 않았습니다.</div>
+						</div>
+						</c:if>
 						</c:forEach>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 		<form method="post" action="/pfinal/pfinal.do">
 			<button class="btn btn-link pl" name="command" value="back">돌아가기</button>
-			<input type="text" value="${pr_id }" name="pr_id" />
+			<input type="hidden" value="${pr_id }" name="pr_id" />
 		</form>
 	</div>
 	<script>
