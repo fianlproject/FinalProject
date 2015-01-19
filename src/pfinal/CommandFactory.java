@@ -1,13 +1,6 @@
 package pfinal;
 
 import kit.Command;
-import pfinal.Project.RF.Evaluate_Project;
-import pfinal.Project.RF.Evaluate_Project_Upload;
-import pfinal.Project.RF.Project_Fin;
-import pfinal.Project.RF.Project_Fin_Up;
-import pfinal.Project.RF.Project_Fin_View;
-import pfinal.Project.RF.Project_View;
-import pfinal.Project.RF.RF_Project_List;
 import pfinal.ProjectList.cl_prolist;
 import pfinal.ProjectList.cl_prolist_info;
 import pfinal.ProjectList.cl_prolist_test;
@@ -28,6 +21,18 @@ import pfinal.board.List.WriteCommand;
 import pfinal.board.List.WriteProcCommand;
 import pfinal.board.interest.InterListCommand;
 import pfinal.board.interest.inter;
+import pfinal.cl_Project.RF.cl_Evaluate_Project;
+import pfinal.cl_Project.RF.cl_Evaluate_Project_Upload;
+import pfinal.cl_Project.RF.cl_Project_Fin_Up;
+import pfinal.cl_Project.RF.cl_Project_Fin_View;
+import pfinal.cl_Project.RF.cl_Project_View;
+import pfinal.cl_Project.RF.cl_RF_Project_List;
+import pfinal.fr_Project.RF.fr_Evaluate_Project;
+import pfinal.fr_Project.RF.fr_Evaluate_Project_Upload;
+import pfinal.fr_Project.RF.fr_Project_Fin_Up;
+import pfinal.fr_Project.RF.fr_Project_Fin_View;
+import pfinal.fr_Project.RF.fr_Project_View;
+import pfinal.fr_Project.RF.fr_RF_Project_List;
 import pfinal.friend.Friend_add;
 import pfinal.friend.Friend_add_confrim;
 import pfinal.friend.Friend_delete;
@@ -164,26 +169,40 @@ public class CommandFactory {
 		else if (cmd.equals("final_check"))
 			return new cl_prolist_update_final();
 		
-		// 프로젝트 평가
+		// 기업 프로젝트 평가
 		else if (cmd.equals("evaluate"))
-			return new RF_Project_List();
+			return new cl_RF_Project_List();
 		else if (cmd.equals("home"))
 			return new Home();
 		else if (cmd.equals("back"))
-			return new RF_Project_List();
+			return new cl_RF_Project_List();
 		else if (cmd.equals("evaluatewrite"))
-			return new Evaluate_Project();
+			return new cl_Evaluate_Project();
 		else if (cmd.equals("evaluateup"))
-			return new Evaluate_Project_Upload();
+			return new cl_Evaluate_Project_Upload();
 		else if (cmd.equals("projectfinview"))
-			return new Project_Fin_View();
-		else if (cmd.equals("projectfin"))
-			return new Project_Fin();
+			return new cl_Project_Fin_View();
 		else if (cmd.equals("finprojectup"))
-			return new Project_Fin_Up();
+			return new cl_Project_Fin_Up();
 		else if (cmd.equals("finview"))
-			return new Project_View();
+			return new cl_Project_View();
 				
+		// 프리 프로젝트 평가
+		else if (cmd.equals("frevaluate"))
+			return new fr_RF_Project_List();
+		else if (cmd.equals("frback"))
+			return new fr_RF_Project_List();
+		else if (cmd.equals("frevaluatewrite"))
+			return new fr_Evaluate_Project();
+		else if (cmd.equals("frevaluateup"))
+			return new fr_Evaluate_Project_Upload();
+		else if (cmd.equals("frprojectfinview"))
+			return new fr_Project_Fin_View();
+		else if (cmd.equals("frfinprojectup"))
+			return new fr_Project_Fin_Up();
+		else if (cmd.equals("frfinview"))
+			return new fr_Project_View();
+		
 		//마이페이지		
 				
 		else if (cmd.equals("mypage")) 

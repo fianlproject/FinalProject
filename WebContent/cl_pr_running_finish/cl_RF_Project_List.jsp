@@ -30,7 +30,7 @@
 				<c:if test="${!empty dtoList1 }">
 				<c:forEach items="${dtoList1}" var="dto" varStatus="status">
 				<span>${status.count}</span>
-				<c:if test="${dto.evaluate == null}">
+				<c:if test="${dto.fr_evaluate== null}">
 					<form method="post" action="/pfinal/pfinal.do?command=finview" id="${pr_id }" name="${pr_id }">
 					<div class="project-unit-heading">
 					${dto.pr_subject }
@@ -71,11 +71,11 @@
 				<h3 class="header-text">완료 프로젝트 목록</h3>
 			</div>
 			<div class="content-inner">
-<!-- 			<form name="evaluate" method="post" action="/pfinal/pfinal.do?command=evaluateup"> -->
+<!-- 			<form name="fr_evaluate" method="post" action="/pfinal/pfinal.do?command=fr_evaluateup"> -->
 				<section class="project-unit">
 				<c:if test="${!empty dtoList2 }">
 				<c:forEach items="${dtoList2}" var="dto" varStatus="status">
-				<c:if test="${dto.evaluate == null or empty dto.evaluate}">
+				<c:if test="${dto.fr_evaluate== null or empty dto.fr_evaluate}">
 					<form action="/pfinal/pfinal.do?" method="post" name="${pr_id }" id="${pr_id }">
 					<div class="project-unit-heading">
 					${dto.pr_subject }
@@ -92,7 +92,7 @@
 							<p></p>
 						</div>
 						<button class="btn btn-client active"  id="command" name="command" value="evaluatewrite">프로젝트 평가하기</button>
-						<button class="btn btn-default active" id="command" name="command" value="projectfin">프로젝트 보기</button>
+						<button class="btn btn-default active" id="command" name="command" value="projectfinview">프리랜서 평가 보기</button>
 					</div>
 					<c:if test="${status.count != count2}">
 					<hr size="10">
@@ -102,7 +102,7 @@
 					<input type="hidden" name="pr_subject" id="pr_subject" value="${dto.pr_subject }" />
 					</form>
 				</c:if>
-				<c:if test="${!empty dto.evaluate or dto.evaluate != null}">
+				<c:if test="${!empty dto.fr_evaluate or dto.fr_evaluate!= null}">
 				<form id="${pr_id }" name="${pr_id }" method="post" action="/pfinal/pfinal.do">
 					<div class="project-unit-heading">
 					${dto.pr_subject }
@@ -118,7 +118,7 @@
 						<div class="project-unit-desc">
 							<p>평가된 프로젝트</p>
 						</div>
-						<button class="btn btn-default active" name="command" value="projectfinview">평가 및 자세히 보기</button>
+						<button class="btn btn-default active" name="command" value="projectfinview">프리랜서 평가 보기</button>
 					</div>
 					<input type="hidden" name="pr_id" id="pr_id" value="${dto.pr_id}" />
 					<input type="hidden" name="pr_subject" id="pr_subject" value="${dto.pr_subject }" />

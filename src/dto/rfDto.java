@@ -2,10 +2,34 @@ package dto;
 
 public class rfDto {
 	private int pr_id, total_day, pr_status,fcheck;
-	private String fr_id, cl_id, fin_price, start_day, end_day, comment, pr_subject, evaluate;
-	private String fr_ids, total_price,category ;
+	private String fr_id, cl_id, fin_price, start_day, end_day, cl_comment, pr_subject, cl_evaluate;
+	private String fr_ids, total_price,category, fr_comment, fr_evaluate;;
 	private String[] fr;
 	
+	public String getCl_comment() {
+		return cl_comment;
+	}
+	public void setCl_comment(String cl_comment) {
+		this.cl_comment = cl_comment;
+	}
+	public String getCl_evaluate() {
+		return cl_evaluate;
+	}
+	public void setCl_evaluate(String cl_evaluate) {
+		this.cl_evaluate = cl_evaluate;
+	}
+	public String getFr_comment() {
+		return fr_comment;
+	}
+	public void setFr_comment(String fr_comment) {
+		this.fr_comment = fr_comment;
+	}
+	public String getFr_evaluate() {
+		return fr_evaluate;
+	}
+	public void setFr_evaluate(String fr_evaluate) {
+		this.fr_evaluate = fr_evaluate;
+	}
 	public int getFcheck() {
 		return fcheck;
 	}
@@ -72,23 +96,11 @@ public class rfDto {
 	public void setEnd_day(String end_day) {
 		this.end_day = end_day;
 	}
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
 	public String getPr_subject() {
 		return pr_subject;
 	}
 	public void setPr_subject(String pr_subject) {
 		this.pr_subject = pr_subject;
-	}
-	public String getEvaluate() {
-		return evaluate;
-	}
-	public void setEvaluate(String evaluate) {
-		this.evaluate = evaluate;
 	}
 	public String getFr_ids() {
 		return fr_ids;
