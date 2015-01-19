@@ -1,4 +1,4 @@
-package pfinal.Project.RF;
+package pfinal.cl_Project.RF;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -14,7 +14,7 @@ import kit.Command;
 import kit.DBConnectionMgr;
 import dto.rfDto;
 
-public class Project_View implements Command {
+public class cl_Project_View implements Command {
 
 	@Override
 	public Object processCommand(HttpServletRequest req, HttpServletResponse res)
@@ -35,7 +35,7 @@ public class Project_View implements Command {
 		rfDto run_fin_pro=null;
 		Vector v = new Vector();
 		Vector v2 = new Vector();
-		String flag = "F";
+//		String flag = "F";
 		
 		try{
 			
@@ -69,7 +69,7 @@ public class Project_View implements Command {
 				
 				v2.add(run_fin_pro);
 				
-				flag = "N";
+//				flag = "N";
 //				System.out.println("¤º¤º2");
 			}
 			
@@ -84,9 +84,9 @@ public class Project_View implements Command {
 		req.setAttribute("Dto1", run_fin_pro);
 		req.setAttribute("dtoGetBoard", v);
 		req.setAttribute("dtoGetBoard2", v2);
-		req.setAttribute("flag", flag);
+//		req.setAttribute("flag", flag);
 		
-		return "pr_running_finish/Project_View.jsp";
+		return "cl_pr_running_finish/cl_Project_View.jsp";
 	}
 
 }

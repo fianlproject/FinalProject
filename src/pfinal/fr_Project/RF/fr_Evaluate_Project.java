@@ -1,4 +1,4 @@
-package pfinal.Project.RF;
+package pfinal.fr_Project.RF;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import kit.Command;
 import kit.DBConnectionMgr;
 import dto.rfDto;
 
-public class Evaluate_Project implements Command {
+public class fr_Evaluate_Project implements Command {
 
 	@Override
 	public Object processCommand(HttpServletRequest req, HttpServletResponse res)
@@ -43,7 +43,7 @@ public class Evaluate_Project implements Command {
 		rfDto dto = new rfDto();
 
 		String sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day,"
-					+ "evaluate, pr_comment, pr_status, pr_subject, (to_days(end_day)-to_days(start_day))as total"
+					+ "cl_evaluate, cl_pr_comment, pr_status, pr_subject, (to_days(end_day)-to_days(start_day))as total"
 					+ " From runing_finish_project where pr_id="+pr_id;
 		System.out.println("¿©±â¾ß"+sql); 
 		try {
@@ -63,8 +63,8 @@ public class Evaluate_Project implements Command {
 				dto.setStart_day(rs.getString("start_day"));
 				dto.setEnd_day(rs.getString("end_day"));
 				dto.setTotal_day(rs.getInt("total"));
-				dto.setEvaluate(rs.getString("evaluate"));
-				dto.setComment(rs.getString("pr_comment"));
+				dto.setCl_evaluate(rs.getString("cl_evaluate"));
+				dto.setCl_comment(rs.getString("cl_pr_comment"));
 				dto.setPr_status(rs.getInt("pr_status"));;
 				dto.setPr_subject(rs.getString("pr_subject"));
 			}
@@ -76,7 +76,7 @@ public class Evaluate_Project implements Command {
 		
 		req.setAttribute("dtoGetBoard", dto);
 		
-		return "pr_running_finish/Evaluate_Project.jsp";
+		return "fr_pr_running_finish/fr_Evaluate_Project.jsp";
 	}
 
 }
