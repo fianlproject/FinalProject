@@ -54,7 +54,7 @@ public class JoinController implements Command {
 				pool = DBConnectionMgr.getInstance();
 				con = pool.getConnection();
 
-				sql = "INSERT INTO members VALUES(?,?,?,?,?,?,?,?,?,?)";
+				sql = "INSERT INTO members VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, req.getParameter("id"));
 				pstmt.setString(2, pw);
@@ -66,6 +66,7 @@ public class JoinController implements Command {
 				pstmt.setInt(8, pgender);
 				pstmt.setInt(9, 0);
 				pstmt.setString(10, "");
+				pstmt.setInt(11, 1);
 				pstmt.executeUpdate();
 
 			} catch (Exception e) {
@@ -82,7 +83,7 @@ public class JoinController implements Command {
 				pool = DBConnectionMgr.getInstance();
 				con = pool.getConnection();
 
-				sql = "INSERT INTO members VALUES(?,?,?,?,?,?,?,?,?,?)";
+				sql = "INSERT INTO members VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, req.getParameter("id"));
 				pstmt.setString(2, pw);
@@ -94,6 +95,7 @@ public class JoinController implements Command {
 				pstmt.setInt(8, fgender);
 				pstmt.setInt(9, 0);
 				pstmt.setString(10, "");
+				pstmt.setInt(11, 1);
 				pstmt.executeUpdate();
 				
 

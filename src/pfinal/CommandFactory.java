@@ -114,7 +114,7 @@ public class CommandFactory {
 		//±Û¾²±â
 		else if(cmd.equals("prwrite"))
 			return new WriteCommand();
-		else if(cmd.equals("prwriteProc"))
+		else if(cmd.equals("prwriteProc"))		
 			return new WriteProcCommand();
 		else if(cmd.equals("prupdate"))
 			return new PrUpdateCommand();
