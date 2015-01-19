@@ -51,6 +51,11 @@
 <script>
 	// FullCalnedar
 	$(document).ready(function() {
+<<<<<<< HEAD
+		
+			
+=======
+>>>>>>> branch 'master' of https://github.com/fianlproject/FinalProject.git
 		
 		$('#calendar').fullCalendar({
 			height: 400,
@@ -74,13 +79,21 @@
 		$( ".datepicker" ).datepicker({
 			dateFormat: 'yy-mm-dd' 
 		});		
+<<<<<<< HEAD
+	});	
+=======
 	});
+>>>>>>> branch 'master' of https://github.com/fianlproject/FinalProject.git
 </script>
 <script>
 function fnCal() {
 	window.open("schedule/Calendar.cl", "",
 			"width=670, height=500");  
 }
+function fnMedia() {
+	window.open("/pfinal/pfinal.do?command=m_media", "",
+			"width=570, height=370");
+}	
 </script>
 <style type="text/css">
 #wrap{margin: 0 auto; padding: 20px;}
@@ -232,6 +245,7 @@ function fnCal() {
 					<form method="post" action="/pfinal/pfinal.do">
 						<button class="btn btn-link pl text-muted" name="command" value="mylist">수정</button>						
 					</form>
+					
 				</div>
 				<!-- 마이페이지 -->	
 				
@@ -327,8 +341,11 @@ function fnCal() {
     <section id="news">
         <div class="container">
             <div class="row">
+            	
                 <div class="col-lg-12 text-left" >
-                	 <h2 class="section-heading">오늘의 뉴스(${media_name})</h2> 
+
+                	 <h2 class="section-heading">오늘의 뉴스(${media_name})</h2>
+                	 <button class="btn btn-link pl text-muted" onclick="fnMedia()">신문사 변경</button>
                 <ul>                	
 					<%
 					    if(list!=null){

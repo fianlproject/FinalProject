@@ -15,23 +15,31 @@
 <body>
 
 <br/>
-<form method="post" action="/pfinal/pfinal.do">
-<input type="hidden" name="command" value="media" />
-　<input type="radio" name="ui" value="1">전자신문
-　<input type="radio" name="ui" value="2">zdnet　
-　<input type="radio" name="ui" value="3">조선일보　
-　<input type="radio" name="ui" value="4">중앙일보
-　<input type="radio" name="ui" value="5">동아일보
-　<input type="radio" name="ui" value="6">세계일보
-　<input type="radio" name="ui" value="7">한국일보
-　<input type="radio" name="ui" value="8">경향신문
-　<input type="radio" name="ui" value="9">한겨레
-　<input type="radio" name="ui" value="10">서울경제
-　<input type="radio" name="ui" value="11">한국경제
-　<input type="radio" name="ui" value="12">매일경제
-<input type="submit" value="전송">
+<form id="media" name="media"  method="post" action="/pfinal/pfinal.do?command=media">
+　<img src='img/media/etnews1.png' width="100" height="100"><input type="radio" name="ui" value="1"/>전자신문
+　<input type="radio" name="ui" value="2"/>zdnet　
+　<input type="radio" name="ui" value="3"/>조선일보　
+　<input type="radio" name="ui" value="4"/>중앙일보
+　<input type="radio" name="ui" value="5"/>동아일보
+　<input type="radio" name="ui" value="6"/>세계일보
+　<input type="radio" name="ui" value="7"/>한국일보
+　<input type="radio" name="ui" value="8"/>경향신문
+　<input type="radio" name="ui" value="9"/>한겨레
+　<input type="radio" name="ui" value="10"/>서울경제
+　<input type="radio" name="ui" value="11"/>한국경제
+　<input type="radio" name="ui" value="12"/>매일경제
+  
+	 
+ 
+  <input type="button" value="수정" onclick="media12()"/>
 </form>
-
+<script>
+function media12() {		
+		document.getElementById("media").submit();
+		window.opener.location.href = "/pfinal/pfinal.do?command=media";
+		window.close();	
+}
+</script>
 </body>
 </html>
 

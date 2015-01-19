@@ -114,8 +114,8 @@ public class loginTest implements Command {
 					System.out.println(msg.size());
 					count = msg.size();
 				}
-				
-				System.out.println("??????????????????");
+				//¸Þ´ºui
+				/*System.out.println("??????????????????");
 				sql = "SELECT menu_ui from members where id = ?";
 				System.out.println(sql);
 				pstmt = con.prepareStatement(sql);
@@ -133,7 +133,7 @@ public class loginTest implements Command {
 					    	req.setAttribute(menu, (j-48));
 						}
 					}
-				}
+				}*/
 		}
 		catch(Exception err){
 			err.printStackTrace();
