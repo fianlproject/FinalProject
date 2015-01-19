@@ -9,7 +9,7 @@ public class DBConnectionMgr {
     private Vector connections = new Vector(10);
 	//연결을 10개를 만들어두지만 그 이상 넘어가면 추가생성이 가능하다 ( 컬렉션-vector 사용 )
     private String _driver = "com.mysql.jdbc.Driver",
-    _url = "jdbc:mysql://121.143.146.243:3306/final",
+    _url = "jdbc:mysql://192.168.10.92:3306/final",
     _user = "root", _password = "1234";
     private boolean _traceOn = false;
     private boolean initialized = false;

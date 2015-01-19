@@ -84,7 +84,7 @@
 	    $("#id_check").click(function() { //중복체크아이디 클릭이벤트 
 	    	jQuery.ajaxSetup({cache:false});
 	        $.ajax({
-	         url: "/pfinal/Join/idcheck.jsp",//아이디중복체크할페이지 지정
+	         url: "/pfinal/pr_join/idcheck.jsp",//아이디중복체크할페이지 지정
 	         data : ({
 	         userid: $("input[name=id]").val() //파라메터로 userid 이름으로 값은 사용자가 입력한 사용자아이디를 지정
 	         }),

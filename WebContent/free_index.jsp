@@ -20,7 +20,7 @@
         URL url = new URL(rss);
         InputSource is = new InputSource(url.openStream());
         Document doc = parser.build(is);
- 
+ 		System.out.println(request.getAttribute("rss")+"123");
         Element root = doc.getRootElement();
         Element channel = root.getChild("channel");
         list = channel.getChildren("item");
@@ -42,15 +42,39 @@
     <title>Agency - Start Bootstrap Theme</title>
 	<!-- 달력!!! -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<link href="/pfinal/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="/pfinal/bootstrap/css/bootstrap-responsive.css" />
 <!-- FullCalendar(jQuery API) -->
 <link href='/pfinal/fullcalendar/fullcalendar.css' rel='stylesheet' />
 <script src='/pfinal/fullcalendar/fullcalendar.js'></script>
 <script>
+
 	// FullCalnedar
 	$(document).ready(function() {
+		
+		//test rss
+		alert("1234");
+		$("#rss_check").click(function() { //중복체크아이디 클릭이벤트 
+			alert("test");
+	    	jQuery.ajaxSetup({cache:false});
+	        $.ajax({
+	         url: "/pfinal/pr_media/rsscheck.jsp",//아이디중복체크할페이지 지정
+	         data : ({
+	         userid: $("input[name=id]").val() //파라메터로 userid 이름으로 값은 사용자가 입력한 사용자아이디를 지정
+	         }),
+	         success: function (data){ //중복확인후의 값은 data로 들어온다.
+	            var test1 = data.trim();
+	         	
+	        	alert(test1+"test");
+	         	
+	        	
+	           }
+	        });
+	    }); // click 끝 
+		
 		
 		$('#calendar').fullCalendar({
 			height: 400,
@@ -73,8 +97,13 @@
 	// DatePicker
 		$( ".datepicker" ).datepicker({
 			dateFormat: 'yy-mm-dd' 
-		});		
+		});	
+	
+	
+	
 	});
+	
+	
 </script>
 <script>
 function fnCal() {
@@ -328,7 +357,10 @@ function fnCal() {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-left" >
-                	 <h2 class="section-heading">오늘의 뉴스(${media_name})</h2> 
+                	 <h2 class="section-heading">오늘의 뉴스(${media_name})</h2>
+                	 <input type="text" name="id" id="id" class="form-control" required="required"/>
+                	 <input type="button" name="rss_check" id="rss_check" value="중복체크" class="form-control btn btn-warning" /> 
+                	 <div id="idmessage" class="input">영문, 숫자, 언더바(_), 하이픈(-) 포함 3~16 문자</div>
                 <ul>                	
 					<%
 					    if(list!=null){

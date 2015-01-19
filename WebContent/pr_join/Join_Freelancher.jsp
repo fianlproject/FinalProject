@@ -21,9 +21,8 @@
 			<label class="control-label">ID</label>
 			<div class="icon"></div>
 			<div class="controls">
-				<input type="text" name="id" id="id" class="form-control"
-					required="required" /> <input type="button" name="id_check" id="id_check"
-					value="중복체크" class="form-control btn btn-warning" />
+				<input type="text" name="id" id="id" class="form-control" required="required" />
+				<input type="button" name="id_check" id="id_check" value="중복체크" class="form-control btn btn-warning" />
 				<div id="idmessage" class="input">영문, 숫자, 언더바(_), 하이픈(-) 포함 3~16 문자</div>
 			</div>
 		</div>
@@ -107,7 +106,7 @@
 	    $("#id_check").click(function() { //중복체크아이디 클릭이벤트 
 	    	jQuery.ajaxSetup({cache:false});
 	        $.ajax({
-	         url: "/pfinal/Join/idcheck.jsp",//아이디중복체크할페이지 지정
+	         url: "/pfinal/pr_join/idcheck.jsp",//아이디중복체크할페이지 지정
 	         data : ({
 	         userid: $("input[name=id]").val() //파라메터로 userid 이름으로 값은 사용자가 입력한 사용자아이디를 지정
 	         }),
