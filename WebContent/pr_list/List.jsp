@@ -23,12 +23,12 @@
 <link href="css/layout_nav.css" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>프로젝트 찾기</title>
 
 </head>
+<br/>
 <body class="project-list">
 
-	이곳은 리스트 입니다 ㅋ
 	<%
 	String keyField = request.getParameter("keyField");
 	String keyWord = request.getParameter("keyWord");
@@ -42,10 +42,6 @@
 %>
 	<div class="page">
 		<div class="content">
-			<form action="/pfinal/pfinal.do" name="search" method="post">
-				<button class="btn btn-link pl" name="command" value="free_index">
-					<h4>공주</h4>
-				</button>
 				<div class="content-header">
 					<h3 class="header-text">프로젝트 찾기</h3>
 					<div class="search search-right">

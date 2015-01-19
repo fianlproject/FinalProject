@@ -41,6 +41,7 @@ import pfinal.join.JoinFree;
 import pfinal.main.GetPartnerCommand;
 import pfinal.main.Home;
 import pfinal.main.PartnerListCommand;
+import pfinal.main.client_index;
 import pfinal.main.free_index;
 import pfinal.main.mylist;
 import pfinal.main.mypage;
@@ -100,6 +101,8 @@ public class CommandFactory {
 		//메인페이지
 		else if(cmd.equals("free_index"))
 			return new free_index();
+		else if(cmd.equals("client_index"))
+			return new client_index();
 		
 		//게시판
 		

@@ -178,7 +178,7 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						<br /> <a href="/pfinal/pfinal.do?command=pindex"
+						<br /> <a href="/pfinal/pfinal.do?command=client_index"
 							class="btn btn-lg btn-client js-disable-on-click btn-submit">홈으로</a>
 					</div>
 				</div>

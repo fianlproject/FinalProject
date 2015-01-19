@@ -13,18 +13,25 @@
 <link href="css/floating.css" rel="stylesheet">
 <link href="css/layout_nav.css" rel="stylesheet">
 
+<style type="text/css">
+.btn-lg, .btn-group-lg > .btn {
+padding: 7px 7px;
+font-size: 15px;
+line-height: 1.33;
+border-radius: 5px;
+}
+</style>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>프로젝트</title>
 </head>
+<br/>
 <body>
 	<%
 		String longitude = (String) session.getAttribute("longitude");
 		String latitude = (String) session.getAttribute("latitude");
 	%>
 	<jsp:useBean id="dto" class="dto.listDto" />
-	이곳은 상세내용 입니다 ㅋ
-	<br /> ${dtoGetBoard.pr_id }
-
 
 	<div class="container">
 		<div class="row">
@@ -46,8 +53,8 @@
 												<form method="post" action="/pfinal/pfinal.do">
 													<input type="hidden" name="pr_id"
 														value="${dtoGetBoard.pr_id}">
-													<th>지원하기 :
-														<Button type="submit" value="mup" name="command">지원하기</Button>
+													<th>지원하기  : 
+														<Button type="submit" value="mup" name="command" class="btn btn-lg btn-default js-disable-on-click"> 지원</Button>
 													</th>
 												</form>
 												<th></th>
