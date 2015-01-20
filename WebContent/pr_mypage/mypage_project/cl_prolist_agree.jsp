@@ -43,14 +43,12 @@
 
 				<form method="post" action="/pfinal/pfinal.do">
 					<input type="hidden" name="command" value="cl_up" />
-					<div class="content-header">
-						<c:if test="${check == 5 }">
+					<div class="content-header">						
 							<div class="form-group">
 								<label class="control-label required" for="title"><span>*</span>재협상기간</label>
 								<div id="sm-group">
 									<div class="input-group">
-										<input class="form-control" id="nday" name="nday"
-											required="required" type="text">
+										<input class="form-control" id="nday" name="nday" required="required" type="text">
 										<span class="input-group-addon">일</span>
 									</div>
 								</div>
@@ -65,7 +63,7 @@
 									</div>
 								</div>
 							</div>
-						</c:if>
+						
 
 						<div class="form-group">
 							<label class="control-label required" for="title"><span>*</span>협상내용</label>
@@ -76,10 +74,10 @@
 							</div>
 
 						</div>
-						<br /> <input type="hidden" value="${pr_id}" name="pr_id">
-						<input type="hidden" value="${check}" name="check"> <input
-							type="submit" value="전송"
-							class="btn btn-lg btn-client js-disable-on-click btn-submit">
+						<br /> 
+						<input type="hidden" value="${pr_id}" name="pr_id">						
+						<input type="hidden" value="${app_id}" name="app_id">						
+						<input type="submit" value="전송" class="btn btn-lg btn-client js-disable-on-click btn-submit">
 					</div>
 			</div>
 			</form>

@@ -216,7 +216,7 @@ function fnMedia() {
                     <form method="post" action="/pfinal/pfinal.do">
                    	 <button class="btn btn-link pl text-muted" name="command" value="message" >보관함</button>
                    	 <c:if test="${msg != 0 }" >
-                   	 <span id="newMsg" >${msg }</span>
+                   	 <span id="newMsg" >${msg}</span>
                    	 </c:if>
                     </form>
                 </div>

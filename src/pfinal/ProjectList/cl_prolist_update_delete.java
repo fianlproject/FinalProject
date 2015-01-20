@@ -56,6 +56,11 @@ public class cl_prolist_update_delete implements Command {
 		pstmt.setString(3, pr_id);	
 		pstmt.executeUpdate();
 		
+		sql = "update list set pr_cntman = pr_cntman -1 where pr_id = ? ";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, pr_id);	
+		pstmt.executeUpdate();
+		
 		sql = "delete from app where f_del = 1 and cl_del=1";
 		pstmt = con.prepareStatement(sql);		
 		pstmt.executeUpdate();		

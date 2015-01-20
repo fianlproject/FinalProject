@@ -71,6 +71,7 @@ public class prolist implements Command {
 			dto.setF_del(rs.getInt("f_del"));
 			pro.add(dto);		
 		}
+		req.setAttribute("prolist", pro);
 		
 		}
 		catch(Exception e){
@@ -79,7 +80,6 @@ public class prolist implements Command {
 		finally{
 			pool.freeConnection(con, pstmt, rs);
 		}
-		req.setAttribute("prolist", pro);
 		return "pr_mypage/mypage_project/prolist.jsp";
 
 	}

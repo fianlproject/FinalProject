@@ -55,7 +55,7 @@ public class cl_prolist_update implements Command {
 		pstmt.setString(3, pr_id);	
 		pstmt.executeUpdate();
 		
-		if(check == 0){
+		
 			sql = "select pr_subject , a.pr_id,app_id,app_con,hday,hprice,nday,nprice,check1,a.fcheck,readchk from app a , list l where a.pr_id = l.pr_id and a.cl_id=? and pr_subject = ?";
 			pstmt = con.prepareStatement(sql);			
 			pstmt.setString(1, id);		
@@ -77,7 +77,7 @@ public class cl_prolist_update implements Command {
 				dto.setReadchk(rs.getInt("readchk"));
 				pro.add(dto);		
 			}
-		}
+		
 		
 		}
 		catch(Exception e){
@@ -89,12 +89,8 @@ public class cl_prolist_update implements Command {
 		req.setAttribute("check",check);
 		req.setAttribute("prolist", pro);
 		req.setAttribute("pr_id", pr_id);
-		
-		if(check == 0){
-			System.out.println("일로가나");
-			return "cl_prolist.jsp";
-		}
-		return "pr_mypage/mypage_project/cl_prolist_agree.jsp";
+
+		return "pr_mypage/mypage_project/cl_prolist.jsp";
 
 	}
 }
