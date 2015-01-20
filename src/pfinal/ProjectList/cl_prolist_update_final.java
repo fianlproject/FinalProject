@@ -68,7 +68,7 @@ public class cl_prolist_update_final implements Command {
 			pstmt.executeUpdate();
 		}
 		
-		sql = "insert into runing_finish_project values (?,?,?,?,?,now(),null,null,null,0)";
+		sql = "insert into runing_finish_project values (?,?,?,?,?,now(),null,null,null,null,null,0,0)";
 		System.out.println(sql);
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, pr_id);

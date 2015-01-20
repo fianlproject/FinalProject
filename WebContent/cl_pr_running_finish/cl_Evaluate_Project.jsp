@@ -32,6 +32,7 @@
 					<h3 class="header-text">
 						프로젝트 평가하기 <small class="small-text">정확한 평가가 좋은 파트너를 찾게 도와
 							줍니다.</small>
+						프로젝트 평가하기 <small class="small-text">평가한 항목은 수정할 수 없으니 신중하게 평가 해주시기 바랍니다.</small>
 					</h3>
 				</div>
 				<form name="pr_write" id="pr_write" method="post"

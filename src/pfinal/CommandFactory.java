@@ -44,7 +44,7 @@ import pfinal.join.JoinConfirm;
 import pfinal.join.JoinController;
 import pfinal.join.JoinFree;
 import pfinal.main.GetPartnerCommand;
-import pfinal.main.Home;
+import pfinal.main.cl_Home;
 import pfinal.main.PartnerListCommand;
 import pfinal.main.client_index;
 import pfinal.main.free_index;
@@ -176,7 +176,7 @@ public class CommandFactory {
 		else if (cmd.equals("evaluate"))
 			return new cl_RF_Project_List();
 		else if (cmd.equals("home"))
-			return new Home();
+			return new cl_Home();
 		else if (cmd.equals("back"))
 			return new cl_RF_Project_List();
 		else if (cmd.equals("evaluatewrite"))
@@ -193,6 +193,8 @@ public class CommandFactory {
 		// 프리 프로젝트 평가
 		else if (cmd.equals("frevaluate"))
 			return new fr_RF_Project_List();
+		else if (cmd.equals("frhome"))
+			return new cl_Home();
 		else if (cmd.equals("frback"))
 			return new fr_RF_Project_List();
 		else if (cmd.equals("frevaluatewrite"))

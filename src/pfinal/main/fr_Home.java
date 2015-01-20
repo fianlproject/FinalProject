@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kit.Command;
 
-public class Home implements Command {
+public class fr_Home implements Command {
 
 	@Override
 	public Object processCommand(HttpServletRequest req, HttpServletResponse res)

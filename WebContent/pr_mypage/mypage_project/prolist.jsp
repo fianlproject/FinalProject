@@ -152,6 +152,7 @@
 							</tbody>
 						</table><br/>
 						<a href="/pfinal/pfinal.do?command=free_index" class="btn btn-lg btn-client js-disable-on-click btn-submit">홈으로</a>
+						<a href="/pfinal/pfinal.do?command=frevaluate" class="btn btn-lg btn-client js-disable-on-click btn-submit">진행/완료 프로젝트 보기</a>
 					</div>
 				</div>
 			</div>

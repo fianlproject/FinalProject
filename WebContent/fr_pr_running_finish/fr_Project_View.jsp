@@ -101,15 +101,15 @@
 		</div>
 		<c:if test="${flag =='F' }">
 		<form method="post" action="/pfinal/pfinal.do">
-			<button class="btn btn-link pl" name="command" value="evaluatewrite">프로젝트 평가하기</button>
-			<button class="btn btn-link pl" name="command" value="back">취소</button>
+<!-- 			<button class="btn btn-link pl" name="command" value="frevaluatewrite">프로젝트 평가하기</button> -->
+			<button class="btn btn-link pl" name="command" value="frback">취소</button>
 			<input type="text" value="${pr_id }" name="pr_id" />
 		</form>
 		</c:if>
 		<c:if test="${flag =='N' }">
 		<form method="post" action="/pfinal/pfinal.do">
-			<button class="btn btn-link pl" name="command" value="finprojectup">프로젝트 완료하기</button>
-			<button class="btn btn-link pl" name="command" value="back">취소</button>
+<!-- 			<button class="btn btn-link pl" name="command" value="frfinprojectup">프로젝트 완료하기</button> -->
+			<button class="btn btn-link pl" name="command" value="frback">취소</button>
 			<input type="text" value="${pr_id }" name="pr_id" />
 		</form>
 		</c:if>

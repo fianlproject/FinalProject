@@ -52,7 +52,7 @@ public class fr_Project_Fin_View implements Command {
 			req.setAttribute("pr_id", rs.getString("pr_id"));
 			req.setAttribute("fr_id", fr_id);
 			
-			sql = "select cl_pr_comment, pr_subject, start_day, fin_price, fr_id,cl_evaluate, Floor((to_days(now())-to_days(start_day)))as total_day from runing_finish_project where pr_id="+pr_id;
+			sql = "select cl_pr_comment, pr_subject, start_day, fin_price, fr_id, cl_evaluate, Floor((to_days(now())-to_days(start_day)))as total_day from runing_finish_project where pr_id="+pr_id;
 		
 			System.out.println("runing_finish_project : "+ sql);
 			pstmt = con.prepareStatement(sql);

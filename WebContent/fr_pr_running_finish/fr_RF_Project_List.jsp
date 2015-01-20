@@ -30,8 +30,8 @@
 				<c:if test="${!empty dtoList1 }">
 				<c:forEach items="${dtoList1}" var="dto" varStatus="status">
 				<span>${status.count}</span>
-				<c:if test="${dto.evaluate == null}">
-					<form method="post" action="/pfinal/pfinal.do?command=finview" id="${pr_id }" name="${pr_id }">
+				<c:if test="${dto.fr_evaluate == null}">
+					<form method="post" action="/pfinal/pfinal.do?command=frfinview" id="${pr_id }" name="${pr_id }">
 					<div class="project-unit-heading">
 					${dto.pr_subject }
 					</div>
@@ -44,7 +44,7 @@
 						<div class="project-unit-desc">
 							<p></p>
 						</div>
-						<button class="btn btn-warning active" value="${dto.pr_id }" id="num" >프로젝트 완료하기</button>
+						<button class="btn btn-warning active" value="${dto.pr_id }" id="num" >프로젝트 정보 보기</button>
 					</div>
 					<c:if test="${status.count != count1}">
 					<hr size="10">
@@ -71,11 +71,11 @@
 				<h3 class="header-text">완료 프로젝트 목록</h3>
 			</div>
 			<div class="content-inner">
-<!-- 			<form name="evaluate" method="post" action="/pfinal/pfinal.do?command=evaluateup"> -->
+<!-- 			<form name="fr_evaluate" method="post" action="/pfinal/pfinal.do?command=fr_evaluateup"> -->
 				<section class="project-unit">
 				<c:if test="${!empty dtoList2 }">
 				<c:forEach items="${dtoList2}" var="dto" varStatus="status">
-				<c:if test="${dto.evaluate == null or empty dto.evaluate}">
+				<c:if test="${dto.fr_evaluate == null or empty dto.fr_evaluate}">
 					<form action="/pfinal/pfinal.do?" method="post" name="${pr_id }" id="${pr_id }">
 					<div class="project-unit-heading">
 					${dto.pr_subject }
@@ -91,8 +91,10 @@
 						<div class="project-unit-desc">
 							<p></p>
 						</div>
-						<button class="btn btn-client active"  id="command" name="command" value="evaluatewrite">프로젝트 평가하기</button>
-						<button class="btn btn-default active" id="command" name="command" value="projectfin">프로젝트 보기</button>
+						<c:if test="${empty dto.fr_evaluate }">
+						<button class="btn btn-client active"  id="command" name="command" value="frevaluatewrite">클라이언트 평가하기</button>
+						</c:if>
+						<button class="btn btn-default active" id="command" name="command" value="frprojectfinview">클라이언트 평가 보기</button>
 					</div>
 					<c:if test="${status.count != count2}">
 					<hr size="10">
@@ -101,31 +103,6 @@
 					<input type="hidden" name="pr_id" id="pr_id" value="${dto.pr_id}" />
 					<input type="hidden" name="pr_subject" id="pr_subject" value="${dto.pr_subject }" />
 					</form>
-				</c:if>
-				<c:if test="${!empty dto.evaluate or dto.evaluate != null}">
-				<form id="${pr_id }" name="${pr_id }" method="post" action="/pfinal/pfinal.do">
-					<div class="project-unit-heading">
-					${dto.pr_subject }
-					</div>
-					<div class="project-unit-body">
-						<div class="project-unit-basic-info">
-							<span><i class="fa fa-won"></i>금액 <fmt:formatNumber value="${dto.total_price}" type="currency" /></span> 
-							<span class="applied"><i class="fa fa-pencil"></i>총 ${dto.fr_ids }명 지원</span>
-							<span class="applied"><i class="fa fa-pencil"></i>총 계약 기간 : ${dto.total_day}</span>
-							<span class="date-recruitment">등록일 ${dto.start_day}</span>
-							<span class="date-recruitment">마감일 ${dto.end_day}</span>
-						</div>
-						<div class="project-unit-desc">
-							<p>평가된 프로젝트</p>
-						</div>
-						<button class="btn btn-default active" name="command" value="projectfinview">평가 및 자세히 보기</button>
-					</div>
-					<input type="hidden" name="pr_id" id="pr_id" value="${dto.pr_id}" />
-					<input type="hidden" name="pr_subject" id="pr_subject" value="${dto.pr_subject }" />
-					<c:if test="${status.count != count2}">
-					<hr size="10">
-					</c:if>
-				</form>
 				</c:if>
 				</c:forEach> 
 				</c:if>
@@ -140,7 +117,7 @@
 	</div>
 			<div align="center">
 				<form method="post" action="/pfinal/pfinal.do">
-				<button class="btn btn-default pl" name="command" value="home" >홈으로</button>
+				<button class="btn btn-default pl" name="command" value="frhome" >홈으로</button>
 				</form>
 				</div>
 	<script>

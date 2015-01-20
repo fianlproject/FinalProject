@@ -47,14 +47,14 @@ public class cl_Evaluate_Project_Upload implements Command {
 		try {
 			pool = DBConnectionMgr.getInstance();
 
-			sql = "update runing_finish_project set cl_evaluate='"+eval+"', cl_pr_comment='"+comment+"' WHERE pr_id="+pr_id;
+			sql = "update runing_finish_project set cl_evaluate='"+eval+"', cl_pr_comment='"+comment+"'  WHERE pr_id="+pr_id;
 			System.out.println(sql);
 
 			con = pool.getConnection();
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
 			
-			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, cl_evaluate,cl_pr_comment, pr_status, pr_subject, "
+			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, fr_evaluate,fr_pr_comment, pr_status, pr_subject, cl_evaluate, cl_pr_comment,"
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
 					+ "WHERE cl_id ='"+id+"' and pr_status=0 group by pr_id order by pr_id desc ";
 			
@@ -71,6 +71,8 @@ public class cl_Evaluate_Project_Upload implements Command {
 				dto.setStart_day(rs.getString("start_day"));
 				dto.setEnd_day(rs.getString("end_day"));
 				dto.setTotal_day(rs.getInt("total"));
+				dto.setFr_evaluate(rs.getString("fr_evaluate"));
+				dto.setFr_comment(rs.getString("fr_pr_comment"));
 				dto.setCl_evaluate(rs.getString("cl_evaluate"));
 				dto.setCl_comment(rs.getString("cl_pr_comment"));
 				dto.setPr_status(rs.getInt("pr_status"));;
@@ -80,7 +82,7 @@ public class cl_Evaluate_Project_Upload implements Command {
 				
 				v.add(dto);
 			}
-			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, cl_evaluate, cl_pr_comment, pr_status, pr_subject, "
+			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, fr_evaluate, fr_pr_comment, pr_status, pr_subject, cl_evaluate, cl_pr_comment,"
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
 					+ "WHERE cl_id ='"+id+"' and pr_status=1 group by pr_id order by pr_id desc ";
 			System.out.println(sql);
@@ -96,6 +98,8 @@ public class cl_Evaluate_Project_Upload implements Command {
 				dto.setStart_day(rs.getString("start_day"));
 				dto.setEnd_day(rs.getString("end_day"));
 				dto.setTotal_day(rs.getInt("total"));
+				dto.setFr_evaluate(rs.getString("fr_evaluate"));
+				dto.setFr_comment(rs.getString("fr_pr_comment"));
 				dto.setCl_evaluate(rs.getString("cl_evaluate"));
 				dto.setCl_comment(rs.getString("cl_pr_comment"));
 				dto.setPr_status(rs.getInt("pr_status"));

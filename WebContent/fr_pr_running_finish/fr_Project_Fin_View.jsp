@@ -63,9 +63,9 @@
 								</div>
 							</div>
 							<c:forEach items="${dtoGetBoard2 }" var="dto4" begin="0" end="0">
-								
+							<c:if test="${dto4.cl_evaluate != null }">
 							<div class="content-header">
-							<div>한마디 : ${dto4.comment} </div>
+							<div>한마디 : ${dto4.cl_comment} </div>
 								<table id="datatable" style="visibility: hidden;">
 									<thead>
 										<tr>
@@ -74,7 +74,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forTokens items="${dto4.evaluate}" delims="," var="eval" varStatus="status">
+										<c:forTokens items="${dto4.cl_evaluate}" delims="," var="eval" varStatus="status">
 											<tr class="test">
 												<c:if test="${status.count == 1 }">
 												<td>전문성</td>
@@ -105,14 +105,19 @@
 									style="width: 400px; height: 400px; margin: 0 auto"></div>
 							
 							</div>
-						
+						</c:if>
+						<c:if test="${dto4.cl_evaluate == null }">
+						<div class="content-header">
+							<div>아직 평가 되지 않았습니다.</div>
+						</div>
+						</c:if>
 						</c:forEach>
 					</div>
 				</div>
 			</div>
 		</div>
 		<form method="post" action="/pfinal/pfinal.do">
-			<button class="btn btn-link pl" name="command" value="back">돌아가기</button>
+			<button class="btn btn-link pl" name="command" value="frback">돌아가기</button>
 			<input type="text" value="${pr_id }" name="pr_id" />
 		</form>
 	</div>

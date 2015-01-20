@@ -35,7 +35,7 @@
 					</h3>
 				</div>
 				<form name="pr_write" id="pr_write" method="post"
-					action="/pfinal/pfinal.do?command=evaluateup">
+					action="/pfinal/pfinal.do?command=frevaluateup">
 					<input type="hidden" name="pr_id" value="${dtoGetBoard.pr_id}" />
 					<span>${dtoGetBoard.pr_id }</span>
 					<div class="content-header">
@@ -188,7 +188,7 @@
 	}
 	function fnBack() {
 		document.getElementById("pr_write").submit();
-		var url = "/pfinal/pfinal.do?command=evaluate";
+		var url = "/pfinal/pfinal.do?command=frevaluate";
 		location.href = url;
 	}
 	

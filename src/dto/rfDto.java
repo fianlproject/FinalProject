@@ -3,7 +3,7 @@ package dto;
 public class rfDto {
 	private int pr_id, total_day, pr_status,fcheck;
 	private String fr_id, cl_id, fin_price, start_day, end_day, cl_comment, pr_subject, cl_evaluate;
-	private String fr_ids, total_price,category, fr_comment, fr_evaluate;;
+	private String fr_ids, total_price,category, fr_comment, fr_evaluate;
 	private String[] fr;
 	
 	public String getCl_comment() {

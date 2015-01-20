@@ -35,7 +35,7 @@ public class fr_Project_View implements Command {
 		rfDto run_fin_pro=null;
 		Vector v = new Vector();
 		Vector v2 = new Vector();
-//		String flag = "F";
+		String flag = "F";
 		
 		try{
 			
@@ -69,7 +69,7 @@ public class fr_Project_View implements Command {
 				
 				v2.add(run_fin_pro);
 				
-//				flag = "N";
+				flag = "N";
 //				System.out.println("¤º¤º2");
 			}
 			
@@ -84,7 +84,7 @@ public class fr_Project_View implements Command {
 		req.setAttribute("Dto1", run_fin_pro);
 		req.setAttribute("dtoGetBoard", v);
 		req.setAttribute("dtoGetBoard2", v2);
-//		req.setAttribute("flag", flag);
+		req.setAttribute("flag", flag);
 		
 		return "fr_pr_running_finish/fr_Project_View.jsp";
 	}

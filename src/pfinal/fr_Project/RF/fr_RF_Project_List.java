@@ -43,14 +43,12 @@ public class fr_RF_Project_List implements Command {
 		ResultSet rs = null;
 		DBConnectionMgr pool = null;
 		String sql;
-		boolean flag1=false;
-		boolean flag2=false;
 		try {
 
 			pool = DBConnectionMgr.getInstance();
-			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day,cl_evaluate, cl_pr_comment, pr_status, pr_subject, "
+			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day,cl_evaluate, cl_pr_comment, pr_status, pr_subject, cl_evaluate, cl_pr_comment, "
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
-					+ "WHERE cl_id ='"+id+"' and pr_status=0 group by pr_id order by pr_id desc ";
+					+ "WHERE fr_id ='"+id+"' and pr_status=0 group by pr_id order by pr_id desc ";
 			System.out.println(sql);
 			con = pool.getConnection();
 			pstmt = con.prepareStatement(sql);
@@ -66,17 +64,18 @@ public class fr_RF_Project_List implements Command {
 				dto.setTotal_day(rs.getInt("total"));
 				dto.setCl_evaluate(rs.getString("cl_evaluate"));
 				dto.setCl_comment(rs.getString("cl_pr_comment"));
+				dto.setFr_evaluate(rs.getString("fr_evaluate"));
+				dto.setFr_comment(rs.getString("fr_pr_comment"));
 				dto.setPr_status(rs.getInt("pr_status"));
 				dto.setPr_subject(rs.getString("pr_subject"));
 				dto.setFr_ids(rs.getString("fr_id_count"));
 				dto.setTotal_price(rs.getString("total_price"));
-//				dto.setFcheck(rs.getString("fcheck"));
 				v.add(dto);
 			}
 			
-			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day,cl_evaluate, cl_pr_comment, pr_status, pr_subject, "
+			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, cl_evaluate, cl_pr_comment, pr_status, pr_subject, fr_evaluate, fr_pr_comment, "
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
-					+ "WHERE cl_id ='"+id+"' and pr_status=1 group by pr_id order by pr_id desc ";
+					+ "WHERE fr_id ='"+id+"' and pr_status=1 group by pr_id order by pr_id desc ";
 			System.out.println(sql);
 			con = pool.getConnection();
 			pstmt = con.prepareStatement(sql);
@@ -85,18 +84,19 @@ public class fr_RF_Project_List implements Command {
 			while (rs.next()) {
 				dto = new rfDto();
 				dto.setPr_id(rs.getInt("pr_id"));
-				dto.setCl_id(rs.getString("cl_id"));
+				dto.setFr_id(rs.getString("fr_id"));
 				dto.setFin_price(rs.getString("fin_price"));
 				dto.setStart_day(rs.getString("start_day"));
 				dto.setEnd_day(rs.getString("end_day"));
 				dto.setTotal_day(rs.getInt("total"));
 				dto.setCl_evaluate(rs.getString("cl_evaluate"));
 				dto.setCl_comment(rs.getString("cl_pr_comment"));
+				dto.setFr_evaluate(rs.getString("fr_evaluate"));
+				dto.setFr_comment(rs.getString("fr_pr_comment"));
 				dto.setPr_status(rs.getInt("pr_status"));
 				dto.setPr_subject(rs.getString("pr_subject"));
 				dto.setFr_ids(rs.getString("fr_id_count"));
 				dto.setTotal_price(rs.getString("total_price"));
-//				dto.setFcheck(rs.getString("fcheck"));
 				frv.add(dto);
 			}
 			
@@ -111,7 +111,6 @@ public class fr_RF_Project_List implements Command {
 		req.setAttribute("count2", frv.size());
 		req.setAttribute("dtoList1", v);
 		req.setAttribute("dtoList2", frv);
-//		req.setAttribute("frdto", frv);
 		System.out.println("리스트 블러오기 완료");
 		return "fr_pr_running_finish/fr_RF_Project_List.jsp";
 
