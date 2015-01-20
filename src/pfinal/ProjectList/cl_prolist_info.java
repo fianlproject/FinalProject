@@ -16,6 +16,7 @@ import kit.DBConnectionMgr;
 import dto.JoinDto;
 import dto.ProjectDto;
 import dto.listDto;
+import dto.mySchoolDto;
 import dto.proDto;
 import dto.quDto;
 
@@ -45,6 +46,7 @@ public class cl_prolist_info implements Command {
 		Vector skills = new Vector();
 		Vector qv = new Vector();
 		Vector v = new Vector();
+		String sogae="";
 		try {
 
 		pool = DBConnectionMgr.getInstance();
@@ -146,6 +148,24 @@ public class cl_prolist_info implements Command {
 			
 		}
 		
+		//나의소개
+		sql = "select sogae from members where id=?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, id);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+			sogae = rs.getString("sogae");
+
+			System.out.println("마이리스트 소개"+sogae);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		}
 		catch(Exception e){
@@ -159,6 +179,53 @@ public class cl_prolist_info implements Command {
 		req.setAttribute("qv", qv);
 		req.setAttribute("vjoin", vjoin);
 		req.setAttribute("vector", v);
+		req.setAttribute("sogae", sogae);
+		
+
+		String chk = "no";
+
+		System.out.println("학교 DB체크" + id);
+
+		Connection con;
+		PreparedStatement pstmt;
+		ResultSet rs;
+		DBConnectionMgr pool;
+		Vector schoolv = new Vector();
+
+		String schoolsql = "select * from myschool where id='" + id + "'";
+
+		System.out.println("학교 검색 sql " + schoolsql);
+		try {
+
+			pool = DBConnectionMgr.getInstance();
+			con = pool.getConnection();
+			pstmt = con.prepareStatement(schoolsql);
+			rs = pstmt.executeQuery();
+
+			
+				
+				while (rs.next()) {
+					chk = "yes";
+					mySchoolDto dto = new mySchoolDto();
+					dto.setSchoolname(rs.getString("school_name"));
+					dto.setSchoolmajor(rs.getString("school_major"));
+					dto.setSchoolstate(rs.getString("school_state"));
+					dto.setSchoolid(rs.getInt("school_id"));
+					schoolv.add(dto);
+					System.out.println();
+				}
+			
+
+
+		} catch (Exception err) {
+			System.out.println("DB체크() : " + err);
+			err.printStackTrace();
+		}
+
+		req.setAttribute("SchoolChk", chk);
+		req.setAttribute("mySchoolList", schoolv);
+		
+		
 		
 		return "pr_mypage/mypage_project/cl_info.jsp";
 

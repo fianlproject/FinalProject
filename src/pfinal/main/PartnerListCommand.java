@@ -35,8 +35,11 @@ public class PartnerListCommand implements Command {
 		System.out.println("파트너리스트커맨드"+KeyFiled);
 
 		Vector v = new Vector();
+		Vector skills = new Vector();
 
 		String sql;
+		String skillsql;
+		String id = "";
 
 		
 		if(KeyWord==null||KeyWord.isEmpty()){
@@ -56,9 +59,7 @@ public class PartnerListCommand implements Command {
 
 			while (rs.next()) {
 				JoinDto mdto = new JoinDto();
-				
-				String id, pw, name, cname, tel;
-				int cpcheck, age, gender, pstate;
+
 				
 				mdto.setId(rs.getString("id"));
 				mdto.setPw(rs.getString("pw"));
@@ -69,10 +70,27 @@ public class PartnerListCommand implements Command {
 				mdto.setAge(rs.getInt("age"));
 				mdto.setGender(rs.getInt("gender"));
 				mdto.setPstate(rs.getInt("pstate"));
-
-
+				mdto.setSogae(rs.getString("sogae"));
+				id=rs.getString("id");
+				
+				
+//				skillsql = "select * from skill where id = ?";			
+//				pstmt = con.prepareStatement(skillsql);			
+//				pstmt.setString(1, id);
+//				rs = pstmt.executeQuery();
+//				while(rs.next()){
+//					listDto list2 = new listDto();
+//					list2.setSkill(rs.getString("skill"));
+//					list2.setExp(rs.getInt("exp"));
+//					list2.setMastery(rs.getInt("mastery"));
+//					skills.add(list2);
+//				}
+				
 				v.add(mdto);
 			}
+			
+			
+			
 		} catch (Exception err) {
 			System.out.println("getPartnerlist() : " + err);
 			err.printStackTrace();
@@ -82,6 +100,7 @@ public class PartnerListCommand implements Command {
 		}
 
 		req.setAttribute("mdtoList", v);
+		req.setAttribute("skills", skills);
 		return "pr_list/PartnerList.jsp";
 
 	}

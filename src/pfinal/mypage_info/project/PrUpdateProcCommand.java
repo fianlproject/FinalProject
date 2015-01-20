@@ -70,8 +70,8 @@ public class PrUpdateProcCommand implements Command {
 		// dto.setPr_photo(multi.getParameter("pr_photo"));
 		// dto.setPr_exday(Integer.parseInt(multi.getParameter("pr_exday")));
 
-		dto.setPr_content(multi.getParameter("pr_content"));
-		dto.setPr_subject(multi.getParameter("pr_subject"));
+		
+		String pr_nowskill = multi.getParameter("pr_nowskill");
 
 		String pr_photo = multi.getParameter("uppr_photo");
 		if ((String) saveFiles.get(0) != null) {
@@ -92,9 +92,29 @@ public class PrUpdateProcCommand implements Command {
 		if (deletephoto != null) {
 			pr_photo = null;
 		}
+		
+		String pr_skill = "";
+		String[] pr_skills = multi.getParameterValues("pr_skills");
+
+		for (int i = 0; i < pr_skills.length; i++) {
+			pr_skill += pr_skills[i];
+			if (i < pr_skills.length - 1) {
+				pr_skill += ',';
+			}
+		}
+		
+		
 		dto.setPr_photo(pr_photo);
 		dto.setPr_id(Integer.parseInt(multi.getParameter("pr_id").trim()));
 
+		dto.setPr_content(multi.getParameter("pr_content"));
+		dto.setPr_subject(multi.getParameter("pr_subject"));
+		dto.setPr_skill(pr_skill);
+		dto.setPr_needman(Integer.parseInt(multi.getParameter("pr_needman")));
+		dto.setPr_price(multi.getParameter("pr_price"));
+		dto.setPr_end(multi.getParameter("pr_end"));
+		dto.setPr_exday(Integer.parseInt(multi.getParameter("pr_exday")));
+		
 		sql = "update list set pr_subject = ? , pr_content = ?,  pr_photo = ? where pr_id=?";
 
 		try {

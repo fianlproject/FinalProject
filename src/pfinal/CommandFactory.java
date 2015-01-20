@@ -68,10 +68,12 @@ import pfinal.mypage_info.m_media;
 import pfinal.mypage_info.m_menu_ui;
 import pfinal.mypage_info.m_quali;
 import pfinal.mypage_info.m_skill;
+import pfinal.mypage_info.m_sogae;
 import pfinal.mypage_info.media;
 import pfinal.mypage_info.menu_ui;
 import pfinal.mypage_info.quali;
 import pfinal.mypage_info.skill;
+import pfinal.mypage_info.sogaeProc;
 import pfinal.mypage_info.project.PrDeleteProcCommand;
 import pfinal.mypage_info.project.PrUpdateCommand;
 import pfinal.mypage_info.project.PrUpdateProcCommand;
@@ -242,6 +244,11 @@ public class CommandFactory {
 	         return new m_menu_ui();
 		else if (cmd.equals("m_media")) 
 	         return new m_media();
+		else if(cmd.equals("m_sogae"))
+			return new m_sogae();
+		else if(cmd.equals("sogaeProc"))
+			return new sogaeProc();
+		
 		
 		//회원가입
 		if(cmd.equals("join"))

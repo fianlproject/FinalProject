@@ -40,6 +40,7 @@
 		keyWord = "";
 	}
 %>
+
 	<div class="page">
 		<div class="content">
 			<div class="content-header">
@@ -47,9 +48,11 @@
 			</div>
 
 			<div class="content-inner">
-				<section class="project-unit"> <c:forEach
-					items="${mdtoList}" var="dto">
+				<section class="project-unit"> 
+				
+				<c:forEach items="${mdtoList}" var="dto">
 					<!-- 전체링크 -->
+					<c:if test="${dto.cpcheck==0 }">
 
 					<div class="project-unit-heading">
 						<form method="post" action="/pfinal/pfinal.do">
@@ -61,12 +64,20 @@
 								</button>
 							</p>
 
-							<span class="label label-sm label-partners-availability possible">활동가능</span>
+							<span class="label label-sm label-partners-availability possible"></span>
+							<b>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${dto.sogae }
+							</b>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${dto.age }살
+							
 						</form>
 					</div>
 
 					<hr size="10">
-				</c:forEach> </section>
+					</c:if>
+				</c:forEach> 
+				
+				</section>
 			</div>
 		</div>
 	</div>

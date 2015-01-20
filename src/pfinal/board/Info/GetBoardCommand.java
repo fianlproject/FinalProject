@@ -44,7 +44,7 @@ public class GetBoardCommand implements Command {
 		listDto dto = new listDto();
 		int day_cha = 0;
 
-		String sql = "select pr_id,pr_subject,pr_skill,pr_content,pr_price,"
+		String sql = "select pr_id,pr_subject,pr_skill,pr_content,pr_price,pr_private,"
 				+ "pr_start,pr_end,pr_needman,pr_cntman,c_name,pr_photo,longitude,latitude,pr_exday,cl_id,"
 				+ "to_days(pr_end)-to_days(now()) as day_cha from list where pr_id=?";
 		System.out.println("¿©±â¾ß"+sql); 
@@ -83,6 +83,7 @@ public class GetBoardCommand implements Command {
 				dto.setLatitude(rs.getString("latitude"));
 				dto.setPr_exday(rs.getInt("pr_exday"));
 				dto.setCl_id(rs.getString("cl_id"));
+				dto.setPr_private(rs.getString("pr_private"));
 				
 				session.setAttribute("longitude", rs.getString("longitude"));
 				session.setAttribute("latitude", rs.getString("latitude"));

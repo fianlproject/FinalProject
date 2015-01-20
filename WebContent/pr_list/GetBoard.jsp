@@ -162,6 +162,12 @@ border-radius: 5px;
 				value="${dtoGetBoard.pr_content}" name="pr_content" /> <input
 				type="hidden" value="${dtoGetBoard.pr_photo}" name="pr_photo" /> <input
 				type="hidden" value="	${dtoGetBoard.pr_id }" name="pr_id" />
+				 <input type="hidden" value="${dtoGetBoard.pr_skill }" name="pr_nowskill" />
+				 <input type="hidden" value="${dtoGetBoard.pr_needman }" name="pr_needman" />
+				 <input type="hidden" value="${dtoGetBoard.pr_price }" name="pr_price" />
+				 <input type="hidden" value="${dtoGetBoard.pr_end }" name="pr_end" />
+				 <input type="hidden" value="${dtoGetBoard.pr_private }" name="pr_private" />
+				  <input type="hidden" value="${dtoGetBoard.pr_exday }" name="pr_exday" />
 		</form>
 
 

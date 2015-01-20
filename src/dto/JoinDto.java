@@ -1,8 +1,16 @@
 package dto;
 
 public class JoinDto {
-	String id, pw, name, cname, tel;
+	String id, pw, name, cname, tel, sogae;
 	int cpcheck, age, gender, pstate;
+	
+	
+	public String getSogae() {
+		return sogae;
+	}
+	public void setSogae(String sogae) {
+		this.sogae = sogae;
+	}
 	public String getId() {
 		return id;
 	}

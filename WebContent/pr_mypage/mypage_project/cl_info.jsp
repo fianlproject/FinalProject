@@ -198,6 +198,44 @@
 							</tbody>
 						</table>
 					</div>
+
+
+
+					<div class="form-group">
+						<h4>
+							<font color="#3DB7CC"> 학교 </font>
+						</h4>
+
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>학교명</th>
+									<th>전공</th>
+									<th>상태</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="dto" items="${mySchoolList}">
+									<tr>
+										<td>${dto.schoolname}</td>
+										<td>${dto.schoolmajor}</td>
+										<td>${dto.schoolstate}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="form-group">
+						<h4>
+							<font color="#3DB7CC"> 자기소개 </font>
+						</h4>
+						<c:if test="${sogae!=null }">
+							<b>${sogae }</b>
+							</c:if>
+					</div>
+
+
 					<br />
 
 					<!-- Portfolio Grid Section -->

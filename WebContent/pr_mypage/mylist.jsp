@@ -127,7 +127,7 @@
 								</tbody>
 							</table>
 						</div>
-						<br/>
+						<br />
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
@@ -154,12 +154,13 @@
 								</tbody>
 							</table>
 						</div>
-						<br/>
+						<br />
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
 								<a href="/pfinal/pfinal.do?command=myschoolchk">나의 학교</a>
 							</h5>
+
 							<table class="table table-hover">
 								<thead>
 									<tr>
@@ -169,17 +170,17 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="i" items="${qv}">
+									<c:forEach var="dto" items="${mySchoolList}">
 										<tr>
-											<td>${i.q_name}</td>
-											<td>${i.q_house}</td>
-											<td>${i.q_num}</td>
+											<td>${dto.schoolname}</td>
+											<td>${dto.schoolmajor}</td>
+											<td>${dto.schoolstate}</td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
 						</div>
-						<br/>
+						<br />
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
@@ -195,11 +196,21 @@
 									</tr>
 								</thead>
 								<tbody>
-										<tr>
-										
-										</tr>
+									<tr>
+
+									</tr>
 								</tbody>
 							</table>
+						</div>
+
+
+						<div class="contract-project">
+							<h5 class="contract-project-heading">
+								<a href="/pfinal/pfinal.do?command=sogae">나의 소개</a>
+							</h5>
+							<c:if test="${sogae!=null }">
+							${sogae }
+							</c:if>
 						</div>
 					</div>
 				</div>
@@ -209,23 +220,26 @@
 				<div class="inner">
 					<div class="user-name-tag">
 						<h3 class="user-name-tag-heading"><%=session.getAttribute("id")%>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;
-						<a href="/pfinal/pfinal.do?command=free_index">메인</a></h3>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp; <a href="/pfinal/pfinal.do?command=free_index">메인</a>
+						</h3>
 						<div class="user-name-tag-body">
-						<img alt="kstar9312 사진" class="img-circle user-img"
+							<img alt="kstar9312 사진" class="img-circle user-img"
 								src="/static/img/default_avatar.jpg" />
 							<h4 class="username"><%=session.getAttribute("name")%>님의
 								마이페이지
-							</h4><br/><br/><br/>
+							</h4>
+							<br />
+							<br />
+							<br />
 							<form method="post" action="/pfinal/pfinal.do">
 								<input type="hidden" name="command" value="mypage" /> <input
-								class="btn" type="submit" value="관심기술 ">
+									class="btn" type="submit" value="관심기술 ">
 							</form>
 							<form method="post" action="/pfinal/pfinal.do">
 								<input type="hidden" name="command" value="prolist" /> <input
-								class="btn" type="submit" value="지원 프로젝트 목록 임시 ">
+									class="btn" type="submit" value="지원 프로젝트 목록 임시 ">
 							</form>
 						</div>
 					</div>
@@ -236,19 +250,28 @@
 						<a class="btn btn-client btn-lg btn-project-add"
 							href="/pfinal/pfinal.do?command=project">나의 프로젝트</a>
 					</div>
-					
+
 					<div class="activity">
 						<h3 class="activity-heading">정보 수정</h3>
 						<div id="activity-body">
 							<ul class="activity-unit-list">
-								<li class="empty-activity activity-unit"><a href="/pfinal/pfinal.do?command=m_career">나의 경력</a></li>
-								<li class="empty-activity activity-unit"><a href="/pfinal/pfinal.do?command=m_skill">나의 보유기술</a></li>
-								<li class="empty-activity activity-unit"><a href="/pfinal/pfinal.do?command=m_quali">나의 자격증</a></li>
-								<li class="empty-activity activity-unit"><a href="/pfinal/pfinal.do?command=myschoolchk">나의 학교</a></li>
-								<li class="empty-activity activity-unit"><a href="/pfinal/pfinal.do?command=project">나의 프로젝트</a></li>
-								<li class="empty-activity activity-unit"><a href="/pfinal/pfinal.do?command=m_media">신문사 설정</a></li>
-								<li class="empty-activity activity-unit"><a href="/pfinal/pfinal.do?command=m_menu_ui">메뉴 설정</a></li>
-								
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=m_career">나의 경력</a></li>
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=m_skill">나의 보유기술</a></li>
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=m_quali">나의 자격증</a></li>
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=myschoolchk">나의 학교</a></li>
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=project">나의 프로젝트</a></li>
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=m_sogae">나의 소개</a></li>
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=m_media">신문사 설정</a></li>
+								<li class="empty-activity activity-unit"><a
+									href="/pfinal/pfinal.do?command=m_menu_ui">메뉴 설정</a></li>
+
 							</ul>
 						</div>
 					</div>

@@ -110,6 +110,7 @@ public class WriteProcCommand implements Command {
 		dto.setLongitude(multi.getParameter("longitude"));
 		dto.setLatitude(multi.getParameter("latitude"));
 		
+		
 
 
 		System.out.println("글쓰기 커맨드 사진 : " + dto.getPr_photo());
