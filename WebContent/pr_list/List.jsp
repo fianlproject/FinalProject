@@ -86,7 +86,7 @@
 		</div>
 	</div>
 	<div class="content-inner">
-		<section class="project-unit"> <c:forEach items="${dtoList}" var="dto" begin="${startpage}" end="${endpage}">
+		<section class="project-unit"> <c:forEach items="${dtoList}" var="dto" begin="${startpage-1}" end="${endpage-1}">
 			<div class="project-unit-heading">
 
 				<form method="post" action="/pfinal/pfinal.do">
@@ -152,7 +152,9 @@
 
 
 			</div>
-			<hr size="10">
+			
+              <hr size="10">
+            
 		</c:forEach>
 		<!-- //사이즈 -->
 		<c:forEach begin="1" end="${size}" step="1" varStatus="count1">

@@ -33,7 +33,7 @@ public class media implements Command {
 		
 		
 		String ui =  (String) req.getParameter("ui");
-		System.out.println(ui+"asd");
+		System.out.println(ui+"media");
 		
 		try {
 

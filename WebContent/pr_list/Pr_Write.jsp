@@ -8,7 +8,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script>
+$(function() {
+	$("#datepicker").datepicker({
+		changeMonth : true,
+		changeYear : true,
+		showButtonPanel : true,
+		dateFormat : "yy/mm/dd"
+	});
+});
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>리스트 글올리기</title>
 <link href="css/7911bc0a5c62.css" rel="stylesheet">
@@ -47,8 +59,7 @@
 			<div class="content">
 				<div class="content-header">
 					<h3 class="header-text">
-						프로젝트 등록 <small class="small-text">상세하게 작성해주실수록 더 적합한 파트너스를
-							만날 수 있습니다.</small>
+						프로젝트 등록 <small class="small-text">상세하게 작성해주실수록 더 적합한 파트너스를 만날 수 있습니다.</small>
 					</h3>
 				</div>
 
@@ -58,8 +69,7 @@
 
 						<div class="map_wrap">
 
-							<div id="map"
-								style="width: 100%; height: 100%; position: relative; overflow: hidden; top:"></div>
+							<div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden; top:"></div>
 
 							<div id="menu_wrap" class="bg_white">
 								<div class="option">
@@ -91,20 +101,16 @@
 										class="help-block">프로젝트 제목을 입력해 주세요. (30자 이내)</span>
 								</div>
 							</div>
-
 							<input type="hidden" name="pr_start" id="pr_start"
 								value=<%=pr_start%> size="8">
 							<%
 								request.setAttribute("pr_start", pr_start);
 							%>
-
-
-
 							<div class="form-group project-term-form-group ">
 								<label class="control-label required" for="project_term"><span>*</span>종료날짜</label>
 								<div id="sm-group">
 									<div class="input-group">
-										<input autocomplete="off" class="form-control" id="pr_end"
+										<input autocomplete="off" class="form-control" id="datepicker"
 											name="pr_end" required="required" type="text"><span
 											class="input-group-addon">일</span>
 									</div>

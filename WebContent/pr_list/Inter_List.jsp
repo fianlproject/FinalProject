@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<div class="content-inner">
-				<section class="project-unit"> <c:forEach items="${dtoList}" var="dto" begin="${startpage}" end="${endpage}">
+				<section class="project-unit"> <c:forEach items="${dtoList}" var="dto" begin="${startpage-1}" end="${endpage-1}">
 					<div class="project-unit-heading">
 						<h4 class="project-title">${dto.pr_subject}</h4>
 						<span class="label label-sm label-open">마감 1주 전</span>
@@ -100,7 +100,9 @@
 						</form>
 
 					</div>
-					<hr size="10">
+					<c:if test="${status.count != listSize }">
+              		 <hr size="10">
+              		</c:if>
 				</c:forEach> <c:forEach begin="1" end="${size}" step="1" varStatus="count1">
 					<c:if test="${count1.count!=size}">
 						<form method="post" action="/pfinal/pfinal.do">

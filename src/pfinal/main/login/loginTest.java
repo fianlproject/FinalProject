@@ -31,6 +31,7 @@ public class loginTest implements Command {
 	int cpcheck=2;
 	String media;
 	String rss;
+	Vector v = new Vector();
 	
 	@Override
 	public Object processCommand(HttpServletRequest req, HttpServletResponse res)
@@ -46,7 +47,6 @@ public class loginTest implements Command {
 		pw = Encode.encrypt(pw);
 		ProjectDto pDto = null;
 		boolean flag = false;
-		Vector v = new Vector();
 		Vector msg = new Vector();
 		int count = 0;
 		try{  

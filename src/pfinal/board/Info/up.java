@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import kit.Command;
 import kit.DBConnectionMgr;
+import dto.checkDto;
 import dto.listDto;
 
 public class up implements Command {
@@ -43,6 +44,8 @@ public class up implements Command {
 		String cl_id = null;
 		int pr_exday = 0;
 		int pr_price = 0;
+		Vector vc=new Vector();
+		int start = 1;
 		try {
 
 			pool = DBConnectionMgr.getInstance();
@@ -107,12 +110,12 @@ public class up implements Command {
 		
 		if(KeyWord==null||KeyWord.isEmpty()){
 			 sql = "select  pr_id,pr_subject,pr_skill,pr_content,pr_price,"
-				+ "pr_start,pr_end,pr_needman,pr_cntman,c_name,pr_photo,"
-				+ "Floor((to_days(pr_end)-to_days(pr_start))/7) as week_cha, (to_days(pr_end)-to_days(pr_start))%7 as day_cha from list order by pr_id desc";
+				+ "pr_start,pr_end,pr_needman,pr_cntman,c_name,pr_photo,cl_id,"
+				+ "Floor((to_days(pr_end)-to_days(now()))/7) as week_cha, (to_days(pr_end)-to_days(now()))%7 as day_cha from list where pr_private='y' order by pr_id desc";
 		}else{
 			sql ="select  pr_id,pr_subject,pr_skill,pr_content,pr_price,"
-				+ "pr_start,pr_end,pr_needman,pr_cntman,c_name,pr_photo,"
-				+ "Floor((to_days(pr_end)-to_days(pr_start))/7) as week_cha, (to_days(pr_end)-to_days(pr_start))%7 as day_cha from list where "+ KeyFiled
+				+ "pr_start,pr_end,pr_needman,pr_cntman,c_name,pr_photo,cl_id,"
+				+ "Floor((to_days(pr_end)-to_days(now()))/7) as week_cha, (to_days(pr_end)-to_days(now()))%7 as day_cha from list where pr_private='y' "+ KeyFiled
 					+" like '%"+ KeyWord + "%' order by pr_id";
 		}
 		
@@ -138,8 +141,41 @@ public class up implements Command {
 				dto.setC_name(rs.getString("c_name"));
 				dto.setDay_cha(rs.getString("day_cha"));
 				dto.setWeek_cha(rs.getString("week_cha"));
+				dto.setCl_id(rs.getString("cl_id"));
 				v.add(dto);
 			}
+			sql="select  pr_id, pr_end<now()+1 as check1 from list";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			checkDto dto1 = null;
+			while(rs.next()){
+				dto1 = new checkDto();
+				dto1.setCheck123(rs.getString("check1"));
+				dto1.setPr_id123(rs.getString("pr_id"));
+				vc.add(dto1);
+			}
+			
+
+			String[] ck= new String[vc.size()];
+			String[] ck1=new String[vc.size()];
+			for(int k=0;k<vc.size();k++){
+				
+				dto1 = (checkDto)vc.get(k);
+				ck[k]=dto1.getCheck123();
+				ck1[k]=dto1.getPr_id123();
+	         }
+			
+				for(int i=0; i<ck.length; i++){
+					if(ck[i].equals("1")){
+						 pool = DBConnectionMgr.getInstance();
+						con = pool.getConnection();
+						sql="update list set pr_state='Y' where pr_id=?";
+						 pstmt=con.prepareStatement(sql);
+						 pstmt.setString(1, ck1[i]);
+						 pstmt.executeUpdate();
+					}
+				}
+			
 		} catch (Exception err) {
 			System.out.println("getlist() : " + err);
 			err.printStackTrace();
@@ -147,6 +183,28 @@ public class up implements Command {
 		finally{
 			pool.freeConnection(con, pstmt, rs);
 		}
+		int size = 0;
+		if(v.size()%10 == 0){
+			size = v.size()/10;
+		}
+		else{size = v.size()/10+1;}
+		System.out.println("블럭수" + size);
+		System.out.println("글갯수" + v.size()); 
+		int startpage = 1;
+		int endpage = 10;
+		if(start != 1){
+			startpage = (start-1) * 10 + 1;
+			endpage = (start-1) * 10 + 10;
+		}
+		
+		System.out.println(startpage + "start");
+		System.out.println(endpage + "endpage");
+		req.setAttribute("aa", 123);
+		req.setAttribute("dtoList", v);
+		req.setAttribute("size", size);
+		req.setAttribute("start", start);
+		req.setAttribute("startpage", startpage);
+		req.setAttribute("endpage", endpage);
 
 		req.setAttribute("dtoList", v);
 		

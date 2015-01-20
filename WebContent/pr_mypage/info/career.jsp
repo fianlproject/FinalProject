@@ -5,10 +5,8 @@
 <html>
 
 <head>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/demos/style.css">
 <!-- Bootstrap Core CSS -->
@@ -56,8 +54,7 @@
 			<div class="content">
 				<div class="content-header">
 					<h3 class="header-text">
-						경력 <small class="small-text">상세하게 작성해주실수록 더 적합한 파트너스를 만날 수
-							있습니다.</small>
+						경력 <small class="small-text">상세하게 작성해주실수록 더 적합한 파트너스를 만날 수 있습니다.</small>
 					</h3>
 				</div>
 
@@ -68,32 +65,27 @@
 							<label class="control-label required" for="title"><span>*</span>회사명</label>
 							<div id="sm-group">
 								<div class="control-wrapper">
-									<input class="form-control" id="cname" name="cname"
-										maxlength="30" size="30" required="required" type="text">
+									<input class="form-control" id="cname" name="cname" maxlength="30" size="30" required="required" type="text">
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
 
-							<label class="control-label required" for="title"><span>*</span>부
-								서</label>
+							<label class="control-label required" for="title"><span>*</span>부서</label>
 							<div id="sm-group">
 								<div class="control-wrapper">
-									<input class="form-control" id="part" name="part"
-										maxlength="30" size="30" required="required" type="text">
+									<input class="form-control" id="part" name="part" maxlength="30" size="30" required="required" type="text">
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
 
-							<label class="control-label required" for="title"><span>*</span>직
-								위</label>
+							<label class="control-label required" for="title"><span>*</span>직위</label>
 							<div id="sm-group">
 								<div class="control-wrapper">
-									<input class="form-control" id="position" name="position"
-										maxlength="30" size="30" required="required" type="text">
+									<input class="form-control" id="position" name="position" maxlength="30" size="30" required="required" type="text">
 								</div>
 							</div>
 						</div>
@@ -103,8 +95,7 @@
 							<label class="control-label required" for="title"><span>*</span>입사일</label>
 							<div id="sm-group">
 								<div class="control-wrapper">
-									<input class="form-control" id="datepicker" name="joins"
-										maxlength="30" size="30" required="required" type="text">
+									<input class="form-control" id="datepicker" name="joins" maxlength="30" size="30" required="required" type="text">
 								</div>
 							</div>
 						</div>
@@ -114,15 +105,12 @@
 							<label class="control-label required" for="title"><span>*</span>퇴사일</label>
 							<div id="sm-group">
 								<div class="control-wrapper">
-									<input class="form-control" id="datepicker1" name="resign"
-										maxlength="30" size="30" required="required" type="text">
+									<input class="form-control" id="datepicker1" name="resign" maxlength="30" size="30" required="required" type="text">
 								</div>
 							</div>
-							<br /> <input
-								class="btn btn-lg btn-client js-disable-on-click btn-submit"
-								value="전송" type="submit"> <a
-								href="/pfinal/pfinal.do?command=free_index"
-								class="btn btn-lg btn-default js-disable-on-click">메인으로</a>
+							<br/> 
+							<input class="btn btn-lg btn-client js-disable-on-click btn-submit" value="전송" type="submit">
+							<a href="/pfinal/pfinal.do?command=free_index" class="btn btn-lg btn-default js-disable-on-click">메인으로</a>
 						</div>
 					</div>
 				</form>

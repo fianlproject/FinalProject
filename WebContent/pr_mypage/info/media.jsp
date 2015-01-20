@@ -15,28 +15,40 @@
 <body>
 
 <br/>
-<form id="media" name="media"  method="post" action="/pfinal/pfinal.do?command=media">
-　<img src='img/media/etnews1.png' width="100" height="100"><input type="radio" name="ui" value="1"/>전자신문
-　<input type="radio" name="ui" value="2"/>zdnet　
-　<input type="radio" name="ui" value="3"/>조선일보　
-　<input type="radio" name="ui" value="4"/>중앙일보
-　<input type="radio" name="ui" value="5"/>동아일보
-　<input type="radio" name="ui" value="6"/>세계일보
-　<input type="radio" name="ui" value="7"/>한국일보
-　<input type="radio" name="ui" value="8"/>경향신문
-　<input type="radio" name="ui" value="9"/>한겨레
-　<input type="radio" name="ui" value="10"/>서울경제
-　<input type="radio" name="ui" value="11"/>한국경제
-　<input type="radio" name="ui" value="12"/>매일경제
-  
+ 
+<a href="/pfinal/pfinal.do?command=media&ui=1" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_jj.png"/>전자신문</a>
+<a href="/pfinal/pfinal.do?command=media&ui=2" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_zdnet.png"/>ZDNet</a>
+<a href="/pfinal/pfinal.do?command=media&ui=3" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_jo.png"/>조선일보</a>
+<a href="/pfinal/pfinal.do?command=media&ui=4" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_ja.png"/>중앙일보</a><br/>
+
+<a href="/pfinal/pfinal.do?command=media&ui=5" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_da.png"/>동아일보</a>
+<a href="/pfinal/pfinal.do?command=media&ui=6" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_sg.png"/>세계일보</a>
+<a href="/pfinal/pfinal.do?command=media&ui=7" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_hk.png"/>한국일보</a>
+<a href="/pfinal/pfinal.do?command=media&ui=8" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_kh.png"/>경향신문</a><br/>
+
+<a href="/pfinal/pfinal.do?command=media&ui=9" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_hi.png"/>한겨레　</a>
+<a href="/pfinal/pfinal.do?command=media&ui=10" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_sk.png"/>서울경제</a>
+<a href="/pfinal/pfinal.do?command=media&ui=11" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_ha.png"/>한국경제</a>
+<a href="/pfinal/pfinal.do?command=media&ui=12" name="media" id="media" onclick="media1()">
+<img class="btn-img" src="img/media/new_icon_mk.png"/>매일경제</a>
+
 	 
  
-  <input type="button" value="수정" onclick="media12()"/>
-</form>
+
 <script>
-function media12() {		
-		document.getElementById("media").submit();
-		window.opener.location.href = "/pfinal/pfinal.do?command=media";
+function media1() {		
+		window.opener.location.href = "/pfinal/pfinal.do?command=close_media";
 		window.close();	
 }
 </script>

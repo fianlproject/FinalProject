@@ -93,8 +93,11 @@
 															<c:if test="${i.check==2}">
 																거절
 															</c:if>
-															<c:if test="${i.check==3}">
+															<c:if test="${i.check==3 and i.fcheck == 0}">
 																프리랜서 승인 대기중
+															</c:if>
+															<c:if test="${i.check==3 and i.fcheck == 1}">
+																승인
 															</c:if>
 															<c:if test="${i.check==4}">
 																협상 거절
@@ -134,8 +137,7 @@
 											<td>프로젝트 진행중</td>
 										</c:if>
 									</form>
-									</tr>
-									
+									</tr>									
 								</c:forEach>
 							</tbody>
 						</table>

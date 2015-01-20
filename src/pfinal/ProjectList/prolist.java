@@ -80,6 +80,7 @@ public class prolist implements Command {
 		finally{
 			pool.freeConnection(con, pstmt, rs);
 		}
+		
 		return "pr_mypage/mypage_project/prolist.jsp";
 
 	}

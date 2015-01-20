@@ -45,8 +45,8 @@ import pfinal.join.JoinConfirm;
 import pfinal.join.JoinController;
 import pfinal.join.JoinFree;
 import pfinal.main.GetPartnerCommand;
-import pfinal.main.cl_Home;
 import pfinal.main.PartnerListCommand;
+import pfinal.main.cl_Home;
 import pfinal.main.client_index;
 import pfinal.main.free_index;
 import pfinal.main.mylist;
@@ -62,6 +62,7 @@ import pfinal.message.Message_Write_Detail;
 import pfinal.message.PrivateMessage_Upload;
 import pfinal.message.PrivateMessage_Write;
 import pfinal.mypage_info.career;
+import pfinal.mypage_info.close_media;
 import pfinal.mypage_info.m_career;
 import pfinal.mypage_info.m_media;
 import pfinal.mypage_info.m_menu_ui;
@@ -229,6 +230,8 @@ public class CommandFactory {
 			return new menu_ui();
 		else if(cmd.equals("media"))
 			return new media();
+		else if(cmd.equals("close_media"))
+			return new close_media();
 		else if (cmd.equals("m_career")) // ÀÌµ¿¿ë
 			return new m_career();
 		else if (cmd.equals("m_skill")) 

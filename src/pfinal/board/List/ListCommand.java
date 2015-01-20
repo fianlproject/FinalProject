@@ -125,7 +125,13 @@ public class ListCommand implements Command {
 		finally{
 			pool.freeConnection(con, pstmt, rs);
 		}
-		int size = v.size()/10+1; //블럭수
+		
+		
+		int size = 0;
+		if(v.size()%10 == 0){
+			size = v.size()/10;
+		}
+		else{size = v.size()/10+1;}
 		System.out.println("블럭수" + size);
 		System.out.println("글갯수" + v.size()); 
 		int startpage = 1;

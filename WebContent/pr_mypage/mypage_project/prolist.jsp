@@ -57,7 +57,7 @@
 							
 							<tbody>
 								<c:forEach var="i" items="${prolist}">
-									<c:if test="${i.f_del == 0 }">
+									<c:if test="${i.f_del == 0}">
 										<tr>
 											<c:if test="${i.fcheck == 0}">
 												<c:choose>
@@ -129,7 +129,7 @@
 												<input type="hidden" name="command" value="refusal" />
 												<input type="hidden" name="pr_id" value="${i.pr_id}" />
 												<input type="hidden" name="app_id" value="${i.app_id}" />
-												<c:if test="${i.check != 0 and i.check == 3}">
+												<c:if test="${i.check != 0 and i.check == 3 and i.fcheck == 0}">
 													<td>
 														<select name="check">															
 															<option value="0" selected="selected">최종승인</option>
@@ -137,6 +137,9 @@
 														</select>
 														<button type="submit" class="btn">확인</button>
 													</td>
+												</c:if>
+												<c:if test="${i.fcheck==1 }">
+													<td>최종승인 완료</td>
 												</c:if>
 											</form>
 											<form metdod="post" action="/pfinal/pfinal.do">
