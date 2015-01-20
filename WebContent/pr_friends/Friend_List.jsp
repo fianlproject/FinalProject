@@ -15,7 +15,7 @@
 		<div class="row">
 			<div id="FrList">
 				<form action="/pfinal/pfinal.do" method="post" id="fListItem">
-					<span>${id }님의 친구 목록</span>
+					<span>${id}님의 친구 목록</span>
 					<table class="table">
 						<thead>
 							<tr>

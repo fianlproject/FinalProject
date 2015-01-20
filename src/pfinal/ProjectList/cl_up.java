@@ -35,6 +35,7 @@ public class cl_up implements Command {
 		Vector v = new Vector();
 		HttpSession session = req.getSession();
 		int pr_id = Integer.parseInt(req.getParameter("pr_id"));
+		String app_id = req.getParameter("app_id");
 		String id = (String) session.getAttribute("id");
 		String content = req.getParameter("content");
 		System.out.println(content+","+pr_id+","+id+" clup");
@@ -59,13 +60,14 @@ public class cl_up implements Command {
 				System.out.println("clup"+nday+","+nprice);
 			}
 			System.out.println("이거"+id);
-			sql = "update app set nday = ? , nprice = ? , cl_con = ? where pr_id=? and cl_id = ?";
+			sql = "update app set nday = ? , nprice = ? , cl_con = ? , check1 =? where pr_id=? and app_id = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, nday);
 			pstmt.setInt(2,nprice);
 			pstmt.setString(3,content);
-			pstmt.setInt(4, pr_id);
-			pstmt.setString(5,id);
+			pstmt.setInt(4,3);
+			pstmt.setInt(5, pr_id);
+			pstmt.setString(6,app_id);
 			pstmt.executeUpdate();
 			
 			System.out.println("이거"+ chk);

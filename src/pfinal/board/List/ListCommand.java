@@ -126,14 +126,16 @@ public class ListCommand implements Command {
 			pool.freeConnection(con, pstmt, rs);
 		}
 		int size = v.size()/10+1; //블럭수
-		
+		System.out.println("블럭수" + size);
+		System.out.println("글갯수" + v.size()); 
 		int startpage = 1;
 		int endpage = 10;
 		if(start != 1){
 			startpage = (start-1) * 10 + 1;
 			endpage = (start-1) * 10 + 10;
 		}
-		
+		System.out.println(startpage + "start");
+		System.out.println(endpage + "endpage");
 		req.setAttribute("aa", 123);
 		req.setAttribute("dtoList", v);
 		req.setAttribute("size", size);

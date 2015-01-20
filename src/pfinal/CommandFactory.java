@@ -1,6 +1,7 @@
 package pfinal;
 
 import kit.Command;
+import pfinal.ProjectList.cl_agree;
 import pfinal.ProjectList.cl_prolist;
 import pfinal.ProjectList.cl_prolist_info;
 import pfinal.ProjectList.cl_prolist_test;
@@ -171,6 +172,8 @@ public class CommandFactory {
 			return new cl_prolist_update();
 		else if (cmd.equals("final_check"))
 			return new cl_prolist_update_final();
+		else if (cmd.equals("cl_agree"))
+			return new cl_agree();
 		
 		// 기업 프로젝트 평가
 		else if (cmd.equals("evaluate"))

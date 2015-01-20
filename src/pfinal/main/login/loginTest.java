@@ -114,6 +114,7 @@ public class loginTest implements Command {
 					System.out.println(msg.size());
 					count = msg.size();
 				}
+				System.out.println(count+"login");
 				//¸Þ´ºui
 				/*System.out.println("??????????????????");
 				sql = "SELECT menu_ui from members where id = ?";

@@ -32,7 +32,7 @@ public class media implements Command {
 		String id = (String) session.getAttribute("id");
 		
 		
-		String ui =  req.getParameter("ui");
+		String ui =  (String) req.getParameter("ui");
 		System.out.println(ui+"asd");
 		
 		try {

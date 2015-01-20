@@ -43,15 +43,15 @@
 								<tr>
 									<th>상태</th>
 									<th>프로젝트</th>
-									<th>희망금액</th>
 									<th>예상금액</th>
-									<th>희망기간</th>
-									<th>예상기간</th>
+									<th>예상기간</th> 
+									<th>협상금액</th>
+									<th>협상기간</th> 	
 									<th>인원</th>
-									<th>읽음여부</th>
-									<th>?</th>
+									<th>열람</th>
+									<th>승인여부</th>
 									<th>내용</th>
-									<th>?</th>
+									<th>확인</th> 
 								</tr>
 							</tdead>
 							
@@ -68,81 +68,82 @@
 														<td>협상중</td>
 													</c:when>
 													<c:when test="${i.check==2}">
-														<td>협상완료</td>
+														<td>거절</td>
 													</c:when>
 													<c:when test="${i.check==3}">
-														<td>협상거절</td>
-													</c:when>
-													<c:when test="${i.check==4}">
-														<td>지원거절</td>
-													</c:when>
-													<c:when test="${i.check==5}">
-														<td>협상중</td>
-													</c:when>
+														<td><font color="blue">클라이언트 승인</font></td>
+													</c:when>													
 												</c:choose>
 											</c:if>
 
 											<c:if test="${i.fcheck == 1}">
-												<td>프로젝트 진행중</td>
+												<td><font color="blue">프로젝트 진행중</font></td>
 											</c:if>
 
 											<form metdod="post" action="/pfinal/pfinal.do">
-												<input type="hidden" name="command" value="getboard" /> <input
-													type="hidden" name="pr_id" value="${i.pr_id}" />
+												<input type="hidden" name="command" value="getboard" />
+												<input type="hidden" name="pr_id" value="${i.pr_id}" />
 												<td><button type="submit">${i.pr_subject}</button></td>
 											</form>
 
-											<!-- 금액 -->
-
-											<td><fmt:formatNumber value="${i.hprice}"
-													type="currency" />
-											</td>
-											<td><fmt:formatNumber value="${i.nprice}"
-													type="currency" />
-											</td>
+											<!-- 지원 -->
+											<td><fmt:formatNumber value="${i.hprice}" type="currency" /></td>
 											<td>${i.hday}일</td>
+											<!-- 협상 -->
+											<td><fmt:formatNumber value="${i.nprice}" type="currency" /></td>
 											<td>${i.nday}일</td>
+											
+											<!-- 지원 -->
 											<td>${i.pr_cntman}명</td>
 
 											<c:choose>
 												<c:when test="${i.readchk==0}">
-													<td><font color="red">읽지않음</font></td>
+													<td><font color="red">미열람</font></td>
 												</c:when>
 												<c:when test="${i.readchk==1}">
-													<td>읽음</td>
+													<td>열람</td>
 												</c:when>
 											</c:choose>
 
 											<c:choose>
-												<c:when test="${i.fcheck==0}">
+												<c:when test="${i.fcheck==0 and i.check != 3}">
 													<td><font color="red">미승인</font></td>
 												</c:when>
+												<c:when test="${i.fcheck==0 and i.check == 3}">
+													<td><font color="blue">승인대기중</font></td>
+												</c:when>
 												<c:when test="${i.fcheck==1}">
-													<td>승인</td>
+													<td><font color="blue">승인</font></td>
 												</c:when>
 											</c:choose>
 
 											<c:choose>
-												<c:when test="${i.check != 0}">
+												<c:when test="${i.check == 3}">
 													<td>${i.cl_con}</td>
 												</c:when>
-												<c:when test="${i.check == 0}">
-													<td>내용없음</td>
+												<c:when test="${i.check != 3}">
+													<td>내용 없음</td>
 												</c:when>
 											</c:choose>
 											<form metdod="post" action="/pfinal/pfinal.do">
-												<input type="hidden" name="command" value="refusal" /> <input
-													type="hidden" name="pr_id" value="${i.pr_id}" /> <input
-													type="hidden" name="app_id" value="${i.app_id}" />
-												<c:if test="${i.check != 0 and i.check !=3}">
-													<td><button type="submit" class="btn">거절</button></td>
+												<input type="hidden" name="command" value="refusal" />
+												<input type="hidden" name="pr_id" value="${i.pr_id}" />
+												<input type="hidden" name="app_id" value="${i.app_id}" />
+												<c:if test="${i.check != 0 and i.check == 3}">
+													<td>
+														<select name="check">															
+															<option value="0" selected="selected">최종승인</option>
+															<option value="1">거절</option>
+														</select>
+														<button type="submit" class="btn">확인</button>
+													</td>
 												</c:if>
 											</form>
 											<form metdod="post" action="/pfinal/pfinal.do">
-												<input type="hidden" name="command" value="f_del" /> <input
-													type="hidden" name="pr_id" value="${i.pr_id}" /> <input
-													type="hidden" name="app_id" value="${i.app_id}" />
-												<c:if test="${i.check == 0 or i.check ==3}">
+												<input type="hidden" name="command" value="f_del" />
+												<input type="hidden" name="pr_id" value="${i.pr_id}" />
+												<input type="hidden" name="app_id" value="${i.app_id}" />
+												<c:if test="${i.check == 0 or i.check == 2}">
 													<td><button type="submit" class="btn">삭제</button></td>
 												</c:if>
 											</form>

@@ -144,10 +144,9 @@
 
 
 				<c:if test="${dto.cl_id==id }">
-					<a
-						href="/pfinal/pfinal.do?command=privatemessagewrite&pr_id=${dto.pr_id }">친구에게
+					<a href="/pfinal/pfinal.do?command=privatemessagewrite&pr_id=${dto.pr_id }">친구에게
 						메시지 보내기 </a>
-					<br />
+					<br/>
 
 				</c:if>
 
@@ -155,8 +154,9 @@
 			</div>
 			<hr size="10">
 		</c:forEach>
+		<!-- //사이즈 -->
 		<c:forEach begin="1" end="${size}" step="1" varStatus="count1">
-					<c:if test="${count1.count!=sizes}">
+					<c:if test="${count1.count!=size}">
 					<form method="post" action="/pfinal/pfinal.do">
 						<input type="hidden" value="${count1.count}" name="start">
 						<input type="hidden" value="list" name="command">
@@ -170,7 +170,7 @@
 						<div><button>${count1.count}</button></div>
 					</form>
 					</c:if>
-				</c:forEach>
+		</c:forEach>
 		 </section>
 	</div>
 	</div>
