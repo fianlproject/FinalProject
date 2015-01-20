@@ -100,9 +100,7 @@
 						</form>
 
 					</div>
-					<c:if test="${status.count != listSize }">
-              		 <hr size="10">
-              		</c:if>
+				<img src="img/empty.png" style="background-image: url('img/hr_line.png');background-repeat: repeat-x; width: 100%; height: 30px; background-position: center; margin-bottom: 15px; margin-top: 10px" />
 				</c:forEach> <c:forEach begin="1" end="${size}" step="1" varStatus="count1">
 					<c:if test="${count1.count!=size}">
 						<form method="post" action="/pfinal/pfinal.do">
