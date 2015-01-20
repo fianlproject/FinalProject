@@ -135,11 +135,14 @@
 															<option value="0" selected="selected">최종승인</option>
 															<option value="1">거절</option>
 														</select>
-														<button type="submit" class="btn">확인</button>
+						 								<button type="submit" class="btn">확인</button>
 													</td>
 												</c:if>
 												<c:if test="${i.fcheck==1 }">
 													<td>최종승인 완료</td>
+												</c:if>
+												<c:if test="${i.check==1 }">
+													<td>협상중</td>
 												</c:if>
 											</form>
 											<form metdod="post" action="/pfinal/pfinal.do">
