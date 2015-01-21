@@ -70,7 +70,6 @@ public class PrUpdateProcCommand implements Command {
 		// dto.setPr_photo(multi.getParameter("pr_photo"));
 		// dto.setPr_exday(Integer.parseInt(multi.getParameter("pr_exday")));
 
-		
 		String pr_nowskill = multi.getParameter("pr_nowskill");
 
 		String pr_photo = multi.getParameter("uppr_photo");
@@ -92,30 +91,38 @@ public class PrUpdateProcCommand implements Command {
 		if (deletephoto != null) {
 			pr_photo = null;
 		}
-		
+
 		String pr_skill = "";
 		String[] pr_skills = multi.getParameterValues("pr_skills");
 
-		for (int i = 0; i < pr_skills.length; i++) {
-			pr_skill += pr_skills[i];
-			if (i < pr_skills.length - 1) {
-				pr_skill += ',';
+		System.out.println("기존 기술" + pr_nowskill);
+		System.out.println("현재기술" + pr_skill);
+		if (pr_skills == null) {
+			pr_skill = pr_nowskill;
+		} else {
+			for (int i = 0; i < pr_skills.length; i++) {
+				pr_skill += pr_skills[i];
+				if (i < pr_skills.length - 1) {
+					pr_skill += ',';
+				}
 			}
 		}
-		
-		
+
 		dto.setPr_photo(pr_photo);
 		dto.setPr_id(Integer.parseInt(multi.getParameter("pr_id").trim()));
-
 		dto.setPr_content(multi.getParameter("pr_content"));
+		System.out.println("글수정"+dto.getPr_content());
 		dto.setPr_subject(multi.getParameter("pr_subject"));
+		System.out.println("글수정"+dto.getPr_subject());
 		dto.setPr_skill(pr_skill);
 		dto.setPr_needman(Integer.parseInt(multi.getParameter("pr_needman")));
 		dto.setPr_price(multi.getParameter("pr_price"));
 		dto.setPr_end(multi.getParameter("pr_end"));
 		dto.setPr_exday(Integer.parseInt(multi.getParameter("pr_exday")));
-		
-		sql = "update list set pr_subject = ? , pr_content = ?,  pr_photo = ? where pr_id=?";
+		dto.setPr_private(multi.getParameter("pr_private"));
+
+		sql = "update list set pr_subject = ? , pr_content = ?,  pr_photo = ?,pr_skill=?, pr_needman=?, pr_price=?,pr_end=?,pr_exday=?,pr_private=? "
+				+ "where pr_id=?";
 
 		try {
 			pool = DBConnectionMgr.getInstance();
@@ -135,7 +142,13 @@ public class PrUpdateProcCommand implements Command {
 			pstmt.setString(1, dto.getPr_subject());
 			pstmt.setString(2, dto.getPr_content());
 			pstmt.setString(3, dto.getPr_photo());
-			pstmt.setInt(4, dto.getPr_id());
+			pstmt.setString(4, dto.getPr_skill());
+			pstmt.setInt(5, dto.getPr_needman());
+			pstmt.setString(6, dto.getPr_price());
+			pstmt.setString(7, dto.getPr_end());
+			pstmt.setInt(8, dto.getPr_exday());
+			pstmt.setString(9, dto.getPr_private());
+			pstmt.setInt(10, dto.getPr_id());
 
 			pstmt.executeUpdate();
 		} catch (Exception e) {

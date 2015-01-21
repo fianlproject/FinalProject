@@ -53,8 +53,9 @@ public class ListCommand implements Command {
 		}else{
 			sql ="select  pr_id,pr_subject,pr_skill,pr_content,pr_price,"
 				+ "pr_start,pr_end,pr_needman,pr_cntman,c_name,pr_photo,cl_id,"
-				+ "Floor((to_days(pr_end)-to_days(now()))/7) as week_cha, (to_days(pr_end)-to_days(now()))%7 as day_cha from list where pr_private='y' "+ KeyFiled
+				+ "Floor((to_days(pr_end)-to_days(now()))/7) as week_cha, (to_days(pr_end)-to_days(now()))%7 as day_cha from list where pr_private='y' and "+ KeyFiled
 					+" like '%"+ KeyWord + "%' order by pr_id";
+			System.out.println(sql);
 		}
 		
 		try {

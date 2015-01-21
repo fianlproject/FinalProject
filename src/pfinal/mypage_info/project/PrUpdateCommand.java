@@ -28,7 +28,7 @@ public class PrUpdateCommand implements Command {
 		String pr_exday = req.getParameter("pr_exday");
 		
 		
-		
+		System.out.println("업데이트 커맨드 :"+pr_nowskill);
 		System.out.println("업데이트 커맨드 : " + pr_subject);
 		System.out.println("업데이트 커맨드 : " + pr_content);
 		System.out.println("업데이트 커맨드 : " + pr_photo);
