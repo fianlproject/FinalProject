@@ -238,6 +238,10 @@
 									class="btn" type="submit" value="관심기술 ">
 							</form>
 							<form method="post" action="/pfinal/pfinal.do">
+								<input type="hidden" name="command" value="m_inter" /> <input
+									class="btn" type="submit" value="진짜관심기술 ">
+							</form>
+							<form method="post" action="/pfinal/pfinal.do">
 								<input type="hidden" name="command" value="prolist" /> <input
 									class="btn" type="submit" value="지원 프로젝트 목록 임시 ">
 							</form>

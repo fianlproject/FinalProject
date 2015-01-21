@@ -33,7 +33,7 @@ public class JoinController implements Command {
 		int pgender=0;
 		
 		String pw = req.getParameter("pw"); 
-		
+		String sa_pw = pw; 
 		pw = Encode.encrypt(pw);
 
 		if(req.getParameter("gender") != null){
@@ -54,7 +54,7 @@ public class JoinController implements Command {
 				pool = DBConnectionMgr.getInstance();
 				con = pool.getConnection();
 
-				sql = "INSERT INTO members VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+				sql = "INSERT INTO members(id,pw,name,cpcheck,age,cname,tel,gender,pstate,interest,media,sogae) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, req.getParameter("id"));
 				pstmt.setString(2, pw);
@@ -84,7 +84,7 @@ public class JoinController implements Command {
 				pool = DBConnectionMgr.getInstance();
 				con = pool.getConnection();
 
-				sql = "INSERT INTO members VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+				sql = "INSERT INTO members(id,pw,name,cpcheck,age,cname,tel,gender,pstate,interest,media,sogae) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, req.getParameter("id"));
 				pstmt.setString(2, pw);
@@ -100,7 +100,21 @@ public class JoinController implements Command {
 				pstmt.setString(12, "");
 				pstmt.executeUpdate();
 				
-
+				sql = "select code from members where id = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, req.getParameter("id"));
+				rs = pstmt.executeQuery();
+				rs.next();
+				int code = rs.getInt("code");
+				System.out.println(code+"code");
+				sql = "insert into sa_member values(?,?,?,?,?)";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, code);
+				pstmt.setString(2, req.getParameter("id"));
+				pstmt.setString(3, sa_pw);
+				pstmt.setString(4, req.getParameter("name"));
+				pstmt.setInt(5, 10);
+				pstmt.executeUpdate();
 			} catch (Exception e) {
 				System.out.println("회원가입 오류 : " + e);
 				e.printStackTrace();

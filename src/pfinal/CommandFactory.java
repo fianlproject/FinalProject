@@ -64,6 +64,7 @@ import pfinal.message.PrivateMessage_Write;
 import pfinal.mypage_info.career;
 import pfinal.mypage_info.close_media;
 import pfinal.mypage_info.m_career;
+import pfinal.mypage_info.m_inter;
 import pfinal.mypage_info.m_media;
 import pfinal.mypage_info.m_menu_ui;
 import pfinal.mypage_info.m_quali;
@@ -142,7 +143,7 @@ public class CommandFactory {
 			return new ListCommand();
 		else if(cmd.equals("privatelist"))
 			return new PrivateListCommand();
-		else if (cmd.equals("inter"))  		//관심기술 검색후? 리스트
+		else if (cmd.equals("interlist"))  		//관심기술 검색후? 리스트
 			return new InterListCommand();
 		
 		//파트너스 목록
@@ -246,6 +247,8 @@ public class CommandFactory {
 	         return new m_media();
 		else if(cmd.equals("m_sogae"))
 			return new m_sogae();
+		else if (cmd.equals("m_inter"))
+			return new m_inter();
 		else if(cmd.equals("sogaeProc"))
 			return new sogaeProc();
 		

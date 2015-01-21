@@ -46,21 +46,71 @@ border-radius: 5px;
 						<input type="hidden" name="command" value="inter" />
 
 						<div class="form-group">
-							<input type="checkbox" name="inter" value="java">java
-							<input type="checkbox" name="inter" value="jsp">jsp
-							<input type="checkbox" name="inter" value="php">php
-							<input type="checkbox" name="inter" value="html">html
+							Language<br/>
+							<input type="checkbox" name="inter" value="JAVA">JAVA
+							<input type="checkbox" name="inter" value="C">C
+							<input type="checkbox" name="inter" value="C++">C++
+							<input type="checkbox" name="inter" value=C#>C#
+							<input type="checkbox" name="inter" value="Objective-C">Objective-C<br/>
+							<input type="checkbox" name="inter" value="MFC">MFC
+							<input type="checkbox" name="inter" value="Python">Python
+							<input type="checkbox" name="inter" value="Ruby">Ruby
+							<input type="checkbox" name="inter" value="Groovy">Groovy
+							<input type="checkbox" name="inter" value="Scala">Scala<br/>
+							<input type="checkbox" name="inter" value="VB">VB
+							<input type="checkbox" name="inter" value="Clojure">Clojure
+						</div><hr/>
+						<div class="form-group" style="float: inherit;">
+							WEB<br/>
+							<input type="checkbox" name="inter" value="JSP">JSP
+							<input type="checkbox" name="inter" value="JS">JS
+							<input type="checkbox" name="inter" value="JQuery">JQuery
+							<input type="checkbox" name="inter" value="angular.js">angular.js
+							<input type="checkbox" name="inter" value="JSTL">JSTL<br/>
+							<input type="checkbox" name="inter" value="JSON">JSON
+							<input type="checkbox" name="inter" value="AJAX">AJAX
+							<input type="checkbox" name="inter" value="SPRING">SPRING
+							<input type="checkbox" name="inter" value="PHP">PHP
+							<input type="checkbox" name="inter" value="ASP">ASP<br/>
+							<input type="checkbox" name="inter" value="HTML5">HTML5
+							<input type="checkbox" name="inter" value="Structs">Structs
+							<input type="checkbox" name="inter" value="CSS">CSS
+							<input type="checkbox" name="inter" value="MARIADB">MARIADB
+							<input type="checkbox" name="inter" value="IBATIS">IBATIS<br/>
+							<input type="checkbox" name="inter" value="MYBATS">MYBATS
+							<input type="checkbox" name="inter" value="node.js">node.js
+							<input type="checkbox" name="inter" value="Vert.x">Vert.x
+							<input type="checkbox" name="inter" value="apache">apache
+							<input type="checkbox" name="inter" value="tomcat">tomcat
+						</div><hr/>
+						<div class="form-group" style="float: inherit;">
+							APP<br/>
+							<input type="checkbox" name="inter" value="Android">Android
+							<input type="checkbox" name="inter" value="iOS">iOS	
+						</div><hr/>
+						<div class="form-group" style="float: inherit;">
+							GRAPHIC<br/>
+							<input type="checkbox" name="inter" value="Photoshop">Photoshop
+							<input type="checkbox" name="inter" value="ILLUST">ILLUST	
+						</div><hr/>
+						<div class="form-group" style="float: inherit;">
+							DATABASE<br/>
+							<input type="checkbox" name="inter" value="ORACLE">ORACLE
+							<input type="checkbox" name="inter" value="MYSQL">MYSQL	
+							<input type="checkbox" name="inter" value="MSSQL">MSSQL	
+							<input type="checkbox" name="inter" value="DB2">DB2	
+							<input type="checkbox" name="inter" value="TSQL">TSQL	
+						</div><hr/> 
+						<div class="form-group" style="float: inherit;">
+							OS<br/>
+							<input type="checkbox" name="inter" value="Windows">Windows
+							<input type="checkbox" name="inter" value="Linux">Linux
+							<input type="checkbox" name="inter" value="Unix">Unix									
+						</div><hr/>  
 							<input type="submit" value="전송" class="btn">
-						</div>
 					</form><br/><br/>
 					<div class="form-group">
-						<a href="/pfinal/pfinal.do?command=project"
-							class="btn btn-lg btn-client js-disable-on-click btn-submit">프로젝트
-							등록</a> <a href="/pfinal/pfinal.do?command=friendlist"
-							class="btn btn-lg btn-client js-disable-on-click btn-submit">친구목록</a>
-						<a href="/pfinal/pfinal.do?command=message"
-							class="btn btn-lg btn-client js-disable-on-click btn-submit">내
-							메시지함</a> <a href="/pfinal/pfinal.do?command=free_index"
+						<a href="/pfinal/pfinal.do?command=free_index"
 							class="btn btn-lg btn-default js-disable-on-click">홈으로</a>
 					</div>
 				</div>

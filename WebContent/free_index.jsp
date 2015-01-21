@@ -51,11 +51,6 @@
 <script>
 	// FullCalnedar
 	$(document).ready(function() {
-<<<<<<< HEAD
-		
-			
-=======
->>>>>>> branch 'master' of https://github.com/fianlproject/FinalProject.git
 		
 		$('#calendar').fullCalendar({
 			height: 400,
@@ -79,11 +74,7 @@
 		$( ".datepicker" ).datepicker({
 			dateFormat: 'yy-mm-dd' 
 		});		
-<<<<<<< HEAD
-	});	
-=======
-	});
->>>>>>> branch 'master' of https://github.com/fianlproject/FinalProject.git
+
 </script>
 <script>
 function fnCal() {
@@ -230,7 +221,7 @@ function fnMedia() {
                     </span>
                     <h4 class="service-heading">관심프로젝트</h4>
 					<form method="post" action="/pfinal/pfinal.do">
-						<button class="btn btn-link pl text-muted" name="command" value="inter">수정</button>
+						<button class="btn btn-link pl text-muted" name="command" value="interlist">수정</button>
 					</form>
 				</div>
 				<!-- 관심 -->	

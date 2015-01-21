@@ -87,8 +87,9 @@
 						</div>
 						<div class="project-unit-additional-info">
 							<div class="project-skill-required">
-								<span class="info-title">요구기술</span> <span
-									class="project-skill label-skill">${dto.pr_skill}</span>
+								<span class="info-title">요구기술</span> <c:forEach items="${dto.pr_skills}" var="skill">
+							<span class="project-skill label-skill">${skill}</span>
+						</c:forEach>
 							</div>
 						</div>
 
