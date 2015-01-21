@@ -45,7 +45,7 @@ public class skill implements Command {
 			
 			sql = "select code from members where id = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, req.getParameter("id"));
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			rs.next();
 			int code = rs.getInt("code");
