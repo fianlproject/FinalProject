@@ -82,6 +82,10 @@ import pfinal.mypage_info.project.ProjectCommand;
 import pfinal.mypage_info.project.ProjectUpdate;
 import pfinal.mypage_info.update.career_up_in;
 import pfinal.mypage_info.update.career_up_out;
+import pfinal.mypage_info.update.quali_up_in;
+import pfinal.mypage_info.update.quali_up_out;
+import pfinal.mypage_info.update.skill_up_in;
+import pfinal.mypage_info.update.skill_up_out;
 import pfinal.myschool.SchoolChkCommand;
 import pfinal.myschool.SchoolDeleteDBCommand;
 import pfinal.myschool.SchoolInsertCommand;
@@ -257,6 +261,14 @@ public class CommandFactory {
 			return new career_up_in();
 		else if(cmd.equals("career_update"))
 			return new career_up_out();
+		else if(cmd.equals("skill_up"))
+			return new skill_up_in();
+		else if(cmd.equals("skill_update"))
+			return new skill_up_out();
+		else if(cmd.equals("quali_up"))
+			return new quali_up_in();
+		else if(cmd.equals("quali_update"))
+			return new quali_up_out();
 		
 		
 		//회원가입

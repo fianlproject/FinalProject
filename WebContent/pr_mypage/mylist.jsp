@@ -77,9 +77,7 @@
 							<input type="hidden" name="career_index" value="${i.career_index}">						
 							<input type="submit" value="수정" class="btn">
 						</form>
-						수정 / 삭제
-						
-						
+						수정 / 삭제						
 						</td>
 										</tr>
 									</c:forEach>
@@ -98,6 +96,7 @@
 										<th>기술명</th>
 										<th>경험</th>
 										<th>숙련도</th>
+										<th>수정 및 삭제</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -138,6 +137,17 @@
 													<td>특급</td>
 												</c:when>
 											</c:choose>
+										<td>
+										<form method="post" action="/pfinal/pfinal.do">
+											<input type="hidden" name="command" value="skill_up">
+											<input type="hidden" name="mastery" value="${i.mastery}">						
+											<input type="hidden" name="exp" value="${i.exp}">						
+											<input type="hidden" name="skill" value="${i.skill}">																
+											<input type="hidden" name="skill_index" value="${i.skill_index}">						
+											<input type="submit" value="수정" class="btn">
+										</form>
+										수정 / 삭제						
+										</td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -156,6 +166,7 @@
 										<th>발행기관</th>
 										<th>일련번호</th>
 										<th>발행일</th>
+										<th>수정 및 삭제</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -165,6 +176,18 @@
 											<td>${i.q_house}</td>
 											<td>${i.q_num}</td>
 											<td>${i.q_date}</td>
+											<td>
+											<form method="post" action="/pfinal/pfinal.do">
+												<input type="hidden" name="command" value="quali_up">
+												<input type="hidden" name="q_name" value="${i.q_name}">						
+												<input type="hidden" name="q_house" value="${i.q_house}">						
+												<input type="hidden" name="q_num" value="${i.q_num}">																
+												<input type="hidden" name="q_date" value="${i.q_date}">						
+												<input type="hidden" name="quali_index" value="${i.quali_index}">						
+												<input type="submit" value="수정" class="btn">
+											</form>
+											수정 / 삭제						
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>
