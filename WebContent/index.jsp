@@ -93,7 +93,7 @@ function fnJoin() {
         <div class="container">
             <div class="intro-text">
                 
-                <div class="intro-heading">방문을 환영합니다.</div>
+              <img src="/pfinal/img/intro_logo.png"/>
                 
             </div>
         </div>

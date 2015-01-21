@@ -141,7 +141,7 @@ function fnMedia() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Project</a>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="/pfinal/img/intro_logo_title.png"></a>
                 <a class="navbar-brand page-scroll" href="#page-top"><%=session.getAttribute("name")%>님 환영합니다.</a>
             </div>
 
@@ -175,8 +175,8 @@ function fnMedia() {
         <div class="container">
             <div class="intro-text">
                 
-                <div class="intro-heading">방문을 환영합니다.</div>
-                <form method="post" action="/pfinal/pfinal.do">
+               <img src="/pfinal/img/intro_logo.png"/>
+                <form method="post" action="/pfinal/pfinal.do"><br/><br/><br/>
                 	<button class="btn btn-xl" name="command" value="list">프로젝트 찾기</button>
                 </form>
             </div>
@@ -195,7 +195,7 @@ function fnMedia() {
             </div>
             <div class="row text-center">
             	<!-- 쪽지함 -->	
-               <div class="col-md-4">
+               <div class="col-md-3">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-send fa-stack-1x fa-inverse"></i>
@@ -211,7 +211,7 @@ function fnMedia() {
                 <!-- 쪽지함 -->	
                 
                 <!-- 관심 -->	
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
@@ -224,7 +224,7 @@ function fnMedia() {
 				<!-- 관심 -->	
 				
 				<!-- 마이페이지 -->	
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
@@ -238,10 +238,10 @@ function fnMedia() {
 				<!-- 마이페이지 -->	
 				
 				<!-- 스케줄 -->				
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-calendar"></i>
+                        <i class="fa fa-stack-1x fa-calendar fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">스케줄</h4>
                     <button class="btn btn-link pl text-muted" onclick="fnCal()">보기1</button>
@@ -274,7 +274,7 @@ function fnMedia() {
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                      	<img src="img/portfolio/no_content.png" class="img-responsive" alt="">
+                      	<img src="/pfinal/img/no_content.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>등록하기</h4>
@@ -310,10 +310,10 @@ function fnMedia() {
                     <a href="/pfinal/pfinal.do?command=mypage" class="portfolio-link" >
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
+                                <i class="fa fa-plus fa-3x fa-inverse"></i>
                             </div>
                         </div>
-                      	<img src="img/portfolio/no_content.png" class="img-responsive" alt="">
+                      	<img src="/pfinal/img/no_content.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>등록하기</h4>
@@ -326,30 +326,35 @@ function fnMedia() {
     </section>
 
     <!-- About Section -->
-    <section id="news">
+    <section id="news" class="bg-darkest-gray">
         <div class="container">
             <div class="row">
             	
                 <div class="col-lg-12 text-left" >
 
-                	 <h2 class="section-heading">오늘의 뉴스(${media_name})</h2>
-                	 <button class="btn btn-link pl text-muted" onclick="fnMedia()">신문사 변경</button>
-                <ul>                	
+                	 <h2 class="section-heading btn-xl2">오늘의 뉴스(${media_name}) <button class="btn btn-xl3" onclick="fnMedia()">신문사 변경</button></h2>
+                	
+                <table class="table">                	
 					<%
 					    if(list!=null){
 					        for(int i=0; i<list.size(); i++){
 					            Element el = (Element) list.get(i);
 					%>
-						<li class="timeline-inverted"><a class="text-mute" href='<%=el.getChildText("link")%>' target=_news> <%=el.getChildText("title")%></a></li>
-							<% 
+					<tr>
+					<td><b class="text-mute"><%= i+1 %></b></td>
+						<td class="timeline-inverted"><a class="text-mute" href='<%=el.getChildText("link")%>' target=_news> <%=el.getChildText("title")%></a></td>
+						</tr>
+							<%
 					        }
 					    }else{
 					%>
-							<li>잠시 후 다시 접속하여 주십시오.</li>
+					<tr>
+							<td>잠시 후 다시 접속하여 주십시오.</td>
+							</tr>
 							<%
 					    }
 					%>
-					</ul>
+					</table>
                 </div>
             </div>           
         </div>
