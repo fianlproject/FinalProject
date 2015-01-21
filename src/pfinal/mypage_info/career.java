@@ -50,7 +50,7 @@ public class career implements Command {
 			rs.next();
 			int code = rs.getInt("code");
 			
-			sql = "insert into career values(?, ?, ?, ?, ?, ?, ?)";            
+			sql = "insert into career(code, cname, part, position, id, joins, resign) values(?, ?, ?, ?, ?, ?, ?)";            
 	        pstmt = con.prepareStatement(sql);
 	        pstmt.setInt(1, code);
 	        pstmt.setString(2, cname);

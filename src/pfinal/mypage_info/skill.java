@@ -50,7 +50,7 @@ public class skill implements Command {
 			rs.next();
 			int code = rs.getInt("code");
 			
-			sql = "insert into skill values(?, ?, ?, ?, ?)";            
+			sql = "insert into skill(code, skill, exp, mastery, id) values(?, ?, ?, ?, ?)";            
 	        pstmt = con.prepareStatement(sql);
 	        pstmt.setInt(1, code);
 	        pstmt.setString(2, skill);

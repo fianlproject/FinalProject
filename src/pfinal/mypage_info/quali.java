@@ -47,7 +47,7 @@ public class quali implements Command {
 			rs.next();
 			int code = rs.getInt("code");
 			
-			sql = "insert into quali values(?,?,?,?,?,?)";
+			sql = "insert into quali(code, q_name, q_house, q_num, q_date, id) values(?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, code);
 			pstmt.setString(2, q_name);

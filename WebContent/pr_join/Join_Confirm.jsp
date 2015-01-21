@@ -2,14 +2,46 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>약관동의</title>
 <link href="/pfinal/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <link href="/pfinal/bootstrap/css/bootstrap-responsive.css" />
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<link href="css/7911bc0a5c62.css" rel="stylesheet">
+<link href="css/7e63fa136b7d.css" rel="stylesheet">
+<link href="css/facebook.css" rel="stylesheet">
+<link href="css/floating.css" rel="stylesheet">
+<link href="css/layout_nav.css" rel="stylesheet">
+<link href="css/map.css" rel="stylesheet">
+<style type="text/css">
+textarea {
+height: auto;
+width: 580px;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+padding: 7px 7px;
+font-size: 15px;
+line-height: 1.33;
+border-radius: 5px;
+}
+
+
+</style>
+
 </head>
 <body>
-<textarea cols="60" rows="6">'OKJSP'은 (이하 '사이트'는)
+<textarea cols="25" rows="25">'OKJSP'은 (이하 '사이트'는)
 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
 
 사이트는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
@@ -143,7 +175,7 @@ OKJSP는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭
 4.경찰청 사이버테러대응센터 (www.ctrc.go.kr/02-392-0330)
 </textarea>
 <br/><br/>
-<a href="pfinal.do?command=Agree"><img src="/final/img/portfolio/agree.png"/></a>
-<a href="pfinal.do?command=index"><img src="/final/img/portfolio/not_agree.png"/></a>
+<a href="pfinal.do?command=Agree" class="btn btn-lg btn-default js-disable-on-click"><img src="/final/img/portfolio/agree.png"/>동의합니다</a>
+<a href="pfinal.do?command=index" class="btn btn-lg btn-default js-disable-on-click"><img src="/final/img/portfolio/not_agree.png"/>동의하지않습니다.</a>
 </body>
 </html>

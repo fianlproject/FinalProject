@@ -24,7 +24,14 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>프로젝트 찾기</title>
-
+<style type="text/css">
+.btn-lg, .btn-group-lg > .btn {
+padding: 7px 7px;
+font-size: 15px;
+line-height: 1.33;
+border-radius: 5px;
+}
+</style>
 </head>
 <br/>
 <body class="project-list">
@@ -162,14 +169,14 @@
 					<form method="post" action="/pfinal/pfinal.do">
 						<input type="hidden" value="${count1.count}" name="start">
 						<input type="hidden" value="list" name="command">
-						<div style="float:left;"><button>${count1.count}</button></div>
+						<div style="float:left;" class="pagination btn"><button class="btn btn-lg btn-default js-disable-on-click">${count1.count}</button></div>
 					</form>
 					</c:if>
 					<c:if test="${count1.count==size}">					
 					<form method="post" action="/pfinal/pfinal.do">
 						<input type="hidden" value="${count1.count}" name="start">
 						<input type="hidden" value="list" name="command">
-						<div><button>${count1.count}</button></div>
+						<div class="pagination btn"><button class="btn btn-lg btn-default js-disable-on-click">${count1.count}</button></div>
 					</form>
 					</c:if>
 		</c:forEach>
