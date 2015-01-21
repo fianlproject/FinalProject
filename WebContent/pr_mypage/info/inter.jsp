@@ -46,7 +46,7 @@ border-radius: 5px;
 						<input type="hidden" name="command" value="inter" />
 
 						<div class="form-group">
-							Language<br/>
+						<label class="control-label required" for="title"><span>*</span>Language</label>
 							<input type="checkbox" name="inter" value="JAVA">JAVA
 							<input type="checkbox" name="inter" value="C">C
 							<input type="checkbox" name="inter" value="C++">C++
@@ -61,7 +61,7 @@ border-radius: 5px;
 							<input type="checkbox" name="inter" value="Clojure">Clojure
 						</div><hr/>
 						<div class="form-group" style="float: inherit;">
-							WEB<br/>
+						<label class="control-label required" for="title"><span>*</span>WEB</label>
 							<input type="checkbox" name="inter" value="JSP">JSP
 							<input type="checkbox" name="inter" value="JS">JS
 							<input type="checkbox" name="inter" value="JQuery">JQuery
@@ -84,17 +84,17 @@ border-radius: 5px;
 							<input type="checkbox" name="inter" value="tomcat">tomcat
 						</div><hr/>
 						<div class="form-group" style="float: inherit;">
-							APP<br/>
+						<label class="control-label required" for="title"><span>*</span>APP</label>
 							<input type="checkbox" name="inter" value="Android">Android
 							<input type="checkbox" name="inter" value="iOS">iOS	
 						</div><hr/>
 						<div class="form-group" style="float: inherit;">
-							GRAPHIC<br/>
+						<label class="control-label required" for="title"><span>*</span>GRAPHIC</label>
 							<input type="checkbox" name="inter" value="Photoshop">Photoshop
 							<input type="checkbox" name="inter" value="ILLUST">ILLUST	
 						</div><hr/>
 						<div class="form-group" style="float: inherit;">
-							DATABASE<br/>
+						<label class="control-label required" for="title"><span>*</span>DATABASE</label>
 							<input type="checkbox" name="inter" value="ORACLE">ORACLE
 							<input type="checkbox" name="inter" value="MYSQL">MYSQL	
 							<input type="checkbox" name="inter" value="MSSQL">MSSQL	
@@ -102,17 +102,19 @@ border-radius: 5px;
 							<input type="checkbox" name="inter" value="TSQL">TSQL	
 						</div><hr/> 
 						<div class="form-group" style="float: inherit;">
-							OS<br/>
+						<label class="control-label required" for="title"><span>*</span>OS</label>
 							<input type="checkbox" name="inter" value="Windows">Windows
 							<input type="checkbox" name="inter" value="Linux">Linux
 							<input type="checkbox" name="inter" value="Unix">Unix									
-						</div><hr/>  
-							<input type="submit" value="전송" class="btn">
-					</form><br/><br/>
-					<div class="form-group">
+						<hr/>
+						<div class="form-group">
+							<input type="submit" value="전송" class="btn btn-lg btn-client js-disable-on-click btn-submit">
+					
 						<a href="/pfinal/pfinal.do?command=free_index"
 							class="btn btn-lg btn-default js-disable-on-click">홈으로</a>
 					</div>
+					</div>
+					</form>
 				</div>
 			</div>
 		</div>

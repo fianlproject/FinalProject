@@ -189,16 +189,85 @@
 							<table class="table table-hover">
 								<thead>
 									<tr>
-										<th>☆</th>
-										<th>☆</th>
-										<th>☆</th>
-										<th>☆</th>
+										<th>내용</th>
+										<th>참여일자</th>
+										<th>Category</th>
+										<th>Category_Detail</th>
 									</tr>
 								</thead>
 								<tbody>
+								<c:forEach items="${vector}" var="pDto">
 									<tr>
-
+										<td>${pDto.contents }</td>
+										<td>${pDto.start } - ${pDto.end }</td>
+										<c:if test="${pDto.category == 1 }">
+                                <td>디자인</td>
+                                </c:if>
+                                <c:if test="${pDto.category == 2 }">
+                                <td>개발</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  1}">
+                                <td>웹</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  2}">
+                                <td>애플리케이션</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  3}">
+                                <td>워드프레스</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  4}">
+                                <td>퍼블리싱</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  5}">
+                                <td>커머스, 쇼핑몰</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  6}">
+                                <td>일반 소프트웨어</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  7}">
+                                <td>임베디드</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  8}">
+                                <td>기타</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  9}">
+                                <td>웹</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  10}">
+                                <td>애플리케이션</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  11}">
+                                <td>제품</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  12}">
+                                <td>프레젠테이션</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  13}">
+                                <td>인쇄물</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  14}">
+                                <td>커머스, 쇼핑몰</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  15}">
+                                <td>로고</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  16}">
+                                <td>영상</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  17}">
+                                <td>그래픽</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  18}">
+                                <td>기타</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  19}">
+                                <td>게임</td>
+                                </c:if>
+                                <c:if test="${pDto.category_sub ==  20}">
+                                <td>게임</td>
+                                </c:if>
 									</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
@@ -206,7 +275,7 @@
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
-								<a href="/pfinal/pfinal.do?command=sogae">나의 소개</a>
+								<a href="/pfinal/pfinal.do?command=m_sogae">나의 소개</a>
 							</h5>
 							<c:if test="${sogae!=null }">
 							${sogae }

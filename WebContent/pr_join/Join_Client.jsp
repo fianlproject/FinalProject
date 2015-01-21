@@ -65,8 +65,6 @@
 		<div class="form-group">
 		<div class="controls">
 			<input type="submit" value="가입하기" class="btn" />
-		</div>
-		<div class="controls">
 			<input type="button" value="취소" class="btn" />
 		</div>
 		</div>

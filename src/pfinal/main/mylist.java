@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import kit.Command;
 import kit.DBConnectionMgr;
+import dto.ProjectDto;
 import dto.listDto;
 import dto.mySchoolDto;
 import dto.quDto;
@@ -33,6 +34,7 @@ public class mylist implements Command {
 		Vector d_day = new Vector();
 		Vector skills = new Vector();
 		Vector qv = new Vector();
+		Vector pv = new Vector();
 		String sogae = null;
 		
 		HttpSession session = req.getSession();
@@ -84,6 +86,31 @@ public class mylist implements Command {
 				skills.add(list2);
 			}
 			
+			sql = "select * from f_projects where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				ProjectDto pdto = new ProjectDto();
+				pdto = new ProjectDto();
+				pdto.setTitle(rs.getString("title"));
+				pdto.setCategory(rs.getString("category"));
+				pdto.setCategory_sub(rs.getString("category_sub"));
+				pdto.setContents(rs.getString("contents"));
+				pdto.setStart(rs.getString("start"));
+				pdto.setEnd(rs.getString("end"));
+				pdto.setMain_image(rs.getString("main_image"));
+				pdto.setSub_image(rs.getString("sub_image"));
+				pdto.setCaption(rs.getString("caption"));
+				pdto.setParticipation_rate(rs.getInt("participation_rate"));
+				pdto.setId(rs.getString("id"));
+				pdto.setTag(rs.getString("tag"));
+				System.out.println("project");
+				pv.add(pdto);
+			
+			}
+			
 			sql = "select * from quali where id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -120,6 +147,7 @@ public class mylist implements Command {
 		req.setAttribute("skills1", skills);
 		req.setAttribute("qv", qv);
 		req.setAttribute("sogae", sogae);
+		req.setAttribute("vector", pv);
 		
 		
 		

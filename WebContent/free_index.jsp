@@ -49,8 +49,6 @@
 <link href='/pfinal/fullcalendar/fullcalendar.css' rel='stylesheet' />
 <script src='/pfinal/fullcalendar/fullcalendar.js'></script>
 <script>
-	// FullCalnedar
-	$(document).ready(function() {
 		
 		$('#calendar').fullCalendar({
 			height: 400,
@@ -74,7 +72,6 @@
 		$( ".datepicker" ).datepicker({
 			dateFormat: 'yy-mm-dd' 
 		});		
-
 </script>
 <script>
 function fnCal() {
@@ -221,7 +218,7 @@ function fnMedia() {
                     </span>
                     <h4 class="service-heading">관심프로젝트</h4>
 					<form method="post" action="/pfinal/pfinal.do">
-						<button class="btn btn-link pl text-muted" name="command" value="interlist">수정</button>
+						<button class="btn btn-link pl text-muted" name="command" value="inter">수정</button>
 					</form>
 				</div>
 				<!-- 관심 -->	
@@ -379,79 +376,88 @@ function fnMedia() {
                             <!-- Project Details Go Here -->
                             <h2>${pDto.title }</h2>
                             <img class="img-responsive" src="upload/${pDto.main_image }" alt="" align="center">
-                            <div>
-                            	${pDto.contents }
-                            </div>
-                            <br/>
+                           <table class="table table-responsive">
+                           <tbody>
+                            <tr>
+                            <th>
+                            	내용 : ${pDto.contents }
+                            </th>
+                            
+                            <th>참여일자 : ${pDto.start } - ${pDto.end }</th>
+                            </tr>
+                            <tr>
                             <ul class="list-inline">
-                                <li>${pDto.start } - ${pDto.end }</li>
+                                
                                 <c:if test="${pDto.category == 1 }">
-                                <li>Category: 디자인</li>
+                                <th>Category: 디자인</th>
                                 </c:if>
                                 <c:if test="${pDto.category == 2 }">
-                                <li>Category: 개발</li>
+                                <th>Category: 개발</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  1}">
-                                <li>Category_Detail: 웹</li>
+                                <th>Category_Detail: 웹</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  2}">
-                                <li>Category_Detail: 애플리케이션</li>
+                                <th>Category_Detail: 애플리케이션</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  3}">
-                                <li>Category_Detail: 워드프레스</li>
+                                <th>Category_Detail: 워드프레스</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  4}">
-                                <li>Category_Detail: 퍼블리싱</li>
+                                <th>Category_Detail: 퍼블리싱</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  5}">
-                                <li>Category_Detail: 커머스, 쇼핑몰</li>
+                                <th>Category_Detail: 커머스, 쇼핑몰</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  6}">
-                                <li>Category_Detail: 일반 소프트웨어</li>
+                                <th>Category_Detail: 일반 소프트웨어</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  7}">
-                                <li>Category_Detail: 임베디드</li>
+                                <th>Category_Detail: 임베디드</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  8}">
-                                <li>Category_Detail: 기타</li>
+                                <th>Category_Detail: 기타</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  9}">
-                                <li>Category_Detail: 웹</li>
+                                <th>Category_Detail: 웹</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  10}">
-                                <li>Category_Detail: 애플리케이션</li>
+                                <th>Category_Detail: 애플리케이션</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  11}">
-                                <li>Category_Detail: 제품</li>
+                                <th>Category_Detail: 제품</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  12}">
-                                <li>Category_Detail: 프레젠테이션</li>
+                                <th>Category_Detail: 프레젠테이션</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  13}">
-                                <li>Category_Detail: 인쇄물</li>
+                                <th>Category_Detail: 인쇄물</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  14}">
-                                <li>Category_Detail: 커머스, 쇼핑몰</li>
+                                <th>Category_Detail: 커머스, 쇼핑몰</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  15}">
-                                <li>Category_Detail: 로고</li>
+                                <th>Category_Detail: 로고</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  16}">
-                                <li>Category_Detail: 영상</li>
+                                <th>Category_Detail: 영상</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  17}">
-                                <li>Category_Detail: 그래픽</li>
+                                <th>Category_Detail: 그래픽</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  18}">
-                                <li>Category_Detail: 기타</li>
+                                <th>Category_Detail: 기타</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  19}">
-                                <li>Category_Detail: 게임</li>
+                                <th>Category_Detail: 게임</th>
                                 </c:if>
                                 <c:if test="${pDto.category_sub ==  20}">
-                                <li>Category_Detail: 게임</li>
+                                <th>Category_Detail: 게임</th>
                                 </c:if>
                             </ul>
+                            </tr>
+                            </tbody>
+                            </table>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
