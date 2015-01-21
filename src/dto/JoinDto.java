@@ -1,10 +1,16 @@
 package dto;
 
 public class JoinDto {
-	String id, pw, name, cname, tel, sogae;
+	String id, pw, name, cname, tel, sogae, skill;
 	int cpcheck, age, gender, pstate;
 	
 	
+	public String getSkill() {
+		return skill;
+	}
+	public void setSkill(String skill) {
+		this.skill = skill;
+	}
 	public String getSogae() {
 		return sogae;
 	}

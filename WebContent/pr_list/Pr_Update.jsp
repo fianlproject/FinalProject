@@ -1,114 +1,49 @@
-<!-- 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<?xml version="1.0" encoding="EUC-KR" ?>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.text.DecimalFormat"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script>
-	function fnIsNull() {
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+	<title>¼öÁ¤ÇÏ±â</title>
+	<link href="css/7911bc0a5c62.css" rel="stylesheet">
+		<link href="css/7e63fa136b7d.css" rel="stylesheet">
+			<link href="css/facebook.css" rel="stylesheet">
+				<link href="css/floating.css" rel="stylesheet">
+					<link href="css/layout_nav.css" rel="stylesheet">
+						<link href="css/map.css" rel="stylesheet">
 
-		var pr_subject = document.getElementById("pr_subject").value;
-
-		if (pr_subject == "") {
-			alert("ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”..");
-		} else {
-			document.pr_update.submit();
-		}
-	}
-</script>
-
-${pr_id }
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ë¦¬ìŠ¤íŠ¸ ê¸€ ìˆ˜ì •í•˜ê¸°</title>
-</head>
-
-
-<body>
-
-	<form name="pr_update" method="post"
-		action="/pfinal/pfinal.do?command=prupdateProc"
-		enctype="multipart/form-data">
-		<input type="hidden" name="pr_id" value="${pr_id }"> <input
-			type="hidden" name="uppr_photo" value="${pr_photo }">
-
-		<table width=80% cellspacing=0 cellpadding=3 align=center>
-			<tr>
-				<td width=10%>ì œ ëª©</td>
-				<td width=90%><textarea name="pr_subject" id="pr_subject"
-						rows="1" cols="50">${pr_subject}</textarea></td>
-			</tr>
-			<tr>
-
-				<td width=10%>ë‚´ ìš©</td>
-				<td width=90%><textarea name="pr_content" id="pr_content"
-						rows="10" cols="50"> ${pr_content}</textarea></td>
-			</tr>
-			<tr>
-				<td width=10%>íŒŒì¼ ì—…ë¡œë“œ</td>
-				<td width=50%><input type="file" name="pr_photo" id="pr_photo"
-					size=40> ${pr_photo}</td>
-
-			</tr>
-			<tr>
-				<td>ì‚¬ì§„ì‚­ì œ<input type="checkbox" name="deletephoto"
-					value="deletephoto">
-				</td>
-			</tr>
-
-			<tr>
-				<td><input type="button" value="ìˆ˜ì •" onclick="fnIsNull()"></td>
-			</tr>
-		</table>
-	</form>
- -->
-
-
-
-	<%@page import="java.util.Calendar"%>
-	<%@page import="java.text.DecimalFormat"%>
-	<%@ page language="java" contentType="text/html; charset=utf-8"
-		pageEncoding="utf-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
-	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ìˆ˜ì •í•˜ê¸°</title>
-<link href="css/7911bc0a5c62.css" rel="stylesheet">
-<link href="css/7e63fa136b7d.css" rel="stylesheet">
-<link href="css/facebook.css" rel="stylesheet">
-<link href="css/floating.css" rel="stylesheet">
-<link href="css/layout_nav.css" rel="stylesheet">
-<link href="css/map.css" rel="stylesheet">
-
-<style type="text/css">
+							<style type="text/css">
 #sm-group {
 	width: 30%;
 }
 </style>
 
-<script>
-   $(function() {
-      $("#datepicker").datepicker({
-         changeMonth : true,
-         changeYear : true,
-         showButtonPanel : true,
-         dateFormat : "yy/mm/dd"
-      });
-   });
-</script>
-
+							<script>
+								$(function() {
+									$("#datepicker").datepicker({
+										changeMonth : true,
+										changeYear : true,
+										showButtonPanel : true,
+										dateFormat : "yy/mm/dd"
+									});
+								});
+							</script>
 </head>
 <%
 	DecimalFormat df = new DecimalFormat("00");
 	Calendar currentCalendar = Calendar.getInstance();
 
-	//í˜„ì¬ ë‚ ì§œ êµ¬í•˜ê¸°
+	//ÇöÀç ³¯Â¥ ±¸ÇÏ±â
 	String strYear = Integer.toString(currentCalendar
 			.get(Calendar.YEAR));
 	String strMonth = df
@@ -120,177 +55,177 @@ ${pr_id }
 
 <br />
 <body class="project-list">
-
+	${pr_nowskill }
 	<div id="wrap1">
 		<div class="page">
 			<div class="content">
 				<div class="content-header">
-					<h3 class="header-text">í”„ë¡œì íŠ¸ ìˆ˜ì •</h3>
+					<h3 class="header-text">ÇÁ·ÎÁ§Æ® ¼öÁ¤</h3>
 				</div>
 
 				<div class="content-header">
 					<div class="content-inner">
 
-
-
 						<form enctype="multipart/form-data" name="pr_write" method="post"
 							action="/pfinal/pfinal.do?command=prupdateProc">
 							<input type="hidden" id="longitude" name="longitude"> <input
 								type="hidden" id="latitude" name="latitude"> <input
-								type="hidden" name="pr_id" value="${pr_id }"> <input
-								type="hidden" name="uppr_photo" value="${pr_photo }">
-								<input
-								type="hidden" name="nowskill" value="${pr_nowskill }">
-								
-					
-								
-							<div class="form-group ">
-								<label class="control-label required" for="title"><span>*</span>í”„ë¡œì íŠ¸
-									ì œëª©</label>
-
-								<div class="control-wrapper">
-									<input class="form-control" id="pr_subject" name="pr_subject"
-										maxlength="30" size="30" type="text" value="${pr_subject }"><span
-										class="help-block"></span>
-								</div>
-							</div>
-
-							<input type="hidden" name="pr_start" id="pr_start"
-								value=<%=pr_start%> size="8">
-							<%
-								request.setAttribute("pr_start", pr_start);
-							%>
+									type="hidden" name="pr_id" value="${pr_id }"> <input
+										type="hidden" name="uppr_photo" value="${pr_photo }">
+											<input type="hidden" name="pr_nowskill"
+											value="${pr_nowskill }">
 
 
 
-							<div class="form-group project-term-form-group ">
-								<label class="control-label required" for="project_term"><span>*</span>ì¢…ë£Œë‚ ì§œ</label>
-								<div id="sm-group">
-									<div class="input-group">
-										<input autocomplete="off" class="form-control" id="datepicker"
-											name="pr_end" required="required" type="text" value="${pr_end }"><span
-											class="input-group-addon">ì¼</span>
-									</div>
-									<span class="help-block">ìˆ˜ì •ì „ ë‚ ì§œ ${pr_end }</span>
-								</div>
-							</div>
 
-							<div class="form-group project-term-form-group ">
-								<label class="control-label required" for="project_term"><span>*</span>ì˜ˆìƒë‚ ì§œ</label>
-								<div id="sm-group">
-									<div class="input-group">
-										<input autocomplete="off" class="form-control" id="pr_exday"
-											name="pr_exday" required="required" type="text" value="${pr_exday }"><span
-											class="input-group-addon">ì¼</span>
-									</div>
+												<div class="form-group ">
+													<label class="control-label required" for="title"><span>*</span>ÇÁ·ÎÁ§Æ®
+														Á¦¸ñ</label>
 
-								</div>
-							</div>
-
-							<div class="form-group project-budget-form-group ">
-								<label class="control-label required" for="budget_maximum"><span>*</span>ì§€ì¶œ
-									ê°€ëŠ¥ ì˜ˆì‚°</label>
-								<div id="sm-group">
-									<div class="input-group">
-										<span class="input-group-addon">ï¿¦</span><input
-											class="form-control" id="pr_price" name="pr_price"
-											required="required" type="text" value="${pr_price }">
-									</div>
-									<span class="help-block">ì§€ì¶œ ê°€ëŠ¥í•œ ì˜ˆì‚°ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”. (ì˜ˆ
-										100,000,000)</span>
-								</div>
-							</div>
-
-							<div class="form-group project-budget-form-group ">
-								<label class="control-label required" for="budget_maximum"><span>*</span>í•„ìš”
-									ì¸ì› ìˆ˜</label>
-								<div id="sm-group">
-									<div class="input-group">
-										<input autocomplete="off" class="form-control" id="pr_needman"
-											name="pr_needman" required="required" type="text" value="${pr_needman }"> <span
-											class="input-group-addon">ëª…</span>
-									</div>
-									<span class="help-block">í•„ìš”í•œ ì¸ì›ìˆ˜ë¥¼ ìˆ«ìë¡œ ì ì–´ì£¼ì„¸ìš”.</span>
-								</div>
-							</div>
-
-							<div class="form-group description-form-group ">
-								<label class="control-label required" for="description"><span>*</span>í”„ë¡œì íŠ¸
-									ë‚´ìš©</label>
-								<div class="control-wrapper">
-									<textarea autocomplete="off" class="form-control" cols="40"
-										id="pr_content" name="pr_content" required="" rows="30">${pr_content }</textarea>
-									<span class="help-block"><p class="text-danger">
-											<span class="label label-danger">ì£¼ì˜</span> ì´ë©”ì¼, ì „í™”ë²ˆí˜¸ ë“±ì„ ê²Œì‹œí•˜ëŠ”
-											ê²½ìš° ì„œë¹„ìŠ¤ ì´ìš©ì— ì œì¬ë¥¼ ë°›ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
-										</p></span>
-								</div>
-							</div>
-
-							<div class="form-group ">
-								<label class="control-label required" for="skill_required"><span>*</span>ê´€ë ¨
-									ê¸°ìˆ </label>
-								<div class="control-wrapper">
-									<input class="tagit-hidden-field" id="skill_required"
-										name="skill_required" type="text">
-									<div>
-										<input type="checkbox" name="pr_skills" id="pr_skills"
-											value="java" size=40>java <input type="checkbox"
-											name="pr_skills" id="pr_skills" value="jsp" size=40>jsp
-										<input type="checkbox" name="pr_skills" id="pr_skills"
-											value="android" size=40>android <input
-											type="checkbox" name="pr_skills" id="pr_skills" value="html"
-											size=40>html
-									</div>
-									<span class="help-block">(ìµœëŒ€ 5ê°œ) </span>
-								</div>
-							</div>
-
-							<div class="form-group ">
-								<label class="control-label required" for="skill_required"><span>*</span>ê³µê°œì—¬ë¶€</label>
-								<div class="control-wrapper">
-								
-									<c:if test="${pr_private=='y' }">
-										í˜„ì¬ ê³µê°œ í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤.<br/>
-									</c:if>
-									<c:if test="${pr_private=='n' }">
-										í˜„ì¬ ë¹„ê³µê°œ í”„ë¡œì íŠ¸ì…ë‹ˆë‹¤.<br/>
-									</c:if>
-									<select name="pr_private">
-										<option selected="selected" value="y">ê³µê°œ</option>
-										<option value="n">ë¹„ê³µê°œ</option>
-									</select>
-
-								</div>
-							</div>
-
-							<div class="form-group ">
-								<label class="control-label required" for="skill_required">íŒŒì¼ì²¨ë¶€</label>
-								<div class="control-wrapper">
-									<input type="file" name="pr_photo" id="pr_photo">
-								</div>
-							</div>
-
-							<div>
-								<div>
-									ì‚¬ì§„ì‚­ì œ<input type="checkbox" name="deletephoto"
-										value="deletephoto">
-								</div>
-							</div>
+													<div class="control-wrapper">
+														<input class="form-control" id="pr_subject"
+															name="pr_subject" maxlength="30" size="30" type="text"
+															value="${pr_subject }"><span class="help-block"></span>
+													</div>
+												</div> <input type="hidden" name="pr_start" id="pr_start"
+												value=<%=pr_start%> size="8"> <%
+ 	request.setAttribute("pr_start", pr_start);
+ %>
 
 
 
-							<div class="form-group">
-								<div class="btn-wrapper">
-									<input
-										class="btn btn-lg btn-client js-disable-on-click btn-submit"
-										value="í”„ë¡œì íŠ¸ ìˆ˜ì •" type="submit"> <input
-										class="btn btn-lg btn-default js-disable-on-click"
-										name="save_for_later" value="ì·¨ì†Œ" type="button">
-								</div>
-							</div>
+													<div class="form-group project-term-form-group ">
+														<label class="control-label required" for="project_term"><span>*</span>Á¾·á³¯Â¥</label>
+														<div id="sm-group">
+															<div class="input-group">
+																<input autocomplete="off" class="form-control"
+																	id="datepicker" name="pr_end" required="required"
+																	type="text" value="${pr_end }"><span
+																	class="input-group-addon">ÀÏ</span>
+															</div>
+															<span class="help-block">¼öÁ¤Àü ³¯Â¥ ${pr_end }</span>
+														</div>
+													</div>
+
+													<div class="form-group project-term-form-group ">
+														<label class="control-label required" for="project_term"><span>*</span>¿¹»ó³¯Â¥</label>
+														<div id="sm-group">
+															<div class="input-group">
+																<input autocomplete="off" class="form-control"
+																	id="pr_exday" name="pr_exday" required="required"
+																	type="text" value="${pr_exday }"><span
+																	class="input-group-addon">ÀÏ</span>
+															</div>
+
+														</div>
+													</div>
+
+													<div class="form-group project-budget-form-group ">
+														<label class="control-label required" for="budget_maximum"><span>*</span>ÁöÃâ
+															°¡´É ¿¹»ê</label>
+														<div id="sm-group">
+															<div class="input-group">
+																<span class="input-group-addon">£Ü</span><input
+																	class="form-control" id="pr_price" name="pr_price"
+																	required="required" type="text" value="${pr_price }">
+															</div>
+															<span class="help-block">ÁöÃâ °¡´ÉÇÑ ¿¹»êÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä. (¿¹
+																100,000,000)</span>
+														</div>
+													</div>
+
+													<div class="form-group project-budget-form-group ">
+														<label class="control-label required" for="budget_maximum"><span>*</span>ÇÊ¿ä
+															ÀÎ¿ø ¼ö</label>
+														<div id="sm-group">
+															<div class="input-group">
+																<input autocomplete="off" class="form-control"
+																	id="pr_needman" name="pr_needman" required="required"
+																	type="text" value="${pr_needman }"> <span
+																	class="input-group-addon">¸í</span>
+															</div>
+															<span class="help-block">ÇÊ¿äÇÑ ÀÎ¿ø¼ö¸¦ ¼ıÀÚ·Î Àû¾îÁÖ¼¼¿ä.</span>
+														</div>
+													</div>
+
+													<div class="form-group description-form-group ">
+														<label class="control-label required" for="description"><span>*</span>ÇÁ·ÎÁ§Æ®
+															³»¿ë</label>
+														<div class="control-wrapper">
+															<textarea autocomplete="off" class="form-control"
+																cols="40" id="pr_content" name="pr_content" required=""
+																rows="30">${pr_content }</textarea>
+															<span class="help-block"><p class="text-danger">
+																	<span class="label label-danger">ÁÖÀÇ</span> ÀÌ¸ŞÀÏ, ÀüÈ­¹øÈ£ µîÀ»
+																	°Ô½ÃÇÏ´Â °æ¿ì ¼­ºñ½º ÀÌ¿ë¿¡ Á¦Àç¸¦ ¹ŞÀ» ¼ö ÀÖ½À´Ï´Ù.
+																</p></span>
+														</div>
+													</div>
+
+													<div class="form-group ">
+														<label class="control-label required" for="skill_required"><span>*</span>°ü·Ã
+															±â¼ú</label>
+														<div class="control-wrapper">
+															<input class="tagit-hidden-field" id="skill_required"
+																name="skill_required" type="text">
+																<div>
+																	<input type="checkbox" name="pr_skills" id="pr_skills"
+																		value="java" size=40>java <input
+																		type="checkbox" name="pr_skills" id="pr_skills"
+																		value="jsp" size=40>jsp <input type="checkbox"
+																			name="pr_skills" id="pr_skills" value="android"
+																			size=40>android <input type="checkbox"
+																				name="pr_skills" id="pr_skills" value="html" size=40>html
 
 
+																			
+																</div> <span class="help-block">(ÃÖ´ë 5°³) </span>
+														</div>
+													</div>
+
+													<div class="form-group ">
+														<label class="control-label required" for="skill_required"><span>*</span>°ø°³¿©ºÎ</label>
+														<div class="control-wrapper">
+
+															<c:if test="${pr_private=='y' }">
+										ÇöÀç °ø°³ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.<br />
+															</c:if>
+															<c:if test="${pr_private=='n' }">
+										ÇöÀç ºñ°ø°³ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù.<br />
+															</c:if>
+															<select name="pr_private">
+																<option selected="selected" value="y">°ø°³</option>
+																<option value="n">ºñ°ø°³</option>
+															</select>
+
+														</div>
+													</div>
+
+													<div class="form-group ">
+														<label class="control-label required" for="skill_required">ÆÄÀÏÃ·ºÎ</label>
+														<div class="control-wrapper">
+															<input type="file" name="pr_photo" id="pr_photo">
+														</div>
+													</div>
+
+													<div>
+														<div>
+															»çÁø»èÁ¦<input type="checkbox" name="deletephoto"
+																value="deletephoto">
+														</div>
+													</div>
+
+
+
+													<div class="form-group">
+														<div class="btn-wrapper">
+															<input
+																class="btn btn-lg btn-client js-disable-on-click btn-submit"
+																value="ÇÁ·ÎÁ§Æ® ¼öÁ¤" type="submit"> <input
+																class="btn btn-lg btn-default js-disable-on-click"
+																name="save_for_later" value="Ãë¼Ò" type="button">
+														</div>
+													</div>
 						</form>
 					</div>
 				</div>
@@ -304,6 +239,3 @@ ${pr_id }
 
 </html>
 
-</body>
-
-</html>
