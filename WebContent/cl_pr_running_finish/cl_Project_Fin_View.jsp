@@ -36,7 +36,7 @@
 					<div class="content span8">
 							<div class="content-header">
 								<h1 class="header-text">${Dto1.pr_subject}</h1>
-								<div class=".help-text">프리랜서가 평가한 평가 내용입니다.</div>
+								<div class=".help-text"><c:if test="${count2!=0 }">${count2 }명의</c:if>프리랜서가 평가한 평가 내용입니다.</div>
 							</div>
 							
 							<div class="content-header">
@@ -59,14 +59,14 @@
 													<fmt:formatNumber value="${dto2.fin_price}" type="currency" />
 												</div>
 												<div>진행기간 : ${dto2.total_day } 일 소요</div>
-												
+												<div>한마디 : ${dto2.fr_comment} </div>
 											</c:if>
 										</c:forTokens>
 									</c:forEach>
 								</c:if>
 								</div>
 							</div>
-							
+							<c:if test="${evals != null }">
 							<c:forEach items="${dtoGetBoard2 }" var="dto4" begin="0" end="0">
 							<c:if test="${dto4.fr_evaluate != null }">
 							<div class="content-header">
@@ -78,7 +78,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forTokens items="${dto4.fr_evaluate}" delims="," var="eval" varStatus="status">
+										<c:forTokens items="${evals}" delims="," var="eval" varStatus="status">
 											<tr class="test">
 												<c:if test="${status.count == 1 }">
 												<td>전문성</td>
@@ -108,9 +108,6 @@
 								<div id="container"
 									style="width: 400px; height: 400px; margin: 0 auto"></div>
 							</div>
-							<div class="content-header">
-							<div>한마디 : ${dto4.fr_comment} </div>
-							</div>
 						</c:if>
 						<c:if test="${dto4.fr_evaluate == null }">
 						<div class="content-header">
@@ -118,7 +115,7 @@
 						</div>
 						</c:if>
 						</c:forEach>
-						
+						</c:if>
 					</div>
 				</div>
 			</div>

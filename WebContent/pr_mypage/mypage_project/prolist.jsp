@@ -75,11 +75,14 @@
 													</c:when>													
 												</c:choose>
 											</c:if>
-
-											<c:if test="${i.fcheck == 1}">
-												<td><font color="blue">프로젝트 진행중</font></td>
-											</c:if>
-
+											<c:choose>
+												<c:when test="${i.fcheck == 1}">
+													<td><font color="blue">프로젝트 진행중</font></td>
+												</c:when>
+												<c:when test="${i.fcheck==2}">
+															<td><font color="red">프로젝트 완료</font></td>
+												</c:when>			
+											</c:choose>
 											<form metdod="post" action="/pfinal/pfinal.do">
 												<input type="hidden" name="command" value="getboard" />
 												<input type="hidden" name="pr_id" value="${i.pr_id}" />
@@ -129,7 +132,7 @@
 												<input type="hidden" name="command" value="refusal" />
 												<input type="hidden" name="pr_id" value="${i.pr_id}" />
 												<input type="hidden" name="app_id" value="${i.app_id}" />
-												<input type="hidden" name-"pr_subject" value="${i.pr_subject }" />
+												<input type="hidden" name="pr_subject" value="${i.pr_subject }" />
 												<input type="hidden" name="pr_price" value="${i.hprice }" />
 												<c:if test="${i.check != 0 and i.check == 3 and i.fcheck == 0}">
 													<td>

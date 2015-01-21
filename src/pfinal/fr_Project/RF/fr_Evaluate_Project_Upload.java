@@ -42,44 +42,69 @@ public class fr_Evaluate_Project_Upload implements Command {
 				+ req.getParameter("pr_evaluate4") + ","
 				+ req.getParameter("pr_evaluate5");
 
+		int id_size = 0;
+		int count = 0;
 		String comment = req.getParameter("comment");
 		boolean flag = false;
 		try {
 			pool = DBConnectionMgr.getInstance();
+			con = pool.getConnection();
 
-//			sql = "select fr_evaluate_count from runing_finish_project where pr_id="	+ pr_id+"' and fr_id='"+id+"'";
-//			System.out.println("더할값 불러오기 : "+sql);
-//			con = pool.getConnection();
-//			pstmt = con.prepareStatement(sql);
-//			rs = pstmt.executeQuery();
-//			rs.next();
-//			if(rs.getInt("fr_evaluate_count")!=0){
-//				flag = true;
-//			}
-			
-//			if (flag==false){
-				sql = "update runing_finish_project set fr_evaluate='"+eval+"', fr_pr_comment='"+comment+"', fr_evaluate_count=fr_evaluate_count+1 where pr_id="+pr_id+" and fr_id='"+id+"'";
+			sql = "select fr_id, fr_evaluate_count from finish_project  where pr_id="
+					+ pr_id;
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			rs.next();
+			String fr_ids = rs.getString("fr_id");
+			String size[] = fr_ids.split(",");
+			id_size = size.length;
+			String eval_count = rs.getString("fr_evaluate_count");
+			count = Integer.parseInt(eval_count);
+
+			// sql = "select * from runing_finish_project where pr_id=" +
+			// pr_id+"' and fr_id='"+id+"'";
+			// System.out.println("더할값 불러오기 : "+sql);
+			// pstmt = con.prepareStatement(sql);
+			// rs = pstmt.executeQuery();
+			// if(rs.next()){
+			// flag=true;
+			// }
+			// if (flag==false){
+				sql = "update runing_finish_project set fr_evaluate='" + eval
+						+ "', fr_pr_comment='" + comment + "' where pr_id="+ pr_id +" and fr_id='" + id + "'";
 				System.out.println(sql);
 				System.out.println("인서트 통과");
-//			}
-//			else if(flag==true) {
-////				String evals = rs.getString("fr_evaluate");
-////				String a[] = evals.split(",");
-////				String b[] = evals.split(",");
-////				int sum[]=null;
-////				for(int i = 0 ; i < a.length ; i++){
-////					sum[i] = Integer.parseInt(a[i])+Integer.parseInt(b[i]);
-////					System.out.println(sum[i]);
-////				}
-//				sql = "update runing_finish_project set fr_evaluate='" + eval
-//						+ "', fr_pr_comment=fr_pr_comment+'" + comment + "' WHERE pr_id="
-//						+ pr_id;
-//				System.out.println(sql);
-//				System.out.println("업데이트 통과");
-//			}
-				con = pool.getConnection();
 				pstmt = con.prepareStatement(sql);
 				pstmt.executeUpdate();
+
+				sql = "update finish_project set fr_evaluate_count=fr_evaluate_count+1 where pr_id="
+						+ pr_id;
+				pstmt = con.prepareStatement(sql);
+				pstmt.executeUpdate();
+				
+				
+				sql = "update app set fcheck=2 where pr_id="
+						+ pr_id;
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.executeUpdate();
+				// }
+				// else if(flag==true) {
+				// // String evals = rs.getString("fr_evaluate");
+				// // String a[] = evals.split(",");
+				// // String b[] = evals.split(",");
+				// // int sum[]=null;
+				// // for(int i = 0 ; i < a.length ; i++){
+				// // sum[i] = Integer.parseInt(a[i])+Integer.parseInt(b[i]);
+				// // System.out.println(sum[i]);
+				// // }
+				// sql = "update runing_finish_project set fr_evaluate='" + eval
+				// + "', fr_pr_comment=fr_pr_comment+'" + comment +
+				// "' WHERE pr_id="
+				// + pr_id;
+				// System.out.println(sql);
+				// System.out.println("업데이트 통과");
+				// }
 			
 			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, cl_evaluate,cl_pr_comment, pr_status, pr_subject, fr_evaluate, fr_pr_comment,"
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
@@ -151,6 +176,9 @@ public class fr_Evaluate_Project_Upload implements Command {
 		req.setAttribute("count2", frv.size());
 		req.setAttribute("dtoList1", v);
 		req.setAttribute("dtoList2", frv);
+		// 평가하지 않은 명수 파악
+		int eval_status = id_size - count;
+		req.setAttribute("evalstatus", eval_status);
 		return "fr_pr_running_finish/fr_RF_Project_List.jsp";
 	}
 
