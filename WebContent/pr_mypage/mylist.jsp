@@ -50,6 +50,7 @@
 										<th>부서</th>
 										<th>직위</th>
 										<th>입사기간</th>
+										<th>수정 및 삭제</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -65,6 +66,20 @@
 						</c:if> <c:if test="${i.day != 0 }">
 							${i.day}일
 						</c:if></td>
+						<td>
+						<form method="post" action="/pfinal/pfinal.do">
+							<input type="hidden" name="command" value="career_up">
+							<input type="hidden" name="cname" value="${i.cname}">						
+							<input type="hidden" name="part" value="${i.part}">						
+							<input type="hidden" name="position" value="${i.position}">						
+							<input type="hidden" name="resign" value="${i.resign}">						
+							<input type="hidden" name="joins" value="${i.join}">						
+							<input type="submit" value="수정" class="btn">
+						</form>
+						수정 / 삭제
+						
+						
+						</td>
 										</tr>
 									</c:forEach>
 								</tbody>

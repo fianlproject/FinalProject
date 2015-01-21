@@ -1,4 +1,4 @@
-package pfinal.mypage_info;
+package pfinal.mypage_info.update;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -15,7 +15,7 @@ import kit.Command;
 import kit.DBConnectionMgr;
 import dto.listDto;
 
-public class career implements Command {
+public class career_up_in implements Command {
 	Connection con;
 	PreparedStatement pstmt;
 	ResultSet rs;
@@ -50,18 +50,13 @@ public class career implements Command {
 			rs.next();
 			int code = rs.getInt("code");
 			
-			sql = "insert into career values(?, ?, ?, ?, ?, ?, ?)";            
-	        pstmt = con.prepareStatement(sql);
-	        pstmt.setInt(1, code);
-	        pstmt.setString(2, cname);
-	        pstmt.setString(3, part);
-	        pstmt.setString(4, position);
-	        pstmt.setString(5, id);
-	        pstmt.setString(6, joins);
-	        pstmt.setString(7, resign);
-	        pstmt.executeUpdate();
-			System.out.println(sql);
-					
+			req.setAttribute("code", code);
+			req.setAttribute("cname", cname);
+			req.setAttribute("part", part);
+			req.setAttribute("position", position);
+			req.setAttribute("joins", joins);
+			req.setAttribute("resign", resign);
+			
 			
 
 			
@@ -72,7 +67,7 @@ public class career implements Command {
 		finally{
 			pool.freeConnection(con, pstmt, rs);
 		}
-		return "free_index.jsp";
+		return "pr_mypage/info_update/career_update.jsp";
 
 	}
 }

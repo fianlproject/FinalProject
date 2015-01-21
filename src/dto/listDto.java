@@ -31,7 +31,21 @@ public class listDto {
 	private String latitude;
 	private String cl_id;
 	private int fcheck;
+	private String resign;
+	private String join;
 	
+	public String getResign() {
+		return resign;
+	}
+	public void setResign(String resign) {
+		this.resign = resign;
+	}
+	public String getJoin() {
+		return join;
+	}
+	public void setJoin(String join) {
+		this.join = join;
+	}
 	public int getFcheck() {
 		return fcheck;
 	}

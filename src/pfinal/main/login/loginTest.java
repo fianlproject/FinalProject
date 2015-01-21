@@ -154,10 +154,6 @@ public class loginTest implements Command {
 	}
 	else{
 		return "reindex.jsp";
-	}
-	
-	
-	
-	
+	}	
 	}
 }

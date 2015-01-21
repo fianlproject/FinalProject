@@ -80,6 +80,8 @@ import pfinal.mypage_info.project.PrUpdateCommand;
 import pfinal.mypage_info.project.PrUpdateProcCommand;
 import pfinal.mypage_info.project.ProjectCommand;
 import pfinal.mypage_info.project.ProjectUpdate;
+import pfinal.mypage_info.update.career_up_in;
+import pfinal.mypage_info.update.career_up_out;
 import pfinal.myschool.SchoolChkCommand;
 import pfinal.myschool.SchoolDeleteDBCommand;
 import pfinal.myschool.SchoolInsertCommand;
@@ -215,7 +217,7 @@ public class CommandFactory {
 		else if (cmd.equals("frfinview"))
 			return new fr_Project_View();
 		
-		//마이페이지		
+		//마이페이지	
 				
 		else if (cmd.equals("mypage")) 
 			return new mypage();				
@@ -251,6 +253,10 @@ public class CommandFactory {
 			return new m_inter();
 		else if(cmd.equals("sogaeProc"))
 			return new sogaeProc();
+		else if(cmd.equals("career_up"))
+			return new career_up_in();
+		else if(cmd.equals("career_update"))
+			return new career_up_out();
 		
 		
 		//회원가입

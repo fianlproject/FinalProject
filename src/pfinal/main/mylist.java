@@ -42,7 +42,7 @@ public class mylist implements Command {
 
 			pool = DBConnectionMgr.getInstance();
 			con = pool.getConnection();
-			sql = "select (to_days(resign)-to_days(joins)) as day , cname , part , position from career where id = ?";			
+			sql = "select (to_days(resign)-to_days(joins)) as day , cname , part , position , joins , resign from career where id = ?";			
 			pstmt = con.prepareStatement(sql);			
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -69,6 +69,8 @@ public class mylist implements Command {
 					list.setDay(day);
 					System.out.println("¸¶Áö¸·" + day);
 				}
+				list.setJoin(rs.getString("joins"));
+				list.setResign(rs.getString("resign"));
 				d_day.add(list);
 			}
 			
