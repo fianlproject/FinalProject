@@ -87,7 +87,7 @@
 		<hr />
 		<div class="form-group">
 			<div class="controls">
-				<input type="submit" value="가입하기" class="btn" />
+				<input type="submit" value="가입하기" class="btn" onclick="check()"/>
 			</div>
 			<div class="controls">
 				<input type="button" value="취소" class="btn" />
@@ -173,6 +173,7 @@
 					return false;
 				}
 				alert("입력 완료");
+				window.close();
 			}	
 	    });  // submit 끝
 	  });	// ready 끝

@@ -3,7 +3,13 @@
 <html lang="ko">
 
 <head>
+<script>
+function fnJoin() {
+	var Future = "fullscreen=no,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,left=0,top=0,width=600,height=600"; 
+	window.open("/pfinal/pfinal.do?command=join","",Future);
+}
 
+</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,7 +44,7 @@
 
 
     <!-- Navigation -->
-<form method="post" action="/pfinal/pfinal.do">
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,22 +64,22 @@
 	                    <li class="hidden">
 	                        <a href="#page-top"></a>
 	                    </li>
+	                    
 	                    <li>
-	                        <button class="btn btn-link pl" name="command" value="login" >로그인</button>
+	                    	<form method="post" action="/pfinal/pfinal.do">   							
+		                        <input type="text" name="id" class="username" placeholder="ID 입력"/>
+		                        <input type="password" name="pw" class="password" placeholder="PassWord 입력"/>
+		                        <button class="btn btn-link pl" name="command" value="logintest">로그인</button>
+	                        </form>
 	                    </li>
-	                    <li>
-	                        <!-- <a class="page-scroll" href="/pfinal/pfinal.do?command=join">회원가입</a> -->
-	                        <button class="btn btn-link pl" name="command" value="join">회원가입</button>
+
+		                <li>
+		                   <button class="btn btn-link pl text-muted" onclick="fnJoin()">회원가입</button>		                   
+		                   <!-- <form method="post" action="/pfinal/pfinal.do">
+							<button class="btn btn-link pl" name="command" value="join">회원가입</button>	                      
+						   </form> -->
 	                    </li>
-	                    <li>
-	                       <button class="btn btn-link pl" name="command" value="free_index" >임시pindex로</button>
-	                    </li>
-	                    <li>
-	                        <button class="btn btn-link pl" name="command" value="list" >리스트</button>
-	                    </li>
-	                    <li>
-	                        <a class="page-scroll" href="#contact">임시3</a>
-	                    </li>
+
 	                </ul>
 	            </div>
             
@@ -81,7 +87,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-</form>
 
     <!-- Header -->
     <header>
@@ -146,8 +151,7 @@
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
+    
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
 
