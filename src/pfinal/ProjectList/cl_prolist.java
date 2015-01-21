@@ -48,7 +48,8 @@ public class cl_prolist implements Command {
 		pstmt = con.prepareStatement(sql);
 		pstmt.executeUpdate();
 		
-		sql = "select pr_subject , a.pr_id,app_id,app_con,hday,hprice,nday,nprice,check1,a.fcheck,readchk,f_del from app a , list l where a.pr_id = l.pr_id and a.cl_id=? and pr_subject = ?";
+		sql = "select pr_subject , a.pr_id,app_id,app_con,hday,hprice,nday,nprice,check1,a.fcheck,readchk,f_del from app a , "
+				+ "list l where a.pr_id = l.pr_id and a.cl_id=? and pr_subject = ?";
 		pstmt = con.prepareStatement(sql);			
 		pstmt.setString(1, id);		
 		pstmt.setString(2, sub123);		
