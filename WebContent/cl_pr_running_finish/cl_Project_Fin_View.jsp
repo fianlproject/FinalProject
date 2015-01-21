@@ -38,8 +38,10 @@
 								<h1 class="header-text">${Dto1.pr_subject}</h1>
 								<div class=".help-text">프리랜서가 평가한 평가 내용입니다.</div>
 							</div>
+							
 							<div class="content-header">
 								<div class="summary">
+								<c:if test="${!empty fr_id }">
 									<div>
 										프로젝트 참여자 :
 										<c:forTokens items="${fr_id}" delims="," var="dto">
@@ -61,8 +63,10 @@
 											</c:if>
 										</c:forTokens>
 									</c:forEach>
+								</c:if>
 								</div>
 							</div>
+							
 							<c:forEach items="${dtoGetBoard2 }" var="dto4" begin="0" end="0">
 							<c:if test="${dto4.fr_evaluate != null }">
 							<div class="content-header">
