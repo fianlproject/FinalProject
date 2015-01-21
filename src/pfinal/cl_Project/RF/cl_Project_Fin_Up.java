@@ -20,65 +20,57 @@ public class cl_Project_Fin_Up implements Command {
 	@Override
 	public Object processCommand(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		
+
 		System.out.println("프로젝트 완료 완료!!");
 
 		req.setCharacterEncoding("utf-8");
 		res.setCharacterEncoding("utf-8");
-		
-		Connection con=null;
-		PreparedStatement pstmt=null;
-		ResultSet rs=null;
-		DBConnectionMgr pool=null;
-		
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		DBConnectionMgr pool = null;
+
 		String sql;
 		String pr_id = req.getParameter("pr_id");
+		System.out.println(pr_id);
 		HttpSession session = req.getSession();
-		String id = (String)session.getAttribute("id");
+		String id = (String) session.getAttribute("id");
 		Vector v = new Vector();
 		Vector frv = new Vector();
 		rfDto dto = null;
-		boolean flag1=false;
-		boolean flag2=false;
-		try{
-			
+		boolean flag1 = false;
+		boolean flag2 = false;
+		Vector fr_id = new Vector();
+		try {
+
 			pool = DBConnectionMgr.getInstance();
-			
-			sql = "select * from runing_finish_project where pr_id="+pr_id;
+
+			sql = "update finish_project set pr_status=1 where pr_id="
+					+ pr_id;
+			System.out.println("finish_project_업 : " + sql);
 			con = pool.getConnection();
 			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while(rs.next()){
-			String fr_id = rs.getString("fr_id");
-			
-			}
-			sql ="select pr_id from finish_project where pr_id="+pr_id;
-			System.out.println("완료 태이블 검색 : "+sql);
-			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			boolean flag=false;
-			
-			if(rs.next()){
-				flag=true;
-			}
-			if(flag=true){
-			sql= "update finish_project set pr_status=1 set  where pr_id="+pr_id;
-			System.out.println("finish_project_업 : "+sql);
+			pstmt.executeUpdate();
+
+			sql = "update runing_finish_project set pr_status=1, final_end_day=now() where pr_id="
+					+ pr_id;
+			System.out.println("runing_finish_project_업 : " + sql);
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
 			
-			sql = "update runing_finish_project set pr_status=1, end_day=now() where pr_id="+pr_id;
-			System.out.println("runing_finish_project_업 : "+sql);
+			sql = "update app set check1=4 where pr_id="+ pr_id;
+			System.out.println("runing_finish_project_업 : " + sql);
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
-			}
-			
-			
+
 			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, fr_evaluate, fr_pr_comment, pr_status, pr_subject, cl_evaluate, cl_pr_comment,"
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
-					+ "WHERE cl_id ='"+id+"' and pr_status=0 group by pr_id order by pr_id desc ";
-			
-			System.out.println("다시 불러오기: "+sql);
+					+ "WHERE cl_id ='"
+					+ id
+					+ "' and pr_status=0 group by pr_id order by pr_id desc ";
+
+			System.out.println("다시 불러오기: " + sql);
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
@@ -95,21 +87,24 @@ public class cl_Project_Fin_Up implements Command {
 				dto.setFr_comment(rs.getString("fr_pr_comment"));
 				dto.setCl_evaluate(rs.getString("cl_evaluate"));
 				dto.setCl_comment(rs.getString("cl_pr_comment"));
-				dto.setPr_status(rs.getInt("pr_status"));;
+				dto.setPr_status(rs.getInt("pr_status"));
+				;
 				dto.setPr_subject(rs.getString("pr_subject"));
 				dto.setFr_ids(rs.getString("fr_id_count"));
 				dto.setTotal_price(rs.getString("total_price"));
-				
+
 				v.add(dto);
 			}
 			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, fr_evaluate, fr_pr_comment, pr_status, pr_subject, cl_evaluate, cl_pr_comment,"
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
-					+ "WHERE cl_id ='"+id+"' and pr_status=1 group by pr_id order by pr_id desc ";
+					+ "WHERE cl_id ='"
+					+ id
+					+ "' and pr_status=1 group by pr_id order by pr_id desc ";
 			System.out.println(sql);
 			con = pool.getConnection();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
+
 			while (rs.next()) {
 				dto = new rfDto();
 				dto.setPr_id(rs.getInt("pr_id"));
@@ -126,17 +121,17 @@ public class cl_Project_Fin_Up implements Command {
 				dto.setPr_subject(rs.getString("pr_subject"));
 				dto.setFr_ids(rs.getString("fr_id_count"));
 				dto.setTotal_price(rs.getString("total_price"));
-//				dto.setFcheck(rs.getString("fcheck"));
+				// dto.setFcheck(rs.getString("fcheck"));
 				frv.add(dto);
 			}
-			
-		}catch(Exception e){
+
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			pool.freeConnection(con, pstmt, rs);
 		}
 		req.setAttribute("count1", v.size());
-		req.setAttribute("count2", frv.size());		
+		req.setAttribute("count2", frv.size());
 		req.setAttribute("dtoList1", v);
 		req.setAttribute("dtoList2", frv);
 		System.out.println("완료후 불러오기!!");

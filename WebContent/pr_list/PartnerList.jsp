@@ -86,10 +86,19 @@
 								</p>
 								
 								
-							<span class="label label-sm label-partners-availability possible">${dto.skill }</span>
+								
 								<b>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${dto.sogae }
-								</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${dto.age }살
+								
+								</b>
+								
+								이름 : ${dto.name }&nbsp;&nbsp;&nbsp;&nbsp;나이 : ${dto.age }살
+								 <br/>
+								 									 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								 ${dto.sogae }
+								 <br/>
+								 <c:if test="${dto.skill!=null }">
+									<span class="label label-sm label-partners-availability possible"> 가능 기술 : ${dto.skill }</span>
+								</c:if>
 
 							</form>
 						</div>
