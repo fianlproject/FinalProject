@@ -37,7 +37,6 @@ public class skill implements Command {
 		
 		System.out.println("exp 는" + exp + ", mastery는 " + mastery );
 		
-		
 		try {
 
 			pool = DBConnectionMgr.getInstance();
@@ -50,7 +49,37 @@ public class skill implements Command {
 			rs.next();
 			int code = rs.getInt("code");
 			
-			sql = "insert into skill(code, skill, exp, mastery, id) values(?, ?, ?, ?, ?)";            
+			
+			sql = "select skill from members where code ='"+code+"'";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			System.out.println("넣을 때 값 확인"+sql);
+			
+		
+		
+			boolean aaa = false;
+			
+			rs.next();
+			String s = rs.getString("skill");
+	
+			
+			System.out.println(s);
+			
+			if(s.equals("a")){
+				sql = " UPDATE members SET skill = '"+skill+"' WHERE code='"+code+"'";
+
+			}else if(!s.equals("a")){
+				sql = " UPDATE members SET skill =  concat(skill, ',', '"+skill+"') WHERE code='"+code+"'";
+
+			}
+
+				System.out.println(sql);
+				pstmt = con.prepareStatement(sql);
+				pstmt.executeUpdate();
+//멤버에 우선 넣어버려 ㅋ
+			
+				
+			sql = "insert into skill(code, skill, exp, mastery, id) values(?, ?, ?, ?, ?)";           
 	        pstmt = con.prepareStatement(sql);
 	        pstmt.setInt(1, code);
 	        pstmt.setString(2, skill);
@@ -60,9 +89,6 @@ public class skill implements Command {
 	        pstmt.executeUpdate();
 			System.out.println(sql);
 					
-			
-
-			
 		} catch (Exception err) {
 			System.out.println("getBoard() : " + err);
 			err.printStackTrace();

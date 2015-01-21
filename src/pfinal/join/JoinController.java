@@ -54,7 +54,7 @@ public class JoinController implements Command {
 				pool = DBConnectionMgr.getInstance();
 				con = pool.getConnection();
 
-				sql = "INSERT INTO members(id,pw,name,cpcheck,age,cname,tel,gender,pstate,interest,media,sogae) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+				sql = "INSERT INTO members(id,pw,name,cpcheck,age,cname,tel,gender,pstate,interest,media,sogae,skill) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, req.getParameter("id"));
 				pstmt.setString(2, pw);
@@ -68,6 +68,7 @@ public class JoinController implements Command {
 				pstmt.setString(10, "");
 				pstmt.setInt(11, 1);
 				pstmt.setString(12, "");
+				pstmt.setString(13, "a");
 				pstmt.executeUpdate();
 
 			} catch (Exception e) {
@@ -84,7 +85,7 @@ public class JoinController implements Command {
 				pool = DBConnectionMgr.getInstance();
 				con = pool.getConnection();
 
-				sql = "INSERT INTO members(id,pw,name,cpcheck,age,cname,tel,gender,pstate,interest,media,sogae) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+				sql = "INSERT INTO members(id,pw,name,cpcheck,age,cname,tel,gender,pstate,interest,media,sogae,skill) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, req.getParameter("id"));
 				pstmt.setString(2, pw);
@@ -98,6 +99,7 @@ public class JoinController implements Command {
 				pstmt.setString(10, "");
 				pstmt.setInt(11, 1);
 				pstmt.setString(12, "");
+				pstmt.setString(13, "a");
 				pstmt.executeUpdate();
 				
 				sql = "select code from members where id = ?";
