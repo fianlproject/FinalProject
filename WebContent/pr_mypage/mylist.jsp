@@ -41,7 +41,7 @@
 						<h4 class="mywishket-project-heading">내 정보</h4>
 						<div class="submitted-project">
 							<h5 class="submitted-project-heading">
-								<a href="/pfinal/pfinal.do?command=m_career">나의 경력</a>
+								나의 경력&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/pfinal/pfinal.do?command=m_career">추가</a>
 							</h5>
 							<table class="table table-hover">
 								<thead>
@@ -75,9 +75,14 @@
 							<input type="hidden" name="resign" value="${i.resign}">						
 							<input type="hidden" name="joins" value="${i.join}">						
 							<input type="hidden" name="career_index" value="${i.career_index}">						
-							<input type="submit" value="수정" class="btn">
+							<input type="submit" value="수정" class="btn" style="float: left;">
 						</form>
-						수정 / 삭제						
+						<form method="post" action="/pfinal/pfinal.do">
+							<input type="hidden" name="command" value="career_delete">										
+							<input type="hidden" name="career_index" value="${i.career_index}">						
+							<input type="submit" value="삭제" class="btn">
+						</form>
+												
 						</td>
 										</tr>
 									</c:forEach>
@@ -88,7 +93,7 @@
 
 						<div class="proposal-project">
 							<h5 class="proposal-project-heading">
-								<a href="/pfinal/pfinal.do?command=m_skill">나의 보유기술</a>
+								나의 보유기술&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/pfinal/pfinal.do?command=m_skill">추가</a>
 							</h5>
 							<table class="table table-hover">
 								<thead>
@@ -144,9 +149,13 @@
 											<input type="hidden" name="exp" value="${i.exp}">						
 											<input type="hidden" name="skill" value="${i.skill}">																
 											<input type="hidden" name="skill_index" value="${i.skill_index}">						
-											<input type="submit" value="수정" class="btn">
+											<input type="submit" value="수정" class="btn" style="float: left;">
 										</form>
-										수정 / 삭제						
+										<form method="post" action="/pfinal/pfinal.do">
+											<input type="hidden" name="command" value="skill_delete">																										
+											<input type="hidden" name="skill_index" value="${i.skill_index}">						
+											<input type="submit" value="삭제" class="btn">
+										</form>					
 										</td>
 										</tr>
 									</c:forEach>
@@ -157,7 +166,7 @@
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
-								<a href="/pfinal/pfinal.do?command=m_quali">나의 자격증</a>
+								나의 자격증&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/pfinal/pfinal.do?command=m_quali">추가</a>
 							</h5>
 							<table class="table table-hover">
 								<thead>
@@ -167,6 +176,7 @@
 										<th>일련번호</th>
 										<th>발행일</th>
 										<th>수정 및 삭제</th>
+										
 									</tr>
 								</thead>
 								<tbody>
@@ -184,9 +194,13 @@
 												<input type="hidden" name="q_num" value="${i.q_num}">																
 												<input type="hidden" name="q_date" value="${i.q_date}">						
 												<input type="hidden" name="quali_index" value="${i.quali_index}">						
-												<input type="submit" value="수정" class="btn">
-											</form>
-											수정 / 삭제						
+												<input type="submit" value="수정" class="btn" style="float: left;">
+											</form>											
+											<form method="post" action="/pfinal/pfinal.do">
+												<input type="hidden" name="command" value="quali_delete">																	
+												<input type="hidden" name="quali_index" value="${i.quali_index}">						
+												<input type="submit" value="삭제" class="btn">
+											</form>					
 											</td>
 										</tr>
 									</c:forEach>
@@ -197,7 +211,7 @@
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
-								<a href="/pfinal/pfinal.do?command=myschoolchk">나의 학교</a>
+								나의 학교&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/pfinal/pfinal.do?command=myschoolchk">추가</a>
 							</h5>
 
 							<table class="table table-hover">
@@ -223,7 +237,7 @@
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
-								<a href="/pfinal/pfinal.do?command=project">나의 프로젝트</a>
+								나의 프로젝트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/pfinal/pfinal.do?command=project">추가</a>
 							</h5>
 							<table class="table table-hover">
 								<thead>
@@ -314,7 +328,7 @@
 
 						<div class="contract-project">
 							<h5 class="contract-project-heading">
-								<a href="/pfinal/pfinal.do?command=m_sogae">나의 소개</a>
+								나의 소개&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/pfinal/pfinal.do?command=m_sogae">추가</a>
 							</h5>
 							<c:if test="${sogae!=null }">
 							${sogae }

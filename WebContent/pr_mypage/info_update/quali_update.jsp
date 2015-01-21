@@ -70,7 +70,7 @@
 							<div id="sm-group">
 								<div class="control-wrapper">
 									<input class="form-control" id="q_house" name="q_house"
-										maxlength="30" size="30" required="required" type="text" value="q_house">
+										maxlength="30" size="30" required="required" type="text" value="${q_house}">
 								</div>
 							</div>
 						</div>

@@ -1,4 +1,4 @@
-package pfinal.mypage_info.update;
+package pfinal.mypage_info.delete;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -18,7 +18,7 @@ import dto.listDto;
 import dto.mySchoolDto;
 import dto.quDto;
 
-public class quali_up_out implements Command {
+public class quali_delete implements Command {
 	Connection con;
 	PreparedStatement pstmt;
 	ResultSet rs;
@@ -37,12 +37,8 @@ public class quali_up_out implements Command {
 		String sql = null;
 		
 		HttpSession session = req.getSession();
-		String id = (String) session.getAttribute("id");
+		String id = (String) session.getAttribute("id");		
 		
-		String q_name = req.getParameter("q_name");
-		String q_house = req.getParameter("q_house");
-		String q_num = req.getParameter("q_num");
-		String q_date = req.getParameter("q_date");
 		String quali_index = req.getParameter("quali_index");
 		
 		
@@ -51,13 +47,9 @@ public class quali_up_out implements Command {
 			pool = DBConnectionMgr.getInstance();
 			con = pool.getConnection();
 			
-			sql = "update quali set q_name = ? , q_house = ? , q_num = ? , q_date = ? where quali_index = ?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, q_name);
-			pstmt.setString(2, q_house);
-			pstmt.setString(3, q_num);
-			pstmt.setString(4, q_date);
-			pstmt.setString(5, quali_index);			
+			sql = "delete from quali where quali_index = ?";
+			pstmt = con.prepareStatement(sql);			
+			pstmt.setString(1, quali_index);			
 			pstmt.executeUpdate();		
 			
 			sql = "select (to_days(resign)-to_days(joins)) as day , cname , part , position , joins , resign , career_index from career where id = ?";			
