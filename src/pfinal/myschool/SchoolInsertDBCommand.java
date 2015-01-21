@@ -48,18 +48,29 @@ public class SchoolInsertDBCommand implements Command {
 		DBConnectionMgr pool;
 		String sql;
 
-		sql = "insert into myschool(school_id, id, school_state, school_major, school_name) values (?,?,?,?,?);";
 
 		try {
 			pool = DBConnectionMgr.getInstance();
 			con = pool.getConnection();
+			
+			sql = "select code from members where id = ?";
 			pstmt = con.prepareStatement(sql);
-
-			pstmt.setInt(1, schoolnumber);
-			pstmt.setString(2, loginid);
-			pstmt.setString(3, schoolstate);
-			pstmt.setString(4, schoolmajor);
-			pstmt.setString(5, schoolname);
+			pstmt.setString(1, loginid);
+			rs = pstmt.executeQuery();
+			rs.next();
+			int code = rs.getInt("code");
+			
+			
+			sql = "insert into myschool(code,school_id, id, school_state, school_major, school_name) values (?,?,?,?,?,?);";
+			pstmt = con.prepareStatement(sql);
+			
+			
+			pstmt.setInt(1, code);
+			pstmt.setInt(2, schoolnumber);
+			pstmt.setString(3, loginid);
+			pstmt.setString(4, schoolstate);
+			pstmt.setString(5, schoolmajor);
+			pstmt.setString(6, schoolname);
 
 			pstmt.executeUpdate();
 		} catch (Exception e) {

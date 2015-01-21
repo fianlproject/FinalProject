@@ -44,6 +44,7 @@ public class PartnerListCommand implements Command {
 		
 		if(KeyWord==null||KeyWord.isEmpty()){
 			 sql = "select s.skill, m.id, m.sogae, m.age, m.name from final.members m, final.skill s";
+			 System.out.println(sql);
 		}else if(KeyFiled.equals("id")){
 //			sql ="select * from members where "+ KeyFiled
 //					+" like '%"+ KeyWord + "%' ";

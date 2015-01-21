@@ -42,14 +42,23 @@ public class career implements Command {
 
 			pool = DBConnectionMgr.getInstance();
 			con = pool.getConnection();
-			sql = "insert into career values(?, ?, ?, ?, ?, ?)";            
+			
+			sql = "select code from members where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, req.getParameter("id"));
+			rs = pstmt.executeQuery();
+			rs.next();
+			int code = rs.getInt("code");
+			
+			sql = "insert into career values(?, ?, ?, ?, ?, ?, ?)";            
 	        pstmt = con.prepareStatement(sql);
-	        pstmt.setString(1, cname);
-	        pstmt.setString(2, part);
-	        pstmt.setString(3, position);
-	        pstmt.setString(4, id);
-	        pstmt.setString(5, joins);
-	        pstmt.setString(6, resign);
+	        pstmt.setInt(1, code);
+	        pstmt.setString(2, cname);
+	        pstmt.setString(3, part);
+	        pstmt.setString(4, position);
+	        pstmt.setString(5, id);
+	        pstmt.setString(6, joins);
+	        pstmt.setString(7, resign);
 	        pstmt.executeUpdate();
 			System.out.println(sql);
 					

@@ -39,13 +39,22 @@ public class quali implements Command {
 			
 			pool = DBConnectionMgr.getInstance();
 			con = pool.getConnection();
-			sql = "insert into quali values(?,?,?,?,?)";
+			
+			sql = "select code from members where id = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, q_name);
-			pstmt.setString(2, q_house);
-			pstmt.setInt(3, q_num);
-			pstmt.setString(4, q_date);
-			pstmt.setString(5, id);
+			pstmt.setString(1, req.getParameter("id"));
+			rs = pstmt.executeQuery();
+			rs.next();
+			int code = rs.getInt("code");
+			
+			sql = "insert into quali values(?,?,?,?,?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, code);
+			pstmt.setString(2, q_name);
+			pstmt.setString(3, q_house);
+			pstmt.setInt(4, q_num);
+			pstmt.setString(5, q_date);
+			pstmt.setString(6, id);
 			pstmt.executeUpdate();
 			System.out.println(sql+"ÀÚ°ÝÁõ");
 			

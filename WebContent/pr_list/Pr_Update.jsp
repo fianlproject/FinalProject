@@ -13,31 +13,31 @@
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
-	<title>수정하기</title>
-	<link href="css/7911bc0a5c62.css" rel="stylesheet">
-		<link href="css/7e63fa136b7d.css" rel="stylesheet">
-			<link href="css/facebook.css" rel="stylesheet">
-				<link href="css/floating.css" rel="stylesheet">
-					<link href="css/layout_nav.css" rel="stylesheet">
-						<link href="css/map.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+<title>수정하기</title>
+<link href="css/7911bc0a5c62.css" rel="stylesheet">
+	<link href="css/7e63fa136b7d.css" rel="stylesheet">
+		<link href="css/facebook.css" rel="stylesheet">
+			<link href="css/floating.css" rel="stylesheet">
+				<link href="css/layout_nav.css" rel="stylesheet">
+					<link href="css/map.css" rel="stylesheet">
 
-							<style type="text/css">
+						<style type="text/css">
 #sm-group {
 	width: 30%;
 }
 </style>
 
-							<script>
-								$(function() {
-									$("#datepicker").datepicker({
-										changeMonth : true,
-										changeYear : true,
-										showButtonPanel : true,
-										dateFormat : "yy/mm/dd"
-									});
+						<script>
+							$(function() {
+								$("#datepicker").datepicker({
+									changeMonth : true,
+									changeYear : true,
+									showButtonPanel : true,
+									dateFormat : "yy/mm/dd"
 								});
-							</script>
+							});
+						</script>
 </head>
 <%
 	DecimalFormat df = new DecimalFormat("00");
@@ -176,7 +176,6 @@
 																			name="pr_skills" id="pr_skills" value="android"
 																			size=40>android <input type="checkbox"
 																				name="pr_skills" id="pr_skills" value="html" size=40>html
-
 
 																			
 																</div> <span class="help-block">(최대 5개) </span>

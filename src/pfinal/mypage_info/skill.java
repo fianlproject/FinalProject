@@ -42,12 +42,21 @@ public class skill implements Command {
 
 			pool = DBConnectionMgr.getInstance();
 			con = pool.getConnection();
-			sql = "insert into skill values(?, ?, ?, ?)";            
+			
+			sql = "select code from members where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, req.getParameter("id"));
+			rs = pstmt.executeQuery();
+			rs.next();
+			int code = rs.getInt("code");
+			
+			sql = "insert into skill values(?, ?, ?, ?, ?)";            
 	        pstmt = con.prepareStatement(sql);
-	        pstmt.setString(1, skill);
-	        pstmt.setInt(2, exp);
-	        pstmt.setInt(3, mastery);
-	        pstmt.setString(4, id);	    
+	        pstmt.setInt(1, code);
+	        pstmt.setString(2, skill);
+	        pstmt.setInt(3, exp);
+	        pstmt.setInt(4, mastery);
+	        pstmt.setString(5, id);	    
 	        pstmt.executeUpdate();
 			System.out.println(sql);
 					
