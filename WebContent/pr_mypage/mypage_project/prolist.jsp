@@ -129,6 +129,8 @@
 												<input type="hidden" name="command" value="refusal" />
 												<input type="hidden" name="pr_id" value="${i.pr_id}" />
 												<input type="hidden" name="app_id" value="${i.app_id}" />
+												<input type="hidden" name-"pr_subject" value="${i.pr_subject }" />
+												<input type="hidden" name="pr_price" value="${i.hprice }" />
 												<c:if test="${i.check != 0 and i.check == 3 and i.fcheck == 0}">
 													<td>
 														<select name="check">															
@@ -159,7 +161,7 @@
 							</tbody>
 						</table><br/>
 						<a href="/pfinal/pfinal.do?command=free_index" class="btn btn-lg btn-client js-disable-on-click btn-submit">홈으로</a>
-						<a href="/pfinal/pfinal.do?command=frevaluate" class="btn btn-lg btn-client js-disable-on-click btn-submit">진행/완료 프로젝트 보기</a>
+						<a href="/pfinal/pfinal.do?command=frevaluate" class="btn btn-lg btn-client js-disable-on-click btn-submit">완료 프로젝트 보기</a>
 					</div>
 				</div>
 			</div>

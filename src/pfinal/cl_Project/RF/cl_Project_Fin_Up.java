@@ -44,9 +44,26 @@ public class cl_Project_Fin_Up implements Command {
 			
 			pool = DBConnectionMgr.getInstance();
 			
-			sql= "update finish_project set pr_status=1 where pr_id="+pr_id;
-			System.out.println("finish_project_업 : "+sql);
+			sql = "select * from runing_finish_project where pr_id="+pr_id;
 			con = pool.getConnection();
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+			String fr_id = rs.getString("fr_id");
+			
+			}
+			sql ="select pr_id from finish_project where pr_id="+pr_id;
+			System.out.println("완료 태이블 검색 : "+sql);
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			boolean flag=false;
+			
+			if(rs.next()){
+				flag=true;
+			}
+			if(flag=true){
+			sql= "update finish_project set pr_status=1 set  where pr_id="+pr_id;
+			System.out.println("finish_project_업 : "+sql);
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
 			
@@ -54,6 +71,8 @@ public class cl_Project_Fin_Up implements Command {
 			System.out.println("runing_finish_project_업 : "+sql);
 			pstmt = con.prepareStatement(sql);
 			pstmt.executeUpdate();
+			}
+			
 			
 			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day, fr_evaluate, fr_pr_comment, pr_status, pr_subject, cl_evaluate, cl_pr_comment,"
 					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
