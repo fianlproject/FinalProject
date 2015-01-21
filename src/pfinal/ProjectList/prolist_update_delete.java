@@ -68,7 +68,7 @@ public class prolist_update_delete implements Command {
 		pstmt = con.prepareStatement(sql);		
 		pstmt.executeUpdate();
 		
-		sql = "select pr_subject , pr_cntman ,a.pr_id,app_id,cl_con,hday,hprice,nday,nprice,check1,fcheck,readchk,a.cl_id,f_del from app a , list l where a.pr_id = l.pr_id and app_id=?";
+		sql = "select pr_subject , pr_cntman ,a.pr_id,app_id,cl_con,hday,hprice,nday,nprice,check1,a.fcheck,readchk,a.cl_id,f_del from app a , list l where a.pr_id = l.pr_id and app_id=?";
 		pstmt = con.prepareStatement(sql);			
 		pstmt.setString(1, id);		
 		rs = pstmt.executeQuery();
@@ -85,7 +85,7 @@ public class prolist_update_delete implements Command {
 			dto.setNday(rs.getString("nday"));
 			dto.setNprice(rs.getInt("nprice"));
 			dto.setCheck(rs.getInt("check1"));
-			dto.setFcheck(rs.getInt("fcheck"));
+			dto.setFcheck(rs.getInt("a.fcheck"));
 			dto.setReadchk(rs.getInt("readchk"));
 			dto.setCl_id(rs.getString("a.cl_id"));
 			dto.setF_del(rs.getInt("f_del"));
