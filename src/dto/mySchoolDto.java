@@ -7,8 +7,16 @@ public class mySchoolDto {
 	private String schoolmajor;
 	private String schoolstate;
 	private int schoolid;
+	private String myschool_index;
 	
 	
+	
+	public String getMyschool_index() {
+		return myschool_index;
+	}
+	public void setMyschool_index(String myschool_index) {
+		this.myschool_index = myschool_index;
+	}
 	public int getSchoolid() {
 		return schoolid;
 	}

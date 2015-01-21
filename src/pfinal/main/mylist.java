@@ -44,7 +44,7 @@ public class mylist implements Command {
 
 			pool = DBConnectionMgr.getInstance();
 			con = pool.getConnection();
-			sql = "select (to_days(resign)-to_days(joins)) as day , cname , part , position , joins , resign from career where id = ?";			
+			sql = "select (to_days(resign)-to_days(joins)) as day , cname , part , position , joins , resign , career_index from career where id = ?";			
 			pstmt = con.prepareStatement(sql);			
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -73,6 +73,7 @@ public class mylist implements Command {
 				}
 				list.setJoin(rs.getString("joins"));
 				list.setResign(rs.getString("resign"));
+				list.setCareer_index(rs.getString("career_index"));
 				d_day.add(list);
 			}
 			
@@ -85,6 +86,7 @@ public class mylist implements Command {
 				list2.setSkill(rs.getString("skill"));
 				list2.setExp(rs.getInt("exp"));
 				list2.setMastery(rs.getInt("mastery"));
+				list2.setSkill_index(rs.getString("skill_index"));
 				skills.add(list2);
 			}
 			
@@ -123,6 +125,7 @@ public class mylist implements Command {
 				qdto.setQ_house(rs.getString("q_house"));
 				qdto.setQ_num(rs.getInt("q_num"));
 				qdto.setQ_date(rs.getString("q_date"));
+				qdto.setQuali_index(rs.getString("quali_index"));
 				qv.add(qdto);
 				
 				System.out.println(qdto.getQ_date()+"자격증날짜");
@@ -183,6 +186,7 @@ public class mylist implements Command {
 					dto.setSchoolmajor(rs.getString("school_major"));
 					dto.setSchoolstate(rs.getString("school_state"));
 					dto.setSchoolid(rs.getInt("school_id"));
+					
 					v.add(dto);
 					System.out.println();
 				}

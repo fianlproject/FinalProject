@@ -59,7 +59,7 @@
 											<td>${i.cname}</td>
 											<td>${i.part}</td>
 											<td>${i.position}</td>
-											<td><c:if test="${i.year != 0 }">
+						<td><c:if test="${i.year != 0 }">
 							${i.year}년
 						</c:if> <c:if test="${i.month != 0 }">
 							${i.month}월
@@ -74,6 +74,7 @@
 							<input type="hidden" name="position" value="${i.position}">						
 							<input type="hidden" name="resign" value="${i.resign}">						
 							<input type="hidden" name="joins" value="${i.join}">						
+							<input type="hidden" name="career_index" value="${i.career_index}">						
 							<input type="submit" value="수정" class="btn">
 						</form>
 						수정 / 삭제

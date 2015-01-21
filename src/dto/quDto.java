@@ -5,7 +5,15 @@ public class quDto {
 	private String q_house;
 	private int q_num;
 	private String q_date;
+	private String quali_index;
 	
+	
+	public String getQuali_index() {
+		return quali_index;
+	}
+	public void setQuali_index(String quali_index) {
+		this.quali_index = quali_index;
+	}
 	public String getQ_name() {
 		return q_name;
 	}

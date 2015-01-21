@@ -33,7 +33,21 @@ public class listDto {
 	private int fcheck;
 	private String resign;
 	private String join;
+	private String Skill_index , career_index;
 	
+	
+	public String getSkill_index() {
+		return Skill_index;
+	}
+	public void setSkill_index(String skill_index) {
+		Skill_index = skill_index;
+	}
+	public String getCareer_index() {
+		return career_index;
+	}
+	public void setCareer_index(String career_index) {
+		this.career_index = career_index;
+	}
 	public String getResign() {
 		return resign;
 	}

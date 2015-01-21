@@ -36,6 +36,7 @@ public class career_up_in implements Command {
 		String position = req.getParameter("position");
 		String joins = req.getParameter("joins");
 		String resign = req.getParameter("resign");
+		String career_index = req.getParameter("career_index");
 		
 		
 		try {
@@ -56,6 +57,7 @@ public class career_up_in implements Command {
 			req.setAttribute("position", position);
 			req.setAttribute("joins", joins);
 			req.setAttribute("resign", resign);
+			req.setAttribute("career_index", career_index);
 			
 			
 

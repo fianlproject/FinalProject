@@ -60,6 +60,7 @@
 
 				<form method="post" action="/pfinal/pfinal.do">
 					<input type="hidden" name="command" value="career_update" />
+					<input type="hidden" name="career_index" value="${career_index}" />
 					<div class="content-header">
 						<div class="form-group">
 							<label class="control-label required" for="title"><span>*</span>회사명</label>
