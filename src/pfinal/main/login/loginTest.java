@@ -153,7 +153,7 @@ public class loginTest implements Command {
 		return "client_index.jsp";
 	}
 	else{
-		return "relogin.jsp";
+		return "reindex.jsp";
 	}
 	
 	
