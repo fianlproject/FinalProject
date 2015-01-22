@@ -1,11 +1,44 @@
 <%@page contentType="text/html;charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="java.net.URL"%>
+<%@ page import="java.util.List"%>
+<%@ page import="org.xml.sax.InputSource"%>
+<%@ page import="org.jdom.Document" %>
+<%@ page import="org.jdom.Element" %>
+<%@ page import="org.jdom.input.SAXBuilder" %>
+<%
+    List list = null;
+ 
+    try{
+        SAXBuilder parser = new SAXBuilder();
+        parser.setValidation(false);
+        parser.setIgnoringElementContentWhitespace(true);
+        //URL url = new URL("http://jsp.picomax.net/rss/sample.xml");
+        //URL url = new URL("http://rss.hankooki.com/news/hk00_list.xml");
+        //URL url = new URL("http://rss.etnews.com/Section901.xml");
+        String rss = (String)session.getAttribute("rss");       
+        URL url = new URL(rss);
+        InputSource is = new InputSource(url.openStream());
+        Document doc = parser.build(is);
+ 
+        Element root = doc.getRootElement();
+        Element channel = root.getChild("channel");
+        list = channel.getChildren("item");
+    }catch(Exception e){
+        e.getStackTrace();
+    }
+%>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
-
+<script>
+function fnMedia() {
+	window.open("/pfinal/pfinal.do?command=m_media", "",
+			"width=600, height=300 , scrollbars=no,  resizable=no");
+}	
+</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -280,6 +313,46 @@
 			</div>
 		</div>
 	</section>
+	
+	   <!-- About Section -->
+    <section id="news" class="bg-darkest-gray">
+        <div class="container">
+            <div class="row">
+            	
+                <div class="col-lg-12 text-left" >
+
+                	 <h2 class="section-heading btn-xl2">오늘의 뉴스(${media_name}) <button class="btn btn-xl3" onclick="fnMedia()">신문사 변경</button></h2>
+                	
+                <table class="table">                	
+					<%	
+						int size = list.size(); 
+						if(list.size()>50){ 
+							size = 50;							
+						}
+					    if(list!=null){
+					    	
+					        for(int i=0; i<size; i++){
+					            Element el = (Element) list.get(i);
+					%>
+					<tr>
+					<td><b class="text-mute"><%= i+1 %></b></td>
+						<td class="timeline-inverted"><a class="text-mute" href='<%=el.getChildText("link")%>' target=_news> <%=el.getChildText("title")%></a></td>
+						</tr>
+							<%
+					        }
+					    }else{
+					%>
+					<tr>
+							<td>잠시 후 다시 접속하여 주십시오.</td>
+							</tr>
+							<%
+					    }
+					%>
+					</table>
+                </div>
+            </div>           
+        </div>
+    </section>
 				
 
 </body>
