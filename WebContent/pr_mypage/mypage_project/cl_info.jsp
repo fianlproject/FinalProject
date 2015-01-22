@@ -39,6 +39,8 @@
 </head>
 <br />
 <body class="project-list">
+${cl_id }
+${chk }
 	<div id="wrap1">
 		<div class="page">
 			<div class="content">
@@ -46,6 +48,7 @@
 					<h3 class="header-text">
 						지원자정보 <small class="small-text">지원자의 상세정보입니다.</small>
 					</h3>
+		
 				</div>
 
 				<div class="content-header">
@@ -381,12 +384,12 @@
 				<!-- Plugin JavaScript -->
 				<script
 					src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-				<script src="js/classie.js"></script>
+		
 				<script src="js/cbpAnimatedHeader.js"></script>
 
 				<!-- Contact Form JavaScript -->
 				<script src="js/jqBootstrapValidation.js"></script>
-				<script src="js/contact_me.js"></script>
+
 
 				<!-- Custom Theme JavaScript -->
 				<script src="js/agency.js"></script>
@@ -394,6 +397,8 @@
 				<form method="post" action="/pfinal/pfinal.do">
 					<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="client_index">홈으로</button>
 			</form>
+			
+			
 					</div>
 				</div>
 			</div>

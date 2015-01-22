@@ -324,6 +324,7 @@ public class CommandFactory {
 			return new Friend_add();
 		if(cmd.equals("resfriend"))
 			return new Friend_add_confrim();
+	
 		
 		//¸Þ¼¼Áö
 		if(cmd.equals("message"))

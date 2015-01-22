@@ -159,14 +159,6 @@ public class cl_prolist_info implements Command {
 			System.out.println("마이리스트 소개"+sogae);
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -180,7 +172,7 @@ public class cl_prolist_info implements Command {
 		req.setAttribute("vjoin", vjoin);
 		req.setAttribute("vector", v);
 		req.setAttribute("sogae", sogae);
-		
+		req.setAttribute("cl_id", id);
 
 		String chk = "no";
 

@@ -97,7 +97,10 @@
 								 ${dto.sogae }
 								 <br/>
 								 <c:if test="${dto.skill!=null }">
-									<span class="label label-sm label-partners-availability possible"> 가능 기술 : ${dto.skill }</span>
+									<span class="label label-sm label-partners-availability possible"> 가능 기술 :</span>&nbsp;&nbsp;&nbsp;&nbsp;
+								 <c:forTokens items="${dto.skill }" delims="," var="skill">
+									<span class="label label-sm label-partners-availability possible">  ${skill }</span>
+									</c:forTokens>
 								</c:if>
 
 							</form>
