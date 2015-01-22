@@ -53,33 +53,10 @@ public class skill_delete implements Command {
 			sql = "delete from skill where skill_index = ?";
 			pstmt = con.prepareStatement(sql);			
 			pstmt.setString(1, skill_index);			
-			pstmt.executeUpdate();	
-			
-			sql = "select code from members where id = ?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			rs.next();
-			int code = rs.getInt("code");
-			
-			String s_skill = "";
-			sql = "select skill from skill where code = ?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, code);
-			rs = pstmt.executeQuery();	
-			while(rs.next()){
-				s_skill += (rs.getString("skill")+',');
-				
-			}
-			System.out.println("¸â¹ö½º¿¡ ³ÖÀ»²¨¾ß"+s_skill);
+			pstmt.executeUpdate();			
 			
 			
-			sql = " UPDATE members SET skill = '"+s_skill+"' WHERE code='"+code+"'";
 
-			System.out.println(sql);
-			pstmt = con.prepareStatement(sql);
-			pstmt.executeUpdate();
-			
 			
 			sql = "select (to_days(resign)-to_days(joins)) as day , cname , part , position , joins , resign , career_index from career where id = ?";			
 			pstmt = con.prepareStatement(sql);			

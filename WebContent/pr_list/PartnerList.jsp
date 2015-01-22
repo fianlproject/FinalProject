@@ -84,7 +84,12 @@
 										<h4 class="project-title">${dto.id}</h4>
 									</button>
 								</p>
-						
+								
+								
+								
+								<b>
+								
+								</b>
 								
 								이름 : ${dto.name }&nbsp;&nbsp;&nbsp;&nbsp;나이 : ${dto.age }살
 								 <br/>
@@ -92,17 +97,11 @@
 								 ${dto.sogae }
 								 <br/>
 								 <c:if test="${dto.skill!=null }">
-									<span class="label label-sm label-partners-availability possible"> 가능 기술 :</span>
-									 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								 <c:forTokens items="${dto.skill}" delims="," var="skill">
-									<span class="label label-sm label-partners-availability possible"> ${skill }</span>
-								 </c:forTokens>
+									<span class="label label-sm label-partners-availability possible"> 가능 기술 : ${dto.skill }</span>
 								</c:if>
 
 							</form>
-							
 						</div>
-						
 
 						<hr size="10">
 					</c:if>
