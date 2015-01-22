@@ -84,12 +84,7 @@
 										<h4 class="project-title">${dto.id}</h4>
 									</button>
 								</p>
-								
-								
-								
-								<b>
-								
-								</b>
+						
 								
 								이름 : ${dto.name }&nbsp;&nbsp;&nbsp;&nbsp;나이 : ${dto.age }살
 								 <br/>
@@ -105,7 +100,14 @@
 								</c:if>
 
 							</form>
+							<form method="post" action="/pfinal/pfinal.do">
+								<input type="hidden" name="friend_id" value="${dto.id}">
+									<div style="float: right">
+										<button class="btn" name="command" value="notfriendmsgwrite">메시지 보내기</button>
+									</div>
+							</form>
 						</div>
+						
 
 						<hr size="10">
 					</c:if>

@@ -61,6 +61,7 @@ import pfinal.message.Message_Read_Detail;
 import pfinal.message.Message_Upload;
 import pfinal.message.Message_Write;
 import pfinal.message.Message_Write_Detail;
+import pfinal.message.NotFriendmsgwrite;
 import pfinal.message.PrivateMessage_Upload;
 import pfinal.message.PrivateMessage_Write;
 import pfinal.mypage_info.career;
@@ -342,8 +343,9 @@ public class CommandFactory {
 			return new PrivateMessage_Write();
 		}if(cmd.equals("privatemessageupload")){
 			return new PrivateMessage_Upload();
-		}
-		
+		}else if(cmd.equals("notfriendmsgwrite"))
+			return new NotFriendmsgwrite();
+			
 		//학교등록
 		else if(cmd.equals("schoolsc")){
 			return new SchoolResultCommand();
