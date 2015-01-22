@@ -1,4 +1,6 @@
 <%@page contentType="text/html;charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -72,10 +74,6 @@
 					
 	                    </li>
 	                    <li>
-	                    	<button class="btn btn-link pl" name="command" value="evaluate" >프로젝트임시2</button>
-					
-	                    </li>
-	                    <li>
 	                        <a class="page-scroll" href="#contact">임시3</a>
 	                    </li>
 	                </ul>
@@ -98,44 +96,193 @@
         </div>
     </header>
 
-    <!-- Services Section -->
-    <section id="services">
+ <body class="project-list">
+
+ <!-- About Section -->
+    <section id="news" >
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">프로젝트 조회</h4>
-                    <p class="text-muted">설명</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">연결</h4>
-                    <p class="text-muted">설명1</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">제목2</h4>
-                    <p class="text-muted">설명2</p>
-                </div>
-            </div>
-        </div>
-    </section>
+				<c:if test="${!empty prolist }">
+				<table class="table">
+						<thead>
+						<thead>
+							<tr>
+								<td colspan="6" align="center" style="font-size: large; background-color: green">협상중 프로젝트 목록</td>
+							</tr>
+							<tr>
+								<th>지원자</th>
+								<th>프로젝트</th>
+								<th>희망금액</th>
+								<th>희망기간</th>
+								<th>지원내용</th>
+								<th>지출금액</th>
+								<th>예상기간</th>
+								<th>상태</th>							
+								<th>확인</th> 							
+							</tr>
+							</thead>
+							<tbody>
+								<c:forEach var="i" items="${prolist}">
+									<c:if test="${i.cl_del == 0 }">
+										<tr>
+											<c:if test="${i.f_del == 0}">
+												<td>
+													<button type="submit" class="btn">${i.app_id}</button>
+												</td>
+											</c:if>
+											<c:if test="${i.f_del == 1 }">
+												<td>${i.app_id}</td>												
+											</c:if>
+												<td>${i.pr_subject}</td>
+												<td><fmt:formatNumber value="${i.hprice}" type="currency" /></td>
+												<td>${i.hday}일</td>
+												<td>${i.app_con}</td>
+												<td><fmt:formatNumber value="${i.nprice}" type="currency" /></td>
+												<td>${i.nday}일</td>
+												<c:if test="${i.check==0 }">
+												<td>지원요청</td>
+												</c:if> 
+												<c:if test="${i.check==0 }">
+												<td>협상중</td>
+												</c:if> 
+												<c:if test="${i.check==2 }">
+												<td>거절</td>
+												</c:if> 
+												<c:if test="${i.check==3 and i.fcheck == 0 }">
+												<td>프리랜서 승인 대기중</td>
+												</c:if> 
+												<c:if test="${i.check==3 and i.fcheck == 1}">
+												<td>승인</td>
+												</c:if> 
+												<c:if test="${i.check==4}">
+												<td>협상 거절</td>
+												</c:if>
+												<c:if test="${i.f_del == 1 and i.check != 4}">
+												<td>지원자가 지원을 취소한 상태 입니다.</td>
+											</c:if>
+										</tr>									
+									</c:if>
+								</c:forEach>
+							</tbody>
+						</table>
+				</c:if>
+				<c:if test="${empty prolist}">
+					<table class="table">
+						<thead>
+						<thead>
+							<tr>
+								<td colspan="6" align="center" style="font-size: x-large;">협상중 프로젝트 목록</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="6" align="center" style="font-size: large;">협상중인 프로젝트가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</c:if>
+				<br/><br/><br/>
+				<c:if test="${!empty dtoList1 }">
+				<table class="table">
+						<thead>
+						<thead>
+							<tr>
+								<td colspan="6" align="center" style="font-size: x-large; background-color: #3ebaac;">진행 프로젝트 목록</td>
+							</tr>
+							<tr>
+								<th>제목</th>
+								<th>금액</th>
+								<th>지원</th>
+								<th>등록일</th>
+								<th>계약기간</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach items="${dtoList1}" var="dto" varStatus="status">
+							<tr>
+								<td>${dto.pr_subject }</td>
+								<td><fmt:formatNumber value="${dto.total_price}" type="currency" /></td> 
+								<td>${dto.fr_ids }명</td>
+								<td>${dto.start_day}</td>
+								<td>${dto.total_day}일</td>
+							</tr>
+						</c:forEach> 	
+						</tbody>
+				</table>
+				</c:if>
+				<c:if test="${empty dtoList1}">
+					<table class="table table-hover">
+						<thead>
+						<thead>
+							<tr>
+								<td colspan="6" align="center" style="font-size: x-large;">진행중 프로젝트 목록</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="6" align="center" style="font-size: large;">진행중인 프로젝트가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</c:if>
+				<br/><br/><br/>
+				<c:if test="${!empty dtoList2 }">
+					<table class="table">
+						<thead>
+						<thead>
+							<tr>
+								<td colspan="6" align="center" style="font-size: x-large; background-color: #ff0000; color: white;">완료 프로젝트 목록</td>
+							</tr>
+							<tr>
+								<th>제목</th>
+								<th>금액</th>
+								<th>지원</th>
+								<th>계약기간</th>
+								<th>등록일</th>
+								<th>마감일</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach items="${dtoList2}" var="dto" varStatus="status">
+							<tr>
+							 	<td>${dto.pr_subject }</td>
+								<td><fmt:formatNumber value="${dto.total_price}" type="currency" /></td>
+								<td>${dto.fr_ids }명</td>
+								<td>${dto.total_day}일</td>
+								<td>${dto.start_day}</td>
+								<td>${dto.end_day}</td>
+							</tr>
+							<input type="hidden" name="count" value="${status.count }"	/>
+							<input type="hidden" name="pr_id" id="pr_id" value="${dto.pr_id}" />
+							<input type="hidden" name="pr_subject" id="pr_subject" value="${dto.pr_subject }" />
+						</c:forEach> 
+						</tbody>
+					</table>
+				</c:if>
+				<c:if test="${empty dtoList2}">
+					<table class="table table-hover">
+						<thead>
+						<thead>
+							<tr>
+								<td colspan="6" align="center" style="font-size: x-large;">완료된 프로젝트 목록</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="6" align="center" style="font-size: x-large;">완료된 프로젝트가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</c:if>
+				<form action="/pfinal/pfinal.do?command=evaluate" method="post">
+					<input type="submit" value="내프로젝트" />
+				</form>
+			</div>
+		</div>
+	</section>
+				
 
+</body>
  
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
