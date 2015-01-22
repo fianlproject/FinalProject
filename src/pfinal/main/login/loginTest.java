@@ -16,6 +16,7 @@ import kit.DBConnectionMgr;
 import kit.Encode;
 import dto.MessageDto;
 import dto.ProjectDto;
+import dto.proDto;
 import dto.rfDto;
 
 public class loginTest implements Command {
@@ -47,14 +48,14 @@ public class loginTest implements Command {
 		String pw = req.getParameter("pw");
 		pw = Encode.encrypt(pw);
 		ProjectDto pDto = null;
-		boolean flag = false;
-		Vector msg = new Vector();
 		int count = 0;
+		Vector msg = new Vector();
 		Vector v = new Vector();
 		Vector frv = new Vector();
+		Vector pro = new Vector();
 		rfDto dto = null;
-		// rfDto frdto = null;
 
+		boolean flag = false;
 		boolean flag1 = false;
 		boolean flag2 = false;
 		try {
@@ -137,7 +138,7 @@ public class loginTest implements Command {
 			 */
 
 			sql = "select pr_id, fr_id, cl_id, fin_price, start_day, end_day,fr_evaluate, fr_pr_comment, pr_status, pr_subject, cl_evaluate, cl_pr_comment,"
-					+ "(to_days(end_day)-to_days(start_day))as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
+					+ "to_days(start_day)-to_days(now())as total, count(pr_id)as fr_id_count, sum(fin_price)as total_price From runing_finish_project "
 					+ "WHERE cl_id ='"
 					+ id
 					+ "' and pr_status=0 group by pr_id order by pr_id desc ";
@@ -194,7 +195,38 @@ public class loginTest implements Command {
 				// dto.setFcheck(rs.getString("fcheck"));
 				frv.add(dto);
 			}
-
+			
+			sql = "select pr_subject , pr_cntman from list where cl_id = '"+id+"'";
+			System.out.println("cl_prolist_test : " + sql);
+			pstmt = con.prepareStatement(sql);			
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			String sub123 = rs.getString("pr_subject");
+			
+			sql = "select pr_subject , a.pr_id,app_id,app_con,hday,hprice,nday,nprice,check1,a.fcheck,readchk,f_del from app a , "
+					+ "list l where a.pr_id = l.pr_id and a.cl_id=? and pr_subject = ?";
+			pstmt = con.prepareStatement(sql);			
+			pstmt.setString(1, id);		
+			pstmt.setString(2, sub123);		
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				proDto pdto = new proDto();
+				pdto.setPr_subject(rs.getString("pr_subject"));			
+				pdto.setPr_id(rs.getInt("pr_id"));
+				pdto.setApp_id(rs.getString("app_id"));
+				pdto.setApp_con(rs.getString("app_con"));
+				pdto.setHday(rs.getString("hday"));
+				pdto.setHprice(rs.getInt("hprice"));
+				pdto.setNday(rs.getString("nday"));
+				pdto.setNprice(rs.getInt("nprice"));
+				pdto.setCheck(rs.getInt("check1"));
+				pdto.setFcheck(rs.getInt("fcheck"));
+				pdto.setReadchk(rs.getInt("readchk"));
+				pdto.setF_del(rs.getInt("f_del"));
+				pro.add(pdto);		
+			}
 		} catch (Exception err) {
 			err.printStackTrace();
 		} finally {
@@ -207,6 +239,11 @@ public class loginTest implements Command {
 			req.setAttribute("msg", count);
 			return "free_index.jsp";
 		} else if ((cpcheck == 1 && pw1.equals(pw))) {
+			req.setAttribute("count1", v.size());
+			req.setAttribute("count2", frv.size());
+			req.setAttribute("dtoList1", v);
+			req.setAttribute("dtoList2", frv);
+			req.setAttribute("prolist", pro);
 			return "client_index.jsp";
 		} else {
 			return "reindex.jsp";
