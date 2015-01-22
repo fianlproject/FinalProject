@@ -87,6 +87,8 @@ $(function() {
 
 						<script type="text/javascript"
 							src="//apis.daum.net/maps/maps3.js?apikey=3d9835e43d08f616d89784b77f22a468&libraries=services"></script>
+							<!-- 3d9835e43d08f616d89784b77f22a468 -->
+							<!-- a34d02ece8c5eef0e1ec0707707e38f0 내꺼 -->
 						<script type="text/javascript" src="/pfinal/js/map.js"></script>
 						<form enctype="multipart/form-data" name="pr_write" method="post"
 							action="/pfinal/pfinal.do?command=prwriteProc">

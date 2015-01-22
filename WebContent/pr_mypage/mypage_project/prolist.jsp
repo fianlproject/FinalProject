@@ -163,8 +163,10 @@
 								</c:forEach>
 							</tbody>
 						</table><br/>
-						<a href="/pfinal/pfinal.do?command=free_index" class="btn btn-lg btn-client js-disable-on-click btn-submit">홈으로</a>
-						<a href="/pfinal/pfinal.do?command=frevaluate" class="btn btn-lg btn-client js-disable-on-click btn-submit">완료 프로젝트 보기</a>
+						<form method="post" action="/pfinal/pfinal.do">
+								<Button class="btn btn-lg btn-client js-disable-on-click btn-submit" name="command" value="frevaluate">완료 프로젝트 보기</Button>
+								<Button class="btn btn-lg btn-default js-disable-on-click" name="command" value="mylist">마이리스트</Button>
+							</form>
 					</div>
 				</div>
 			</div>

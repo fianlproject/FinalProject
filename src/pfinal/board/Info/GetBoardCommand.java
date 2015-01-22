@@ -74,7 +74,7 @@ public class GetBoardCommand implements Command {
 				dto.setPr_end(rs.getString("pr_end"));
 				dto.setPr_needman(rs.getInt("pr_needman"));
 				dto.setPr_cntman(rs.getInt("pr_cntman"));
-				dto.setC_name(rs.getString("c_name"));
+				session.setAttribute("c_name",rs.getString("c_name"));
 				dto.setPr_photo(rs.getString("pr_photo"));
 				dto.setPr_skill(pr_skill);
 				System.out.println(rs.getString("day_cha"));

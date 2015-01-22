@@ -17,6 +17,7 @@
 <title>Insert title here</title>
 
 </head>
+<br/>
 <body class="project-list">
 
 	
@@ -111,15 +112,14 @@
 						완료된 프로젝트가 없습니다.
 					</h3>
 				</c:if>
-				</section>
-			</div>
+				<br/>
+				<form method="post" action="/pfinal/pfinal.do">
+				<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="frhome" >홈으로</button>
+				</form>
+			</section>
 		</div>
 	</div>
-			<div align="center">
-				<form method="post" action="/pfinal/pfinal.do">
-				<button class="btn btn-default pl" name="command" value="frhome" >홈으로</button>
-				</form>
-				</div>
+</div>
 	<script>
 	function KeyWordCheck() {
 		if (document.search.keyWord.value == "") {
