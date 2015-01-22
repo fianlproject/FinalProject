@@ -56,8 +56,11 @@ border-radius: 5px;
 					<div class="form-group">
 						<a href="/pfinal/pfinal.do?command=project"
 							class="btn btn-lg btn-client js-disable-on-click btn-submit">프로젝트
-							등록</a>
-						<a href="/pfinal/pfinal.do?command=free_index"
+							등록</a> <a href="/pfinal/pfinal.do?command=friendlist"
+							class="btn btn-lg btn-client js-disable-on-click btn-submit">친구목록</a>
+						<a href="/pfinal/pfinal.do?command=message"
+							class="btn btn-lg btn-client js-disable-on-click btn-submit">내
+							메시지함</a> <a href="/pfinal/pfinal.do?command=free_index"
 							class="btn btn-lg btn-default js-disable-on-click">홈으로</a>
 					</div>
 				</div>

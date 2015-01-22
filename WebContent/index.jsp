@@ -93,7 +93,7 @@ function fnJoin() {
         <div class="container">
             <div class="intro-text">
                 
-              <img src="/pfinal/img/intro_logo_2.png"/>
+              <img src="/pfinal/img/intro_logo.png"/>
                 
             </div>
         </div>
