@@ -27,8 +27,6 @@
 
 </head>
 <body class="project-list">
-
-	이곳은 리스트 입니다 ㅋ
 	<%
 	String keyField = request.getParameter("keyField");
 	String keyWord = request.getParameter("keyWord");

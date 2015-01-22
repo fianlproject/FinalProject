@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//Ddiv HTML 4.01 divansitional//EN" "http://www.w3.org/div/html4/loose.ddiv">
 <html>
@@ -85,20 +86,19 @@ border-radius: 5px;
 												<c:if test="${dtoGetBoard.pr_state eq 'Y'}">
 													<th>마감입니다.</th>
 												</c:if>
-
-												<th>예상비용 :</th>
-												<td>${dtoGetBoard.pr_price}</td>
-												<th>필요인원 :</th>
-												<td>${dtoGetBoard.pr_needman }</td>
+												
+												<th>예상비용 :<fmt:formatNumber value="${dtoGetBoard.pr_price}" type="currency" /></th>
+												<th></th>
+												<th>필요인원 :${dtoGetBoard.pr_needman }명</th>
+												
 											</tr>
 											<tr>
-												<th>회사명 :${dtoGetBoard.c_name }</th>
+												<th>회사명 :${c_name }</th>
 												<th>관련기술 : ${dtoGetBoard.pr_skill }</th>
 
 												<!--  <td><c:forEach items="${dtoGetBoard.pr_skills}" var="dto">${dto}   </c:forEach></td>-->
 												<td></td>
-												<th>지원인원 :</th>
-												<td>${dtoGetBoard.pr_cntman}</td>
+												<th>지원인원 :${dtoGetBoard.pr_cntman}명 </th>
 											</tr>
 										</tbody>
 									</table>
@@ -174,12 +174,7 @@ border-radius: 5px;
 											staticMapContainer, staticMapOption);
 								</script> --%>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+						
 
 
 	<c:if test="${id == dtoGetBoard.cl_id }">
@@ -213,7 +208,12 @@ border-radius: 5px;
 		 <input
 				type="hidden" value="	${dtoGetBoard.pr_id }" name="pr_id" />
 		</form>
-
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 		<!-- 

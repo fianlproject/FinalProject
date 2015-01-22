@@ -8,6 +8,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>소개글쓰기</title>
@@ -25,6 +33,10 @@
 
 </head>
 
+<script type="text/javascript"
+	src="//apis.daum.net/maps/maps3.js?apikey=3d9835e43d08f616d89784b77f22a468&libraries=services"></script>
+<script type="text/javascript" src="/pfinal/js/map.js"></script>
+							
 
 
 <br />
@@ -38,36 +50,23 @@
 						${id }님의 자기소개를 해주세요. 
 					</h3>
 				</div>
-
-				<div class="content-header">
-					<div class="content-inner">
-
-
-						<div class="map_wrap">
-
-
-
-							<script type="text/javascript"
-								src="//apis.daum.net/maps/maps3.js?apikey=3d9835e43d08f616d89784b77f22a468&libraries=services"></script>
-							<script type="text/javascript" src="/pfinal/js/map.js"></script>
-							
-							
 							<form name="sogae" method="post"
 								action="/pfinal/pfinal.do?command=sogaeProc">
-						
+				<div class="content-header">
+					<div class="form-group">
 
 								<div class="form-group description-form-group ">
 									<label class="control-label required" for="description"><span>*</span>자기소개 내용</label>
 									<div class="control-wrapper">
 										<textarea autocomplete="off" class="form-control" cols="40"
-											id="mysogae" name="mysogae" required="" rows="25" >${nowsogae }</textarea>
+											id="mysogae" name="mysogae" required="" rows="25">${nowsogae }</textarea>
 										<span class="help-block"><p class="text-danger">
 											자신을 자세하게 소개해주세요.
 											</p></span>
 									</div>
 								</div>
+							</div>
 
-		
 								<div class="form-group">
 									<div class="btn-wrapper">
 										<input

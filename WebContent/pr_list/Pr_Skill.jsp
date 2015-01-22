@@ -22,14 +22,7 @@
 <link href="css/floating.css" rel="stylesheet">
 <link href="css/layout_nav.css" rel="stylesheet">
 <link href="css/map.css" rel="stylesheet">
-<style type="text/css">
-.btn-lg, .btn-group-lg > .btn {
-padding: 7px 7px;
-font-size: 15px;
-line-height: 1.33;
-border-radius: 5px;
-}
-</style>
+
 </head>
 <br />
 <body class="project-list">
@@ -110,11 +103,12 @@ border-radius: 5px;
 						<div class="form-group">
 							<input type="submit" value="다음" class="btn btn-lg btn-client js-disable-on-click btn-submit">
 					
-						<a href="/pfinal/pfinal.do?command=client_index"
-							class="btn btn-lg btn-default js-disable-on-click">홈으로</a>
-					</div>
-					</div>
+					</form><br/><br/>
+					<form method="post" action="/pfinal/pfinal.do">
+					<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="client_index">홈으로</button>
 					</form>
+					</div>
+					</div>
 				</div>
 			</div>
 		</div>

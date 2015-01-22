@@ -62,7 +62,7 @@ public class inter implements Command {
 			pool.freeConnection(con, pstmt, rs);
 		}
 	
-		return "free_index.jsp";
+		return "pr_mypage/mylist.jsp";
 
 	}
 }

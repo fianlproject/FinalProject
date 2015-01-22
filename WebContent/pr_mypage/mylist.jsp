@@ -442,10 +442,13 @@ color: #5D5D5D;
                   <h3 class="activity-heading">정보 입력</h3>
                   <div id="activity-body">
                      <ul class="activity-unit-list">
+                     <li class="empty-activity activity-unit"><a
+                           href="/pfinal/pfinal.do?command=m_sogae">나의 소개</a></li>
                         <li class="empty-activity activity-unit"><a
                            href="/pfinal/pfinal.do?command=m_inter">관심기술</a></li>
                         <li class="empty-activity activity-unit"><a
                            href="/pfinal/pfinal.do?command=prolist">지원 프로젝트 목록 임시</a></li>
+                           
                      </ul>
                   </div>
                </div>

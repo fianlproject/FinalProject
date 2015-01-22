@@ -211,14 +211,13 @@ $(function() {
 								<div class="btn-wrapper">
 									<input
 										class="btn btn-lg btn-client js-disable-on-click btn-submit"
-										value="프로젝트 등록" type="submit" onclick="ok()"> <input
-										class="btn btn-lg btn-default js-disable-on-click"
-										name="save_for_later" value="취소" type="button">
-								</div>
-							</div>
-
-
-						</form>
+										value="프로젝트 등록" type="submit" onclick="ok()"> 
+						</form><br/><br/>
+					<form method="post" action="/pfinal/pfinal.do">
+					<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="prwrite">취소</button>
+					</form>
+					</div>
+					</div>
 					</div>
 				</div>
 
