@@ -209,8 +209,9 @@ width: 30%;
 			Django
 		</span>
 	</div><br/>
-	<span ><button class="btn btn-lg btn-client" id="p5-portfolio-cancel-btn">취소</button>
-		<input class="btn btn-lg btn-default" type="submit" id="p5-submit-portfolio-btn" value="추가">
+	<span ><button class="btn btn-lg btn-client" id="p5-portfolio-cancel-btn">추가</button>
+		 <a href="/pfinal/pfinal.do?command=free_index"
+				class="btn btn-lg btn-default js-disable-on-click">메인으로</a>
 	</span>
 	</div>
 	</div>
