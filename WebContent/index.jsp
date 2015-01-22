@@ -5,7 +5,7 @@
 <head>
 <script>
 function fnJoin() {
-	var Future = "fullscreen=no,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,left=0,top=0,width=600,height=600"; 
+	var Future = "fullscreen=no,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,left=0,top=0,width=600,height=650"; 
 	window.open("/pfinal/pfinal.do?command=join","",Future);
 }
 

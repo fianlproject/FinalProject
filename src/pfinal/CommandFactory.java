@@ -39,7 +39,6 @@ import pfinal.friend.Friend_add_confrim;
 import pfinal.friend.Friend_delete;
 import pfinal.friend.Friend_find;
 import pfinal.friend.Friend_getBoard;
-import pfinal.join.Join;
 import pfinal.join.JoinClient;
 import pfinal.join.JoinConfirm;
 import pfinal.join.JoinController;
@@ -289,8 +288,6 @@ public class CommandFactory {
 			return new JoinFree();
 		if(cmd.equals("Client"))
 			return new JoinClient();
-		if(cmd.equals("Agree"))
-			return new Join();
 		
 		//프로젝트? ?????
 		if(cmd.equals("project"))

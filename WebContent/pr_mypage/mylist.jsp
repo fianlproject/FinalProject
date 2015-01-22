@@ -23,6 +23,15 @@
 <link href="css/floating.css" rel="stylesheet">
 <link href="css/layout_nav.css" rel="stylesheet">
 <link href="css/map.css" rel="stylesheet">
+<style type="text/css">
+.btn{
+border-color: #BDBDBD;
+
+}
+.mywishket .content .content-inner .mywishket-project .table td .btn {
+color: #5D5D5D;
+}
+</style>
 
 </head>
 <body class="logged-in client mywishket">
@@ -355,49 +364,25 @@
 							<br />
 							<br />
 							<br />
-							<form method="post" action="/pfinal/pfinal.do">
-								<input type="hidden" name="command" value="mypage" /> <input
-									class="btn" type="submit" value="관심기술 ">
-							</form>
-							<form method="post" action="/pfinal/pfinal.do">
-								<input type="hidden" name="command" value="m_inter" /> <input
-									class="btn" type="submit" value="진짜관심기술 ">
-							</form>
-							<form method="post" action="/pfinal/pfinal.do">
-								<input type="hidden" name="command" value="prolist" /> <input
-									class="btn" type="submit" value="지원 프로젝트 목록 임시 ">
-							</form>
+							
 						</div>
 					</div>
 					<div class="project-add-suggestion">
 						<h5 class="suggestion-text">
-							무료로 프로젝트를<br />등록해 보세요
+							 친구를 등록해 보세요.
 						</h5>
 						<a class="btn btn-client btn-lg btn-project-add"
-							href="/pfinal/pfinal.do?command=project">나의 프로젝트</a>
+							href="/pfinal/pfinal.do?command=friendlist">나의 친구</a>
 					</div>
 
 					<div class="activity">
-						<h3 class="activity-heading">정보 수정</h3>
+						<h3 class="activity-heading">정보 입력</h3>
 						<div id="activity-body">
 							<ul class="activity-unit-list">
 								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=m_career">나의 경력</a></li>
+									href="/pfinal/pfinal.do?command=m_inter">관심기술</a></li>
 								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=m_skill">나의 보유기술</a></li>
-								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=m_quali">나의 자격증</a></li>
-								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=myschoolchk">나의 학교</a></li>
-								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=project">나의 프로젝트</a></li>
-								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=m_sogae">나의 소개</a></li>
-								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=m_media">신문사 설정</a></li>
-								<li class="empty-activity activity-unit"><a
-									href="/pfinal/pfinal.do?command=m_menu_ui">메뉴 설정</a></li>
-
+									href="/pfinal/pfinal.do?command=prolist">지원 프로젝트 목록 임시</a></li>
 							</ul>
 						</div>
 					</div>

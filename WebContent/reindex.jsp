@@ -4,9 +4,6 @@
 
 <head>
 <script>
-alert("로그인 정보가 잘못 되었습니다.");
-</script>
-<script>
 function fnJoin() {
 	var Future = "fullscreen=no,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,left=0,top=0,width=600,height=600"; 
 	window.open("/pfinal/pfinal.do?command=join","",Future);
@@ -96,7 +93,7 @@ function fnJoin() {
         <div class="container">
             <div class="intro-text">
                 
-                <div class="intro-heading">방문을 환영합니다.</div>
+              <img src="/pfinal/img/intro_logo.png"/>
                 
             </div>
         </div>

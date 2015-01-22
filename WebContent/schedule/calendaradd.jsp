@@ -8,7 +8,14 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/table.css">
 
+<link href="css/7911bc0a5c62.css" rel="stylesheet">
+<link href="css/7e63fa136b7d.css" rel="stylesheet">
+<link href="css/facebook.css" rel="stylesheet">
+<link href="css/floating.css" rel="stylesheet">
+<link href="css/layout_nav.css" rel="stylesheet">
+<link href="css/map.css" rel="stylesheet">
 <!-- FullCalendar(jQuery API) -->
 <script>
 	// FullCalnedar
@@ -32,19 +39,19 @@
 		<div class="cal_input_table">
 			<form action="./CalendarAdd.cl" method="post">
 			<input type="hidden" name="id" value="${id}" />			
-				<table border="1">
+				<table class="table">
+				
 					<tr><td colspan="2">일정 추가</td></tr>				
 					<tr><td>일정</td><td><input type="text" name="title"></td></tr>
 					<tr><td>날짜</td><td><input type="text" class="datepicker" name="date"></td></tr>
 					<tr><td colspan="2"><input type="submit" value="추가" onclick="popclose()"></td></tr>
 				</table>
 			</form>
-			<br>
 			<form action="./CalendarDel.cl" method="post">
 				<table border="1">
 					<tr><td colspan="2">일정 삭제</td></tr>
 					<tr><td>날짜</td><td><input type="text" class="datepicker" name="date"></td></tr>
-					<tr><td colspan="2"><input type="submit" value="삭제" onclick="popclose()"></td></tr>
+					<tr><td colspan="2"><input type="submit" value="삭제"  onclick="popclose()"></td></tr>
 				</table>
 			</form>
 		</div>	
