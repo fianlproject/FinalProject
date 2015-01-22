@@ -5,47 +5,31 @@
 <html>
 
 <head>
-
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.css" rel="stylesheet">
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
+<style>
+	body{
+		padding: 0px;
+		margin: 0px;
+	}
+</style>
 </head>
-<body>
-
-<br/>
- 
-<a href="/pfinal/pfinal.do?command=media&ui=1" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_jj.png"/>전자신문</a>
-<a href="/pfinal/pfinal.do?command=media&ui=2" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_zdnet.png"/>ZDNet</a>
-<a href="/pfinal/pfinal.do?command=media&ui=3" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_jo.png"/>조선일보</a>
-<a href="/pfinal/pfinal.do?command=media&ui=4" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_ja.png"/>중앙일보</a><br/>
-
-<a href="/pfinal/pfinal.do?command=media&ui=5" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_da.png"/>동아일보</a>
-<a href="/pfinal/pfinal.do?command=media&ui=6" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_sg.png"/>세계일보</a>
-<a href="/pfinal/pfinal.do?command=media&ui=7" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_hk.png"/>한국일보</a>
-<a href="/pfinal/pfinal.do?command=media&ui=8" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_kh.png"/>경향신문</a><br/>
-
-<a href="/pfinal/pfinal.do?command=media&ui=9" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_hi.png"/>한겨레　</a>
-<a href="/pfinal/pfinal.do?command=media&ui=10" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_sk.png"/>서울경제</a>
-<a href="/pfinal/pfinal.do?command=media&ui=11" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_ha.png"/>한국경제</a>
-<a href="/pfinal/pfinal.do?command=media&ui=12" name="media" id="media" onclick="media1()">
-<img class="btn-img" src="img/media/new_icon_mk.png"/>매일경제</a>
-
-	 
- 
-
+<body >
+		<img src="img/media/news_bg.png" usemap="#001"/>
+		<map name="001">
+ 			<area shape="rect" coords="27,11,118,150" href="/pfinal/pfinal.do?command=media&ui=1" onclick="media1()">
+ 			<area shape="rect" coords="118,11,209,150" href="/pfinal/pfinal.do?command=media&ui=2" onclick="media1()">
+ 			<area shape="rect" coords="209,11,300,150" href="/pfinal/pfinal.do?command=media&ui=3" onclick="media1()">
+ 			<area shape="rect" coords="300,11,391,150" href="/pfinal/pfinal.do?command=media&ui=4" onclick="media1()">
+ 			<area shape="rect" coords="391,11,482,150" href="/pfinal/pfinal.do?command=media&ui=5" onclick="media1()">
+ 			<area shape="rect" coords="482,11,573,150" href="/pfinal/pfinal.do?command=media&ui=6" onclick="media1()">
+ 			<area shape="rect" coords="27,150,118,289" href="/pfinal/pfinal.do?command=media&ui=7" onclick="media1()">
+ 			<area shape="rect" coords="118,150,209,289" href="/pfinal/pfinal.do?command=media&ui=8" onclick="media1()">
+ 			<area shape="rect" coords="209,150,300,289" href="/pfinal/pfinal.do?command=media&ui=9" onclick="media1()">
+ 			<area shape="rect" coords="300,150,391,289" href="/pfinal/pfinal.do?command=media&ui=10" onclick="media1()">
+ 			<area shape="rect" coords="391,150,482,289" href="/pfinal/pfinal.do?command=media&ui=11" onclick="media1()">
+ 			<area shape="rect" coords="482,150,573,289" href="/pfinal/pfinal.do?command=media&ui=12" onclick="media1()">
+		</map>
 <script>
 function media1() {		
 		window.opener.location.href = "/pfinal/pfinal.do?command=close_media";
