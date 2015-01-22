@@ -203,7 +203,7 @@ function fnMedia() {
                     <h4 class="service-heading">쪽지함</h4>
                     <form method="post" action="/pfinal/pfinal.do">
                    	 <button class="btn btn-link pl text-muted" name="command" value="message" >보관함</button>
-                   	 <c:if test="${msg != 0 || msg != null }" >
+                   	 <c:if test="${msg != 0}" >
                    	 <span id="newMsg" >${msg}</span>
                    	 </c:if>
                     </form>
@@ -268,7 +268,7 @@ function fnMedia() {
         	<!-- 없으면  -->
             <c:if test="${requestScope.flag==false}" >
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="/pfinal/pfinal.do?command=mypage" class="portfolio-link" >
+                    <a href="/pfinal/pfinal.do?command=mylist" class="portfolio-link" >
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -307,7 +307,7 @@ function fnMedia() {
                 </div>
                 </c:forEach>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="/pfinal/pfinal.do?command=mypage" class="portfolio-link" >
+                    <a href="/pfinal/pfinal.do?command=mylist" class="portfolio-link" >
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x fa-inverse"></i>

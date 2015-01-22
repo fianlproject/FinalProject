@@ -308,6 +308,7 @@ function fnMedia() {
 					</table>
 				</c:if>
 				<form action="/pfinal/pfinal.do?command=evaluate" method="post">
+					<input type="hidden" name="cl_id" value="${id }"/>
 					<input type="submit" value="내프로젝트" />
 				</form>
 			</div>
