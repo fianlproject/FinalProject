@@ -564,23 +564,23 @@ FREE BEST은 컨텐츠가 일정기간 이상 경과되어, 컨텐츠로써의 �
 
 </textarea>
 <br/><br/>
-<button  class="btn btn-lg btn-client js-disable-on-click btn-submit" onclick="Agree()" id="nawa" value="ok" style="display: inline;">동의합니다</button>
-<a href="#" onclick="javascript:self.close();" class="btn btn-lg btn-default js-disable-on-click" style="display: inline;" id="no">동의하지않습니다.</a> 
-<br/><br/><br/>
+<button  class="btn btn-lg btn-client js-disable-on-click btn-submit" onclick="Agree()" id="nawa" value="ok" >동의합니다</button>
+<a href="#" onclick="javascript:self.close();" class="btn btn-lg btn-default js-disable-on-click" id="no">동의하지않습니다.</a> 
+
 <a href="/pfinal/pfinal.do?command=Free" class="btn btn-lg btn-client js-disable-on-click btn-submit" style="display: none;" id="input">개인회원</a>
 <a href="/pfinal/pfinal.do?command=Client" class="btn btn-lg btn-client js-disable-on-click btn-submit" style="display: none;" id="text">기업회원</a>
 
 </body>
 <script>
 function Agree() {
-    var a = document.getElementById("text");
+    var a = document.getElementById("text"); //기업
     var b = document.getElementById("input");
-    var c = document.getElementById("nawa");
+    var c = document.getElementById("nawa"); //동의
     var d = document.getElementById("no");
 
     if (c.value == "ok") {
-       a.style.display = "inline";
-       b.style.display = "inline";
+       a.style.display = "";
+       b.style.display = "";
        c.style.display = "none";
        d.style.display = "none";
        
