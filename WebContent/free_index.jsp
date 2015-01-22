@@ -39,7 +39,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>FREE BEST</title>
 	<!-- 달력!!! -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -65,7 +65,7 @@
 			
 		}).dblclick(function(){
 			var popUrl = "/pfinal/schedule/calendaradd.jsp";	//팝업창에 출력될 페이지 URL
-			var popOption = "width=350, height=300, resizable=no, scrollbars=no, status=no, top=250, left=900;";    //팝업창 옵션(optoin)
+			var popOption = "width=350, height=300, resizable=no, scrollbars=no, status=no, top=250, left=900; ";    //팝업창 옵션(optoin)
 				window.open(popUrl,"",popOption);
 		});
 	// DatePicker
@@ -76,11 +76,11 @@
 <script>
 function fnCal() {
 	window.open("schedule/Calendar.cl", "",
-			"width=670, height=500");  
+			"width=670, height=500,  scrollbars=no, resizable=yes, status=0");  
 }
 function fnMedia() {
 	window.open("/pfinal/pfinal.do?command=m_media", "",
-			"width=570, height=370");
+			"width=600, height=300 , scrollbars=no,  resizable=no");
 }	
 </script>
 <style type="text/css">
@@ -175,7 +175,7 @@ function fnMedia() {
         <div class="container">
             <div class="intro-text">
                 
-               <img src="/pfinal/img/intro_logo.png"/>
+               <img src="/pfinal/img/intro_logo_2.png"/>
                 <form method="post" action="/pfinal/pfinal.do"><br/><br/><br/>
                 	<button class="btn btn-xl" name="command" value="list">프로젝트 찾기</button>
                 </form>
