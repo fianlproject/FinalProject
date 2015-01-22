@@ -137,6 +137,7 @@ border-radius: 5px;
 											
 											
 											var iwContent = '<div style="padding:5px;">${c_name}<br><a href="http://map.daum.net/link/map/${c_name},${longitude},${latitude}" style="color:blue" target="_blank">큰지도보기</a> <a href="http://map.daum.net/link/to/${c_name},${longitude},${latitude}" style="color:blue" target="_blank">길찾기</a></div>', 
+
 											// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 											    iwPosition = new daum.maps.LatLng(<%=longitude%>,<%=latitude%>); //인포윈도우 표시 위치입니다
 			
