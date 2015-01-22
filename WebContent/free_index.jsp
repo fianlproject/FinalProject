@@ -335,9 +335,14 @@ function fnMedia() {
                 	 <h2 class="section-heading btn-xl2">오늘의 뉴스(${media_name}) <button class="btn btn-xl3" onclick="fnMedia()">신문사 변경</button></h2>
                 	
                 <table class="table">                	
-					<%
+					<%	
+						int size = list.size(); 
+						if(list.size()>50){ 
+							size = 50;							
+						}
 					    if(list!=null){
-					        for(int i=0; i<list.size(); i++){
+					    	
+					        for(int i=0; i<size; i++){
 					            Element el = (Element) list.get(i);
 					%>
 					<tr>
