@@ -100,12 +100,7 @@
 								</c:if>
 
 							</form>
-							<form method="post" action="/pfinal/pfinal.do">
-								<input type="hidden" name="friend_id" value="${dto.id}">
-									<div style="float: right">
-										<button class="btn" name="command" value="notfriendmsgwrite">메시지 보내기</button>
-									</div>
-							</form>
+							
 						</div>
 						
 
