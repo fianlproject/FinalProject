@@ -197,18 +197,18 @@
 
 
 
-													<div class="form-group">
-														<div class="btn-wrapper">
-															<input
-																class="btn btn-lg btn-client js-disable-on-click btn-submit"
-																value="프로젝트 수정" type="submit"> <input
-																class="btn btn-lg btn-default js-disable-on-click"
-																name="save_for_later" value="취소" type="button">
-														</div>
-													</div>
-						</form>
-					</div>
-				</div>
+							<div class="form-group">
+								<div class="btn-wrapper">
+									<input
+										class="btn btn-lg btn-client js-disable-on-click btn-submit"
+										value="프로젝트 수정" type="submit"> 
+						</form><br/><br/>
+							<form method="post" action="/pfinal/pfinal.do">
+									<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="list">취소</button>
+							</form>
+									</div>
+								</div>
+								</div></div>
 
 			</div>
 		</div>

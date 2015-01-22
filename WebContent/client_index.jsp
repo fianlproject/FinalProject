@@ -94,7 +94,7 @@ function fnMedia() {
 	                        <a href="#page-top"></a>
 	                    </li>
 	                    <li>
-	                        <button class="btn btn-link pl" name="command" value="procheck" >프로젝트 확인</button>
+	                        <button class="btn btn-link pl" name="command" value="cl_prolist_test" >임시 프로젝트</button>
 	                    </li>
 	                    <li>
 	                        <button class="btn btn-link pl" name="command" value="prwrite" >프로젝트 등록</button>
@@ -103,8 +103,7 @@ function fnMedia() {
 	                        <button class="btn btn-link pl" name="command" value="list" >프로젝트 리스트</button>
 	                    </li>
 	                    <li>
-	                        <button class="btn btn-link pl" name="command" value="cl_prolist_test" >임시 프로젝트</button>
-					
+	                        <a class="page-scroll btn btn-link pl" href="#news">오늘의 뉴스</a>					
 	                    </li>
 	                    <li>
 	                        <a class="page-scroll" href="#contact">임시3</a>
@@ -132,7 +131,7 @@ function fnMedia() {
  <body class="project-list">
 
  <!-- About Section -->
-    <section id="news" >
+    <section id="news1" >
         <div class="container">
             <div class="row">
 				<c:if test="${!empty prolist }">
@@ -308,6 +307,7 @@ function fnMedia() {
 					</table>
 				</c:if>
 				<form action="/pfinal/pfinal.do?command=evaluate" method="post">
+					<input type="hidden" name="cl_id" value="${id }"/>
 					<input type="submit" value="내프로젝트" />
 				</form>
 			</div>
@@ -370,7 +370,6 @@ function fnMedia() {
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>

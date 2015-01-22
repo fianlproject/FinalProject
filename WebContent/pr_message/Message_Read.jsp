@@ -93,8 +93,7 @@ A:hover {
 															<td><input type="checkbox" id="msg_chk"
 																name="msg_chk" value="${dto.msg_id}" /></td>
 															<td><div>
-																	<a
-																		href="/pfinal/pfinal.do?command=messagedetail&msg_id=${dto.msg_id }">${dto.msg_content }</a>
+																	<a href="/pfinal/pfinal.do?command=messagedetail&msg_id=${dto.msg_id }">${dto.msg_content }</a>
 																</div></td>
 															<td>${dto.send_id }</td>
 															<td>${dto.send_date }</td>
@@ -103,8 +102,9 @@ A:hover {
 												</c:when>
 												<c:otherwise>
 													<tr>
-														<td colspan="4" align="center"><div>받은 쪽지가
-																없습니다.</div></td>
+														<td colspan="4" align="center">
+														<div>받은 쪽지가 없습니다.</div>
+														</td>
 													</tr>
 												</c:otherwise>
 											</c:choose>
@@ -142,7 +142,7 @@ A:hover {
 					"width=570, height=370");
 		}
 		function fnWriteDetail() {
-			window.open("/pfinal/pfinal.do?command=messagewrite", "",
+			window.open("/pfinal/pfinal.do?command=messagewritedetail", "",
 					"width=570, height=370");
 		}
 		// 뒤로 돌아가기

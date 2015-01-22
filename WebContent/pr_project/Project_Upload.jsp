@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -481,13 +480,14 @@ body.fb_hidden {
 					<div class="content-inner" style="padding-top: 15px">
 						<section class="p5-partition-title">
 							<h3 class="header-text" style="margin-bottom: 30px">
-								포트폴리오 등록 
+								${id }님의 포트폴리오 등록 
 							</h3>
 						</section>
 						<section class="p5-section">
 							<form action="/pfinal/pfinal.do?command=projectupload"
 								enctype="multipart/form-data" id="p5-fix-portfolio-form"
 								method="POST" >
+								<input type="hidden" value="${id }" name="id" id="id" />
 								<div class="form-group p5-portfolio-form-group">
 									<label class="control-label required p5-box-control-label"
 										for=""><span>*</span>제목</label>
