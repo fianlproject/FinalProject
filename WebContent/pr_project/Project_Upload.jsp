@@ -1,236 +1,778 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="com.oreilly.servlet.*"%>
-<%@page import="com.oreilly.servlet.multipart.*"%>
-<%@ page import="java.util.Date" %>
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>í”„ë¡œì íŠ¸ ë“±ë¡</title>
-
-<link href="/pfinal/bootstrap/css/bootstrap.css" rel="stylesheet"
-	media="screen" />
-<link href="/pfinal/bootstrap/css/bootstrap-responsive.css" />
-<link href="/pfinal/css/bootstrap-responsive.css" />
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="/pfinal/bootstrap/js/bootstrap.js"></script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css">
-
-<link href="css/7911bc0a5c62.css" rel="stylesheet">
-<link href="css/7e63fa136b7d.css" rel="stylesheet">
-<link href="css/facebook.css" rel="stylesheet">
-<link href="css/floating.css" rel="stylesheet">
-<link href="css/layout_nav.css" rel="stylesheet">
-<link href="css/map.css" rel="stylesheet">
-
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" async=""
+	src="/pfinal/js/mixpanel-2.2.min.js"></script>
+<script async="" src="/pfinal/js/analytics.js"></script>
+<script src="/pfinal/js/json2.js"></script>
+<link href="/pfinal/css/7911bc0a5c62.css"
+	rel="stylesheet" type="text/css">
+<link href="/pfinal/css/33f4c32b6489.css"
+	rel="stylesheet" type="text/css">
+<!--[if IE 7]><link rel="stylesheet" href="/static/CACHE/css/c8ab8de16cbd.css" type="text/css" /><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" href="/static/CACHE/css/cdb287f057fa.css" type="text/css" /><![endif]-->
+<link
+	href="http://www.wishket.com/static/django_facebook/css/facebook.css"
+	media="all" rel="stylesheet">
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="/pfinal/js/a52a868564de.js"
+	type="text/javascript"></script>
+<link href="http://www.wishket.com/static/css/layout_nav.css"
+	rel="stylesheet">
+<link href="http://www.wishket.com/static/css/p5.css" rel="stylesheet">
+<link href="http://www.wishket.com/static/css/floating.css"
+	rel="stylesheet">
+<script src="/pfinal/js/wcslog.js"
+	type="text/javascript"></script>
+<link href="http://www.wishket.com/static/favicon.ico"
+	rel="shortcut icon" type="image/x-icon">
+<link href="http://www.wishket.com/static/favicon.ico" rel="icon"
+	type="image/x-icon">
+<link href="http://www.wishket.com/static/touch-icon-ipad.png"
+	rel="apple-touch-icon" sizes="76x76">
+<link href="http://www.wishket.com/static/touch-icon-iphone-retina.png"
+	rel="apple-touch-icon" sizes="120x120">
+<link href="http://www.wishket.com/static/touch-icon-ipad-retina.png"
+	rel="apple-touch-icon" sizes="152x152">
+<script src="/pfinal/js/cb793deb7347.js"
+	type="text/javascript"></script>
+<script src="/pfinal/js/c3617c8217d0.js"
+	type="text/javascript"></script>
 <style type="text/css">
-.form-control{
-width: 30%;
+.fb_hidden {
+	position: absolute;
+	top: -10000px;
+	z-index: 10001
 }
 
+.fb_invisible {
+	display: none
+}
+
+.fb_reset {
+	background: none;
+	border: 0;
+	border-spacing: 0;
+	color: #000;
+	cursor: auto;
+	direction: ltr;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	line-height: 1;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+	text-shadow: none;
+	text-transform: none;
+	visibility: visible;
+	white-space: normal;
+	word-spacing: normal
+}
+
+.fb_reset>div {
+	overflow: hidden
+}
+
+.fb_link img {
+	border: none
+}
+
+.fb_dialog {
+	background: rgba(82, 82, 82, .7);
+	position: absolute;
+	top: -10000px;
+	z-index: 10001
+}
+
+.fb_reset .fb_dialog_legacy {
+	overflow: visible
+}
+
+.fb_dialog_advanced {
+	padding: 10px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px
+}
+
+.fb_dialog_content {
+	background: #fff;
+	color: #333
+}
+
+.fb_dialog_close_icon {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png)
+		no-repeat scroll 0 0 transparent;
+	_background-image:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);
+	cursor: pointer;
+	display: block;
+	height: 15px;
+	position: absolute;
+	right: 18px;
+	top: 17px;
+	width: 15px
+}
+
+.fb_dialog_mobile .fb_dialog_close_icon {
+	top: 5px;
+	left: 5px;
+	right: auto
+}
+
+.fb_dialog_padding {
+	background-color: transparent;
+	position: absolute;
+	width: 1px;
+	z-index: -1
+}
+
+.fb_dialog_close_icon:hover {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png)
+		no-repeat scroll 0 -15px transparent;
+	_background-image:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)
+}
+
+.fb_dialog_close_icon:active {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png)
+		no-repeat scroll 0 -30px transparent;
+	_background-image:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)
+}
+
+.fb_dialog_loader {
+	background-color: #f6f7f8;
+	border: 1px solid #606060;
+	font-size: 24px;
+	padding: 20px
+}
+
+.fb_dialog_top_left, .fb_dialog_top_right, .fb_dialog_bottom_left,
+	.fb_dialog_bottom_right {
+	height: 10px;
+	width: 10px;
+	overflow: hidden;
+	position: absolute
+}
+
+.fb_dialog_top_left {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png)
+		no-repeat 0 0;
+	left: -10px;
+	top: -10px
+}
+
+.fb_dialog_top_right {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png)
+		no-repeat 0 -10px;
+	right: -10px;
+	top: -10px
+}
+
+.fb_dialog_bottom_left {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png)
+		no-repeat 0 -20px;
+	bottom: -10px;
+	left: -10px
+}
+
+.fb_dialog_bottom_right {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png)
+		no-repeat 0 -30px;
+	right: -10px;
+	bottom: -10px
+}
+
+.fb_dialog_vert_left, .fb_dialog_vert_right, .fb_dialog_horiz_top,
+	.fb_dialog_horiz_bottom {
+	position: absolute;
+	background: #525252;
+	filter: alpha(opacity = 70);
+	opacity: .7
+}
+
+.fb_dialog_vert_left, .fb_dialog_vert_right {
+	width: 10px;
+	height: 100%
+}
+
+.fb_dialog_vert_left {
+	margin-left: -10px
+}
+
+.fb_dialog_vert_right {
+	right: 0;
+	margin-right: -10px
+}
+
+.fb_dialog_horiz_top, .fb_dialog_horiz_bottom {
+	width: 100%;
+	height: 10px
+}
+
+.fb_dialog_horiz_top {
+	margin-top: -10px
+}
+
+.fb_dialog_horiz_bottom {
+	bottom: 0;
+	margin-bottom: -10px
+}
+
+.fb_dialog_iframe {
+	line-height: 0
+}
+
+.fb_dialog_content .dialog_title {
+	background: #6d84b4;
+	border: 1px solid #3a5795;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0
+}
+
+.fb_dialog_content .dialog_title>span {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+		no-repeat 5px 50%;
+	float: left;
+	padding: 5px 0 7px 26px
+}
+
+body.fb_hidden {
+	-webkit-transform: none;
+	height: 100%;
+	margin: 0;
+	overflow: visible;
+	position: absolute;
+	top: -10000px;
+	left: 0;
+	width: 100%
+}
+
+.fb_dialog.fb_dialog_mobile.loading {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white
+		no-repeat 50% 50%;
+	min-height: 100%;
+	min-width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 10001
+}
+
+.fb_dialog.fb_dialog_mobile.loading.centered {
+	max-height: 590px;
+	min-height: 590px;
+	max-width: 500px;
+	min-width: 500px
+}
+
+#fb-root #fb_dialog_ipad_overlay {
+	background: rgba(0, 0, 0, .45);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	min-height: 100%;
+	z-index: 10000
+}
+
+#fb-root #fb_dialog_ipad_overlay.hidden {
+	display: none
+}
+
+.fb_dialog.fb_dialog_mobile.loading iframe {
+	visibility: hidden
+}
+
+.fb_dialog_content .dialog_header {
+	-webkit-box-shadow: white 0 1px 1px -1px inset;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA),
+		to(#2C4987));
+	border-bottom: 1px solid;
+	border-color: #1d4088;
+	color: #fff;
+	font: 14px Helvetica, sans-serif;
+	font-weight: bold;
+	text-overflow: ellipsis;
+	text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+	vertical-align: middle;
+	white-space: nowrap
+}
+
+.fb_dialog_content .dialog_header table {
+	-webkit-font-smoothing: subpixel-antialiased;
+	height: 43px;
+	width: 100%
+}
+
+.fb_dialog_content .dialog_header td.header_left {
+	font-size: 12px;
+	padding-left: 5px;
+	vertical-align: middle;
+	width: 60px
+}
+
+.fb_dialog_content .dialog_header td.header_right {
+	font-size: 12px;
+	padding-right: 5px;
+	vertical-align: middle;
+	width: 60px
+}
+
+.fb_dialog_content .touchable_button {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6),
+		color-stop(.5, #355492), to(#2A4887));
+	border: 1px solid #2f477a;
+	-webkit-background-clip: padding-box;
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: rgba(0, 0, 0, .117188) 0 1px 1px inset,
+		rgba(255, 255, 255, .167969) 0 1px 0;
+	display: inline-block;
+	margin-top: 3px;
+	max-width: 85px;
+	line-height: 18px;
+	padding: 4px 12px;
+	position: relative
+}
+
+.fb_dialog_content .dialog_header .touchable_button input {
+	border: none;
+	background: none;
+	color: #fff;
+	font: 12px Helvetica, sans-serif;
+	font-weight: bold;
+	margin: 2px -12px;
+	padding: 2px 6px 3px 6px;
+	text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+}
+
+.fb_dialog_content .dialog_header .header_center {
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
+	text-align: center;
+	vertical-align: middle
+}
+
+.fb_dialog_content .dialog_content {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif)
+		no-repeat 50% 50%;
+	border: 1px solid #555;
+	border-bottom: 0;
+	border-top: 0;
+	height: 150px
+}
+
+.fb_dialog_content .dialog_footer {
+	background: #f6f7f8;
+	border: 1px solid #555;
+	border-top-color: #ccc;
+	height: 40px
+}
+
+#fb_dialog_loader_close {
+	float: left
+}
+
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
+	text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+}
+
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+	visibility: hidden
+}
+
+.fb_iframe_widget {
+	display: inline-block;
+	position: relative
+}
+
+.fb_iframe_widget span {
+	display: inline-block;
+	position: relative;
+	text-align: justify
+}
+
+.fb_iframe_widget iframe {
+	position: absolute
+}
+
+.fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span,
+	.fb_iframe_widget_fluid_desktop iframe {
+	max-width: 100%
+}
+
+.fb_iframe_widget_fluid_desktop iframe {
+	min-width: 220px;
+	position: relative
+}
+
+.fb_iframe_widget_lift {
+	z-index: 1
+}
+
+.fb_hide_iframes iframe {
+	position: relative;
+	left: -10000px
+}
+
+.fb_iframe_widget_loader {
+	position: relative;
+	display: inline-block
+}
+
+.fb_iframe_widget_fluid {
+	display: inline
+}
+
+.fb_iframe_widget_fluid span {
+	width: 100%
+}
+
+.fb_iframe_widget_loader iframe {
+	min-height: 32px;
+	z-index: 2;
+	zoom: 1
+}
+
+.fb_iframe_widget_loader .FB_Loader {
+	background:
+		url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif)
+		no-repeat;
+	height: 32px;
+	width: 32px;
+	margin-left: -16px;
+	position: absolute;
+	left: 50%;
+	z-index: 4
+}
 </style>
-
 </head>
-<br/>
-<body class="project-list">
-	<div id="wrap1">
+<body class="logged-in partners partners-setting">
+	<div id="wrap">
 		<div class="page">
-			<div class="content">
-				<div class="content-header">
-					<h3 class="header-text">
-						í”„ë¡œì íŠ¸ ë“±ë¡ <small class="small-text">ìƒì„¸í•˜ê²Œ ì‘ì„±í•´ì£¼ì‹¤ìˆ˜ë¡ ë” ì í•©í•œ íŒŒíŠ¸ë„ˆìŠ¤ë¥¼
-							ë§Œë‚  ìˆ˜ ìˆìŠµë‹ˆë‹¤.</small>
-					</h3>
+			<div class="page-inner">
+				<div class="content">
+					<div class="content-inner" style="padding-top: 15px">
+						<section class="p5-partition-title">
+							<h3 class="header-text" style="margin-bottom: 30px">
+								Æ÷Æ®Æú¸®¿À µî·Ï 
+							</h3>
+						</section>
+						<section class="p5-section">
+							<form action="/pfinal/pfinal.do?command=projectupload"
+								enctype="multipart/form-data" id="p5-fix-portfolio-form"
+								method="POST" >
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for=""><span>*</span>Á¦¸ñ</label>
+									<div class="control-wrapper">
+										<input class="form-control p5-portfolio-form-title"
+											data-validation="required" id="p5-form-title" name="title"
+											required="required" type="text">
+									</div>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for=""><span>*</span>Ä«Å×°í¸®</label>
+									<div class="control-wrapper p5-2-control-wrapper">
+										<select class="form-control" data-validation="required"
+											id="p5-form-category" name="categoryId"><option
+												selected="selected" value="">Ä«Å×°í¸®</option>
+											<option value="2">°³¹ß</option>
+											<option value="1">µğÀÚÀÎ</option></select><select class="form-control"
+											data-validation="required" id="p5-form-subcategory"
+											name="subcategoryId"><option selected="selected"
+												value="">¼¼ºÎ Ä«Å×°í¸®</option></select>
+									</div>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label required" for=""><span>*</span>¼³¸í</label>
+									<div class="control-wrapper">
+										<textarea class="form-control p5-portfolio-description"
+											cols="80" data-validation="required" id="p5-form-description"
+											name="description" required="" rows="10"></textarea>
+									</div>
+									<span class="p5-portfolio-information"
+										id="p5-form-description-information">ÇÑ±Û ±âÁØ 5000ÀÚ ¹Ì¸¸</span>
+								</div>
+								<div
+									class="form-group year-month-widget p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for=""><span>*</span>Âü¿© ½ÃÀÛÀÏ</label>
+									<div class="control-wrapper p5-2-control-wrapper">
+										<select class="begin form-control p5-date-select"
+											data-validation="required" id="p5-form-begin-year"
+											name="participationBeginYear"><option
+												selected="selected" value="">¿¬</option>
+											<option value="2015">2015³â</option>
+											<option value="2014">2014³â</option>
+											<option value="2013">2013³â</option>
+											<option value="2012">2012³â</option>
+											<option value="2011">2011³â</option>
+											<option value="2010">2010³â</option>
+											<option value="2009">2009³â</option>
+											<option value="2008">2008³â</option>
+											<option value="2007">2007³â</option>
+											<option value="2006">2006³â</option>
+											<option value="2005">2005³â</option>
+											<option value="2004">2004³â</option>
+											<option value="2003">2003³â</option>
+											<option value="2002">2002³â</option>
+											<option value="2001">2001³â</option>
+											<option value="2000">2000³â</option>
+											<option value="1999">1999³â</option>
+											<option value="1998">1998³â</option>
+											<option value="1997">1997³â</option>
+											<option value="1996">1996³â</option>
+											<option value="1995">1995³â</option>
+											<option value="1994">1994³â</option>
+											<option value="1993">1993³â</option>
+											<option value="1992">1992³â</option>
+											<option value="1991">1991³â</option>
+											<option value="1990">1990³â</option>
+											<option value="1989">1989³â</option>
+											<option value="1988">1988³â</option>
+											<option value="1987">1987³â</option>
+											<option value="1986">1986³â</option></select><select
+											class="form-control" data-validation="required"
+											id="p5-form-begin-month" name="participationBeginMonth"><option
+												selected="selected" value="">¿ù</option>
+											<option value="1">1¿ù</option>
+											<option value="2">2¿ù</option>
+											<option value="3">3¿ù</option>
+											<option value="4">4¿ù</option>
+											<option value="5">5¿ù</option>
+											<option value="6">6¿ù</option>
+											<option value="7">7¿ù</option>
+											<option value="8">8¿ù</option>
+											<option value="9">9¿ù</option>
+											<option value="10">10¿ù</option>
+											<option value="11">11¿ù</option>
+											<option value="12">12¿ù</option></select>
+									</div>
+								</div>
+								<div
+									class="form-group year-month-widget p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for=""><span>*</span>Âü¿© Á¾·áÀÏ</label>
+									<div class="control-wrapper p5-2-control-wrapper">
+										<select class="form-control p5-date-select"
+											data-validation="required" id="p5-form-end-year"
+											name="participationEndYear"><option
+												selected="selected" value="">¿¬</option>
+											<option value="2015">2015³â</option>
+											<option value="2014">2014³â</option>
+											<option value="2013">2013³â</option>
+											<option value="2012">2012³â</option>
+											<option value="2011">2011³â</option>
+											<option value="2010">2010³â</option>
+											<option value="2009">2009³â</option>
+											<option value="2008">2008³â</option>
+											<option value="2007">2007³â</option>
+											<option value="2006">2006³â</option>
+											<option value="2005">2005³â</option>
+											<option value="2004">2004³â</option>
+											<option value="2003">2003³â</option>
+											<option value="2002">2002³â</option>
+											<option value="2001">2001³â</option>
+											<option value="2000">2000³â</option>
+											<option value="1999">1999³â</option>
+											<option value="1998">1998³â</option>
+											<option value="1997">1997³â</option>
+											<option value="1996">1996³â</option>
+											<option value="1995">1995³â</option>
+											<option value="1994">1994³â</option>
+											<option value="1993">1993³â</option>
+											<option value="1992">1992³â</option>
+											<option value="1991">1991³â</option>
+											<option value="1990">1990³â</option>
+											<option value="1989">1989³â</option>
+											<option value="1988">1988³â</option>
+											<option value="1987">1987³â</option>
+											<option value="1986">1986³â</option></select><select
+											class="form-control" data-validation="required"
+											id="p5-form-end-month" name="participationEndMonth"
+											required=""><option selected="selected" value="">¿ù</option>
+											<option value="1">1¿ù</option>
+											<option value="2">2¿ù</option>
+											<option value="3">3¿ù</option>
+											<option value="4">4¿ù</option>
+											<option value="5">5¿ù</option>
+											<option value="6">6¿ù</option>
+											<option value="7">7¿ù</option>
+											<option value="8">8¿ù</option>
+											<option value="9">9¿ù</option>
+											<option value="10">10¿ù</option>
+											<option value="11">11¿ù</option>
+											<option value="12">12¿ù</option></select>
+									</div>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for=""><span>*</span>Âü¿©À²</label>
+									<div class="control-wrapper p5-participation-control-wrapper">
+										<input class="form-control p5-portfolio-participation-rate"
+											data-slider-max="100" data-slider-min="1"
+											data-slider-selection="before" data-slider-step="1"
+											id="p5-form-participation-rate" name="participationRate"
+											required="" type="text" value=""><span
+											class="p5-percent">%</span>
+									</div>
+									<span class="p5-portfolio-information"
+										id="p5-participation-rate-infomation">Âü¿©À²Àº 1¿¡¼­ 100±îÁö
+										Á¤¼ö·Î ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.</span>
+								</div>
+								<div class="p5-portfolio-img-information">
+									Æ÷Æ®Æú¸®¿À ÀÌ¹ÌÁö´Â °¡·Î 632px·Î º¯È¯µÇ¾î º¸¿©Áı´Ï´Ù.<br> ÀÌ¹ÌÁö ÆÄÀÏ(.jpg, .jpeg,
+									.png, .gif µî)¸¸ ¾÷·ÎµåÇÒ ¼ö ÀÖ½À´Ï´Ù.<br> ÆÄÀÏ Å©±â´Â ÃÖ´ë 5MB±îÁö ¾÷·Îµå°¡
+									°¡´ÉÇÕ´Ï´Ù.<br>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for="">´ëÇ¥ ÀÌ¹ÌÁö</label>
+									<div class="p5-portfoilo-img-control-wrapper">
+										<div>
+											<span class="p5-img-name" id="p5-image-name-1">ÀÌ¹ÌÁö¸¦
+												µî·ÏÇØÁÖ¼¼¿ä.</span> <span class="p5-custom-file-type-input-wrapper"><button
+													class="btn btn-primary p5-custom-file-type-front"
+													type="button">
+													<i class="fa fa-plus"></i> ÀÌ¹ÌÁö º¯°æ
+												</button>
+												<input accept="image/*" class="p5-custom-file-type-input"
+												id="p5-file-btn-1" name="image1" type="file">
+											<button class="btn btn-cancel p5-img-del-btn" type="button">»èÁ¦</button></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label p5-box-control-label" for="">ÇÑ
+										ÁÙ ¼³¸í</label>
+									<div class="control-wrapper">
+										<input class="form-control p5-form-comment" disabled=""
+											id="p5-img1-description" name="caption1" type="text">
+									</div>
+									<span class="p5-portfolio-information"
+										id="p5-caption1-infomation">ÇÑ±Û ±âÁØ 120ÀÚ ¹Ì¸¸</span>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for="">ÀÌ¹ÌÁö</label>
+									<div class="p5-portfoilo-img-control-wrapper">
+										<div>
+											<span class="p5-img-name" id="p5-image-name-2">ÀÌ¹ÌÁö¸¦
+												µî·ÏÇØÁÖ¼¼¿ä.</span> <span class="p5-custom-file-type-input-wrapper"><button
+													class="btn btn-primary p5-custom-file-type-front"
+													type="button">
+													<i class="fa fa-plus"></i> ÀÌ¹ÌÁö º¯°æ
+												</button>
+												<input accept="image/*" class="p5-custom-file-type-input"
+												id="p5-file-btn-2" name="image2" type="file">
+											<button class="btn btn-cancel p5-img-del-btn" type="button">»èÁ¦</button></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label p5-box-control-label" for="">ÇÑ
+										ÁÙ ¼³¸í</label>
+									<div class="control-wrapper">
+										<input class="form-control p5-form-comment" disabled=""
+											id="p5-img2-description" name="caption2" type="text">
+									</div>
+									<span class="p5-portfolio-information"
+										id="p5-caption2-infomation">ÇÑ±Û ±âÁØ 120ÀÚ ¹Ì¸¸</span>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label required p5-box-control-label"
+										for="">ÀÌ¹ÌÁö</label>
+									<div class="p5-portfoilo-img-control-wrapper">
+										<div>
+											<span class="p5-img-name" id="p5-image-name-3">ÀÌ¹ÌÁö¸¦
+												µî·ÏÇØÁÖ¼¼¿ä.</span> <span class="p5-custom-file-type-input-wrapper"><button
+													class="btn btn-primary p5-custom-file-type-front"
+													type="button">
+													<i class="fa fa-plus"></i> ÀÌ¹ÌÁö º¯°æ
+												</button>
+												<input accept="image/*" class="p5-custom-file-type-input"
+												id="p5-file-btn-3" name="image3" type="file">
+											<button class="btn btn-cancel p5-img-del-btn" type="button">»èÁ¦</button></span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label p5-box-control-label" for="">ÇÑ
+										ÁÙ ¼³¸í</label>
+									<div class="control-wrapper">
+										<input class="form-control p5-form-comment" disabled=""
+											id="p5-img3-description" name="caption3" type="text">
+									</div>
+									<span class="p5-portfolio-information"
+										id="p5-caption3-infomation">ÇÑ±Û ±âÁØ 120ÀÚ ¹Ì¸¸</span>
+								</div>
+								<div class="form-group p5-portfolio-form-group">
+									<label class="control-label p5-box-control-label" for="">ÅÂ±×</label>
+									<div class="control-wrapper p5-tag-form-wrapper">
+										<ul class="p5-tag-form-unit-group">
+											<li><input class="form-control portfolio_title"
+												id="p5-form-tag-input" name="tagList" type="text"></li>
+										</ul>
+									</div>
+									<span class="p5-portfolio-information">´Ù¼öÀÇ °ü·Ã ±â¼úÀ» ÀÔ·Â
+										ÇÒ¶§¿¡´Â ½°Ç¥(,)·Î ±¸ºĞÇØ ÁÖ¼¼¿ä. (ÃÖ´ë 5°³)<br>¿¹) Photoshop, Android,
+										HTML5, Python, Django
+									</span>
+								</div>
+								<span class="pull-right p5-portfolio-btn-group">
+								<a class="btn btn-cancel p5-btn-left" id="p5-portfolio-cancel-btn" href="">Ãë¼Ò</a>
+								<button class="btn btn-partners p5-submit-portfolio-btn" type="submit">Ãß°¡</button></span>
+							</form>
+						</section>
+					</div>
 				</div>
-
-<form action="/pfinal/pfinal.do?command=projectupload" enctype="multipart/form-data" id="p5-fix-portfolio-form" method="POST">
-
-<div class="content-inner">
-	<input type="hidden" name="id" value="<%= session.getAttribute("id") %>" />
-	<div class="content-header">
-	<div class="form-group">
-		<label class="control-label required" for="title"><span>*</span>ì œëª©</label>
-		<div>
-			<input required="required" id="p5-form-title" name="title" type="text" />
-		</div>
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>ì¹´í…Œê³ ë¦¬</label>
-		<div>
-			<select required="required" id="p5-form-category" name="categoryId">
-				<option selected="selected" value="">ì¹´í…Œê³ ë¦¬</option>
-				<option value="2">ê°œë°œ</option>
-				<option value="1">ë””ìì¸</option>
-			</select>
-			<select required="required" id="p5-form-subcategory" name="subcategoryId">
-				<option selected="selected" value="">ì„¸ë¶€ ì¹´í…Œê³ ë¦¬</option>
-			</select>
-		</div>
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>ì„¤ëª…</label>
-		<div>
-			<textarea cols ="80" required="required" id="p5-form-description" name="description" rows="10"></textarea>
-		</div>
-		<span id="p5-form-description-information">í•œê¸€ ê¸°ì¤€ 5000ì ë¯¸ë§Œ</span>
-	</div><br/>
-	<div >
-		<label class="control-label required" for="title"><span>*</span>ì°¸ì—¬
-			ì‹œì‘ì¼</label>
-		<div >
-			<select required="required" id="p5-form-begin-year" name="participationBeginYear" class="p5-date-select">
-				<option selected="selected" value="" >ì—°</option>
-			</select>
-			<select required="required" id="p5-form-begin-month" name="participationBeginMonth">
-				<option selected="selected" value="">ì›”</option>
-				<option value="1">1ì›”</option>
-				<option value="2">2ì›”</option>
-				<option value="3">3ì›”</option>
-				<option value="4">4ì›”</option>
-				<option value="5">5ì›”</option>
-				<option value="6">6ì›”</option>
-				<option value="7">7ì›”</option>
-				<option value="8">8ì›”</option>
-				<option value="9">9ì›”</option>
-				<option value="10">10ì›”</option>
-				<option value="11">11ì›”</option>
-				<option value="12">12ì›”</option>
-			</select>
-		</div>
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>ì°¸ì—¬ ì¢…ë£Œì¼</label>
-		<div>
-			<select required="required" id="p5-form-end-year" name="participationEndYear" class="p5-date-select">
-				<option selected="selected" value="">ì—°</option>
-			</select>
-			<select required="required" id="p5-form-end-month" name="participationEndMonth" >
-				<option selected="selected" value="">ì›”</option>
-				<option value="1">1ì›”</option>
-				<option value="2">2ì›”</option>
-				<option value="3">3ì›”</option>
-				<option value="4">4ì›”</option>
-				<option value="5">5ì›”</option>
-				<option value="6">6ì›”</option>
-				<option value="7">7ì›”</option>
-				<option value="8">8ì›”</option>
-				<option value="9">9ì›”</option>
-				<option value="10">10ì›”</option>
-				<option value="11">11ì›”</option>
-				<option value="12">12ì›”</option>
-			</select>
-		</div>
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>ì°¸ì—¬ìœ¨</label>
-		<div>
-			<input data-slider-max="100" data-slider-min="1" data-slider-selection="before" data-slider-step="1"
-				id="p5-form-participation-rate" name="participationRate" required=""
-				type="text" value="" />
-			<span>%</span>
-		</div>
-		<span id="p5-participation-rate-infomation">ì°¸ì—¬ìœ¨ì€ 1ì—ì„œ 100ê¹Œì§€ ì •ìˆ˜ë¡œ ì…ë ¥í•  ìˆ˜
-			ìˆìŠµë‹ˆë‹¤.</span>
-	</div><br/>
-	<div>
-		í¬íŠ¸í´ë¦¬ì˜¤ ì´ë¯¸ì§€ëŠ” ê°€ë¡œ 632pxë¡œ ë³€í™˜ë˜ì–´ ë³´ì—¬ì§‘ë‹ˆë‹¤.<br /> ì´ë¯¸ì§€ íŒŒì¼(.jpg, .jpeg, .png, .gif
-		ë“±)ë§Œ ì—…ë¡œë“œí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.<br /> íŒŒì¼ í¬ê¸°ëŠ” ìµœëŒ€ 5MBê¹Œì§€ ì—…ë¡œë“œê°€ ê°€ëŠ¥í•©ë‹ˆë‹¤.<br />
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>ëŒ€í‘œ ì´ë¯¸ì§€</label>
-		<div>
-			<div>
-				<span id="p5-image-name-1" class="p5-img-name ">ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”.</span>
-				<span>
-				<button class="btn btn-lg btn-client">	ì´ë¯¸ì§€ ë³€ê²½</button> 
-				<input accept="image/*" id="p5-file-btn-1" name="image1" type="file" />
-					<button class="btn btn-lg btn-default" id="p5-img-del-btn">ì‚­ì œ</button></span>
 			</div>
 		</div>
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>í•œ ì¤„ ì„¤ëª…</label>
-		<div>
-			<input id="p5-img1-description" name="caption1" type="text" />
-		</div>
-		<span id="p5-caption1-infomation">í•œê¸€ ê¸°ì¤€ 120ì ë¯¸ë§Œ</span>
-	</div><br/><br/>
-	<div >
-		<label class="control-label required" for="title"><span>*</span>ì´ë¯¸ì§€</label>
-		<div>
-			<div>
-				<span id="p5-image-name-2" class="p5-img-name">ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”.</span>
-				<span>
-				<button class="btn btn-lg btn-client">	ì´ë¯¸ì§€ ë³€ê²½</button> 
-					<input accept="image/*" id="p5-file-btn-2" name="image2" type="file" />
-				<button class="btn btn-lg btn-default" id="p5-img-del-btn">ì‚­ì œ</button></span>
-			</div>
-		</div>
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>í•œ ì¤„ ì„¤ëª…</label>
-		<div>
-			<input id="p5-img2-description" name="caption2" type="text" />
-		</div>
-		<span id="p5-caption2-infomation">í•œê¸€ ê¸°ì¤€ 120ì ë¯¸ë§Œ</span>
-	</div><br/><br/>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>ì´ë¯¸ì§€</label>
-		<div>
-			<div>
-				<span id="p5-image-name-3" class="p5-img-name">ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”.</span> 
-				<span	>
-				<button class="btn btn-lg btn-client">	ì´ë¯¸ì§€ ë³€ê²½</button> 
-				<input accept="image/*" id="p5-file-btn-3" name="image3" type="file" />
-					<button class="btn btn-lg btn-default" id="p5-img-del-btn">ì‚­ì œ</button></span>
-			</div>
-		</div>
-	</div>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>í•œ ì¤„ ì„¤ëª…</label>
-		<div>
-			<input id="p5-img3-description" name="caption3" type="text" />
-		</div>
-		<span id="p5-caption3-infomation">í•œê¸€
-			ê¸°ì¤€ 120ì ë¯¸ë§Œ</span>
-	</div><br/><br/>
-	<div>
-		<label class="control-label required" for="title"><span>*</span>íƒœê·¸</label>
-		<div>
-			<ul id="p5-tag-form-unit-group">
-				<li><input id="p5-form-tag-input" name="tagList" type="text" /></li>
-			</ul>
-		</div>
-		<span>ë‹¤ìˆ˜ì˜ ê´€ë ¨ ê¸°ìˆ ì„ ì…ë ¥ í• ë•Œì—ëŠ”
-			ì‰¼í‘œ(,)ë¡œ êµ¬ë¶„í•´ ì£¼ì„¸ìš”. (ìµœëŒ€ 5ê°œ)<br />ì˜ˆ) Photoshop, Android, HTML5, Python,
-			Django
-		</span>
-	</div><br/>
-	<span ><button class="btn btn-lg btn-client" id="p5-portfolio-cancel-btn">ì¶”ê°€</button>
-	</span>
-	
-</form><br/><br/>
-<form method="post" action="/pfinal/pfinal.do">
-			<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="free_index">í™ˆìœ¼ë¡œ</button>
-	</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="push"></div>
+		<div id="push"></div>
 <script>
     $(document).ready( function() {
-	
-    	var tagCnt=0;
-    	
+
+		var split = location.href.split('/');
+        var slug = split[5];
+        var portfolioTitle='';
+        var tagCnt=0;
+
+
+//         $('#p5-portfolio-cancel-btn').attr('href',wishketUrl+'/partners/p/'+slug+'/portfolio/update');
+//         $('#p5-fix-portfolio-form').attr('action',serverUrl+'/api/updatePortfolios');
+        //ÀÏÁ¤ ±¸ÇÏ´Â ºÎºĞ
         var d = new Date();
         for(var i=0;i < 30; i++) {
             var temp = '<option value="'+(parseInt(d.getFullYear())-i)+'">'+
-                            (parseInt(d.getFullYear())-i)+'ë…„'+
+                            (parseInt(d.getFullYear())-i)+'³â'+
                         '</option>';
             $('.p5-date-select').append(temp);
         }
@@ -240,7 +782,7 @@ width: 30%;
         });
 
 
-        //textarea ë¬¸ìì—´ ê¸¸ì´
+        //textarea ¹®ÀÚ¿­ ±æÀÌ
         $('.content-inner').on('keyup','#p5-form-description', function(e) {
             if($(this).val().length > 5000) {
                 $('#p5-form-description-information').css('color','#f33d12');
@@ -252,26 +794,25 @@ width: 30%;
                 $('#p5-form-description-information').css('color','#999');
             }
         });
-
         //tag text
         $('.content-inner').on('keyup', '#p5-form-tag-input', function(event) {
 
 
             if(event.which==188||event.which==32) {
-                if($('#p5-tag-form-unit-group').children().length < 6) {
+                if($('.p5-tag-form-unit-group').children().length < 6) {
                     var valid = true;
 
-                    //30ì ë„˜ì–´ê°€ëŠ”ì§€ ê²€ì‚¬
+                    //30ÀÚ ³Ñ¾î°¡´ÂÁö °Ë»ç
                     if($(this).val().length > 30 ) {
                         valid = false;
                         $(this).val("");
                     }
 
-                    //ì¤‘ë³µë¬¸ì ê²€ì‚¬
-                    for(var i=0;i < $('#p5-tag-form-unit-group').children().length; i++) {
-                        if($('#p5-tag-form-unit-val').eq(i).text().trim() === $(this).val().replace(',','').trim()) {
-                           //ì¤‘ë³µëœ íƒœê·¸ ë°±ê·¸ë¼ìš´ë“œ ìƒ‰ ì ì‹œ ë°”ê¿ˆ
-                            var temp = $('#p5-tag-form-unit-val').eq(i).parent();
+                    //Áßº¹¹®ÀÚ °Ë»ç
+                    for(var i=0;i < $('.p5-tag-form-unit-group').children().length; i++) {
+                        if($('.p5-tag-form-unit-val').eq(i).text().trim() === $(this).val().replace(',','').trim()) {
+                           //Áßº¹µÈ ÅÂ±× ¹é±×¶ó¿îµå »ö Àá½Ã ¹Ù²Ş
+                            var temp = $('.p5-tag-form-unit-val').eq(i).parent();
                             temp.css('background-color','#fffc9a');
                             setTimeout( function() {
                                 temp.css('background-color','#fff');
@@ -282,16 +823,15 @@ width: 30%;
                     }
 
                     if(valid == true) {
-                        var tag = '<li><div><span id="p5-tag-form-unit-val">'+$(this).val().replace(',','')+'</span><a href="#" id="p5-form-tag-delete-btn">x</a></div><input type="hidden" name="tagList" value="'+$(this).val().replace(',','')+'"></li>';
-                        tag += '<li><input id="p5-form-tag-input" name="title" type="text"></li>';
+                        var tag = '<li><div class="p5-tag-form-unit"><span class="p5-tag-form-unit-val">'+$(this).val().replace(',','')+'</span><a href="#" class="p5-form-tag-delete-btn">x</a></div><input type="hidden" name="tagList" value="'+$(this).val().replace(',','')+'"></li>';
+                        tag += '<li><input id="p5-form-tag-input" class="form-control portfolio_title" name="title" type="text"></li>';
                         tagCnt++;
                         $(this).parent().remove();
-                        $('#p5-tag-form-unit-group').append(tag);
+                        $('.p5-tag-form-unit-group').append(tag);
 
                         $('#p5-form-tag-input').focus();
 
                     }
-                   
                 }
 
             }
@@ -299,61 +839,59 @@ width: 30%;
 
         $('.content-inner').on('keydown', '#p5-form-tag-input', function(event) {
             if(event.which==8&&$(this).val()==""&&tagCnt!=0) {//backspace
-                $('#p5-tag-form-unit-group li:nth-child('+tagCnt+')').remove();
+                $('.p5-tag-form-unit-group li:nth-child('+tagCnt+')').remove();
                 tagCnt--;
             }
         });
 
         //tag delete btn
-        $('.content-inner').on('click','#p5-form-tag-delete-btn', function(e) {
+        $('.content-inner').on('click','.p5-form-tag-delete-btn', function(e) {
             e.preventDefault();
             $(this).parent().parent().remove();
         });
 
-
         //img delete btn
-        $('.content-inner').on('click','#p5-img-del-btn',function() {
+        $('.content-inner').on('click','.p5-img-del-btn',function() {
 
             if($(this).siblings('input').attr('name')=='image1') {
-                var imgAssignTag = '<button>ì´ë¯¸ì§€ ë³€ê²½</button>'+
-                                   ' <input id="p5-file-btn-1" type="file" name="image1"  accept="image/*">'+
-                                   '<button id="p5-img-del-btn">ì‚­ì œ</button>';
-                                   
+                var imgAssignTag = '<button type="button" class="btn btn-primary p5-custom-file-type-front"><i class="fa fa-plus"></i>&nbsp;ÀÌ¹ÌÁö º¯°æ</button>'+
+                                   '<input id="p5-file-btn-1" type="file" name="image1" class="p5-custom-file-type-input" accept="image/*">'+
+                                   '<button type="button" class="btn btn-cancel p5-img-del-btn">»èÁ¦</button>';
                 $('#p5-img1-description').attr('disabled',true);
                 $('#p5-img1-description').val('');
-                $('#p5-image-name-1').html('ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”.');
+                $('#p5-image-name-1').html('ÀÌ¹ÌÁö¸¦ µî·ÏÇØÁÖ¼¼¿ä.');
                 $('#p5-file-btn-1').parent().html(imgAssignTag);
             } else if ($(this).siblings('input').attr('name')=='image2') {
-                var imgAssignTag = '<button>ì´ë¯¸ì§€ ë³€ê²½</button>'+
-                                   ' <input id="p5-file-btn-2" type="file" name="image2"  accept="image/*">'+
-                                   '<button id="p5-img-del-btn">ì‚­ì œ</button>';
+                var imgAssignTag = '<button type="button" class="btn btn-primary p5-custom-file-type-front"><i class="fa fa-plus"></i>&nbsp;ÀÌ¹ÌÁö º¯°æ</button>'+
+                                   '<input id="p5-file-btn-2" type="file" name="image2" class="p5-custom-file-type-input" accept="image/*">'+
+                                   '<button type="button" class="btn btn-cancel p5-img-del-btn">»èÁ¦</button>';
 
                 $('#p5-img2-description').attr('disabled',true);
                 $('#p5-img2-description').val('');
-                $('#p5-image-name-2').html('ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”.');
+                $('#p5-image-name-2').html('ÀÌ¹ÌÁö¸¦ µî·ÏÇØÁÖ¼¼¿ä.');
                 $('#p5-file-btn-2').parent().html(imgAssignTag);
             } else if ($(this).siblings('input').attr('name')=='image3') {
-                var imgAssignTag = '<button>ì´ë¯¸ì§€ ë³€ê²½</button>'+
-                                   ' <input id="p5-file-btn-3" type="file" name="image3"  accept="image/*">'+
-                                   '<button id="p5-img-del-btn">ì‚­ì œ</button>';
+                var imgAssignTag = '<button type="button" class="btn btn-primary p5-custom-file-type-front"><i class="fa fa-plus"></i>&nbsp;ÀÌ¹ÌÁö º¯°æ</button>'+
+                                   '<input id="p5-file-btn-3" type="file" name="image3" class="p5-custom-file-type-input" accept="image/*">'+
+                                   '<button type="button" class="btn btn-cancel p5-img-del-btn">»èÁ¦</button>';
                 $('#p5-img3-description').attr('disabled',true);
                 $('#p5-img3-description').val('');
-                $('#p5-image-name-3').html('ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”.');
+                $('#p5-image-name-3').html('ÀÌ¹ÌÁö¸¦ µî·ÏÇØÁÖ¼¼¿ä.');
                 $('#p5-file-btn-3').parent().html(imgAssignTag);
             }
 
             $(this).siblings('input').val("");
-            $(this).parent().siblings('.p5-img-name').html("ì´ë¯¸ì§€ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”.");
+            $(this).parent().siblings('.p5-img-name').html("ÀÌ¹ÌÁö¸¦ µî·ÏÇØÁÖ¼¼¿ä.");
         });
 
-        //ì´ë¯¸ì§€ ì„ íƒ ë²„íŠ¼ë“¤
+        //ÀÌ¹ÌÁö ¼±ÅÃ ¹öÆ°µé
         $('.content-inner').on('change','#p5-file-btn-1', function() {
             if($('#p5-file-btn-1').val()==='') {
                 //donothing
             } else {
                 $('#p5-image-name-1').html($(this).val().split(/(\\|\/)/g).pop());
                 image=document.getElementById('p5-file-btn-1');
-                $('#p5-img1-description').attr('disabled',false); //ìº¡ì…˜ í•´ì œ
+                $('#p5-img1-description').attr('disabled',false); //Ä¸¼Ç ÇØÁ¦
 
 
             }
@@ -365,7 +903,7 @@ width: 30%;
             } else {
                 $('#p5-image-name-2').html($(this).val().split(/(\\|\/)/g).pop());
                 image=document.getElementById('p5-file-btn-2');
-                $('#p5-img2-description').attr('disabled',false); //ìº¡ì…˜ í•´ì œ
+                $('#p5-img2-description').attr('disabled',false); //Ä¸¼Ç ÇØÁ¦
 
             }
         });
@@ -376,11 +914,11 @@ width: 30%;
             } else {
                 $('#p5-image-name-3').html($(this).val().split(/(\\|\/)/g).pop());
                 image=document.getElementById('p5-file-btn-3');
-                $('#p5-img3-description').attr('disabled',false); //ìº¡ì…˜ í•´ì œ
+                $('#p5-img3-description').attr('disabled',false); //Ä¸¼Ç ÇØÁ¦
 
             }
         });
-        //ì°¸ì—¬ìœ¨ ì—ëŸ¬ ì²´í¬
+        //Âü¿©À² ¿¡·¯ Ã¼Å©
         $('.content-inner').on('keyup','#p5-form-participation-rate', function() {
             var temp = $('#p5-form-participation-rate').val();
 
@@ -391,7 +929,7 @@ width: 30%;
             }
         });
 
-        //ì´ë¯¸ì§€ ìº¡ì…˜ ì—ëŸ¬ ì²´í¬
+        //ÀÌ¹ÌÁö Ä¸¼Ç ¿¡·¯ Ã¼Å©
         $('.content-inner').on('keyup','#p5-img1-description', function() {
             var temp = $('#p5-img1-description').val().length;
 
@@ -436,7 +974,7 @@ width: 30%;
         });
 
 
-        $('.content-inner').on('click','#p5-submit-portfolio-btn', function(e) {
+        $('.content-inner').on('click','.p5-submit-portfolio-btn', function(e) {
             e.preventDefault();
             var particiPationValid = $('#p5-form-participation-rate').val();
             var img1DescriptionValid = $('#p5-img1-description').val().length;
@@ -507,7 +1045,7 @@ width: 30%;
                  validation = false;
             }
 
-            if(img2DescriptionValid >= 120) {
+            if(img3DescriptionValid >= 120) {
                  validation = false;
             }
 
@@ -515,11 +1053,11 @@ width: 30%;
                 return 0;
             }
 
-//             $('input[name="slug"]').val(slug);
-//             $('input[name="dataId"]').val(0);
-//             $('input[name="isImage1Changed"]').val(1);
-//             $('input[name="isImage2Changed"]').val(1);
-//             $('input[name="isImage3Changed"]').val(1);
+            $('input[name="slug"]').val(slug);
+            $('input[name="dataId"]').val(0);
+            $('input[name="isImage1Changed"]').val(1);
+            $('input[name="isImage2Changed"]').val(1);
+            $('input[name="isImage3Changed"]').val(1);
             $('#p5-form-tag-input').remove();
 
             document.forms["p5-fix-portfolio-form"].submit();
@@ -530,61 +1068,61 @@ width: 30%;
     function getSubCategory(dom) {
         var temp='';
 
-        if($(dom).val()==2) { //ê°œë°œ
-                temp = '<option selected="selected" value="">ì„¸ë¶€ ì¹´í…Œê³ ë¦¬</option>' +
-                        '<option value="1">ì›¹</option>'+
-                        '<option value="2">ì• í”Œë¦¬ì¼€ì´ì…˜</option>'+
-                        '<option value="3">ì›Œë“œí”„ë ˆìŠ¤</option>'+
-                        '<option value="4">í¼ë¸”ë¦¬ì‹±</option>'+
-                        '<option value="5">ì»¤ë¨¸ìŠ¤, ì‡¼í•‘ëª°</option>'+
-                        '<option value="6">ì¼ë°˜ ì†Œí”„íŠ¸ì›¨ì–´</option>'+
-                        '<option value="7">ì„ë² ë””ë“œ</option>'+
-                        '<option value="8">ê¸°íƒ€</option>'+
-                        '<option value="19">ê²Œì„</option>';
+        if($(dom).val()==2) { //°³¹ß
+                temp = '<option selected="selected" value="">¼¼ºÎ Ä«Å×°í¸®</option>' +
+                        '<option value="1">À¥</option>'+
+                        '<option value="2">¾ÖÇÃ¸®ÄÉÀÌ¼Ç</option>'+
+                        '<option value="3">¿öµåÇÁ·¹½º</option>'+
+                        '<option value="4">ÆÛºí¸®½Ì</option>'+
+                        '<option value="5">Ä¿¸Ó½º, ¼îÇÎ¸ô</option>'+
+                        '<option value="6">ÀÏ¹İ ¼ÒÇÁÆ®¿ş¾î</option>'+
+                        '<option value="7">ÀÓº£µğµå</option>'+
+                        '<option value="8">±âÅ¸</option>'+
+                        '<option value="19">°ÔÀÓ</option>';
                 $('#p5-form-subcategory').html(temp);
-            } else if($(dom).val()==1) {//ë””ìì¸
-                temp = '<option selected="selected" value="">ì„¸ë¶€ ì¹´í…Œê³ ë¦¬</option>' +
-                        '<option value="9">ì›¹</option>'+
-                        '<option value="10">ì• í”Œë¦¬ì¼€ì´ì…˜</option>'+
-                        '<option value="11">ì œí’ˆ</option>'+
-                        '<option value="12">í”„ë ˆì  í…Œì´ì…˜</option>'+
-                        '<option value="13">ì¸ì‡„ë¬¼</option>'+
-                        '<option value="14">ì»¤ë¨¸ìŠ¤, ì‡¼í•‘ëª°</option>'+
-                        '<option value="15">ë¡œê³ </option>'+
-                        '<option value="17">ê·¸ë˜í”½</option>'+
-                        '<option value="16">ì˜ìƒ</option>'+
-                        '<option value="20">ê²Œì„</option>'+
-                        '<option value="18">ê¸°íƒ€</option>';
+            } else if($(dom).val()==1) {//µğÀÚÀÎ
+                temp = '<option selected="selected" value="">¼¼ºÎ Ä«Å×°í¸®</option>' +
+                        '<option value="9">À¥</option>'+
+                        '<option value="10">¾ÖÇÃ¸®ÄÉÀÌ¼Ç</option>'+
+                        '<option value="11">Á¦Ç°</option>'+
+                        '<option value="12">ÇÁ·¹Á¨Å×ÀÌ¼Ç</option>'+
+                        '<option value="13">ÀÎ¼â¹°</option>'+
+                        '<option value="14">Ä¿¸Ó½º, ¼îÇÎ¸ô</option>'+
+                        '<option value="15">·Î°í</option>'+
+                        '<option value="17">±×·¡ÇÈ</option>'+
+                        '<option value="16">¿µ»ó</option>'+
+                        '<option value="20">°ÔÀÓ</option>'+
+                        '<option value="18">±âÅ¸</option>';
                 $('#p5-form-subcategory').html(temp);
-            } else { //ì„ íƒ ì œëŒ€ë¡œ ì•ˆëì„ ë•Œ
-                temp = '<option selected="selected" value="">ì„¸ë¶€ ì¹´í…Œê³ ë¦¬</option>'
+            } else { //¼±ÅÃ Á¦´ë·Î ¾ÈµÆÀ» ¶§
+                temp = '<option selected="selected" value="">¼¼ºÎ Ä«Å×°í¸®</option>'
                 $('#p5-form-subcategory').html(temp);
             }
 
     }
 
     function decodeSubCategory( subCategoryValue ) {
-        if (subCategoryValue == 101) return 1; //ì›¹
-        if (subCategoryValue == 102) return 2; //ì• í”Œë¦¬ì¼€ì´ì…˜
-        if (subCategoryValue == 103) return 3; //ì›Œë“œí”„ë ˆìŠ¤
-        if (subCategoryValue == 104) return 4; //í¼ë¸”ë¦¬ì‹±
-        if (subCategoryValue == 106) return 5; //ì»¤ë¨¸ìŠ¤, ì‡¼í•‘ëª°
-        if (subCategoryValue == 105) return 6; //ì¼ë°˜ ì†Œí”„íŠ¸ì›¨ì–´
-        if (subCategoryValue == 108) return 7; //ì„ë² ë””ë“œ
-        if (subCategoryValue == 109) return 8; //ê¸°íƒ€
+        if (subCategoryValue == 101) return 1; //À¥
+        if (subCategoryValue == 102) return 2; //¾ÖÇÃ¸®ÄÉÀÌ¼Ç
+        if (subCategoryValue == 103) return 3; //¿öµåÇÁ·¹½º
+        if (subCategoryValue == 104) return 4; //ÆÛºí¸®½Ì
+        if (subCategoryValue == 106) return 5; //Ä¿¸Ó½º, ¼îÇÎ¸ô
+        if (subCategoryValue == 105) return 6; //ÀÏ¹İ ¼ÒÇÁÆ®¿ş¾î
+        if (subCategoryValue == 108) return 7; //ÀÓº£µğµå
+        if (subCategoryValue == 109) return 8; //±âÅ¸
 
-        if (subCategoryValue == 201) return 9; //ì›¹
-        if (subCategoryValue == 202) return 10; //ì• í”Œë¦¬ì¼€ì´ì…˜
-        if (subCategoryValue == 203) return 11; //ì œí’ˆ
-        if (subCategoryValue == 204) return 12; //í”„ë ˆì  í…Œì´ì…˜
-        if (subCategoryValue == 205) return 13; //ì¸ì‡„ë¬¼
-        if (subCategoryValue == 206) return 14; //ì»¤ë¨¸ìŠ¤, ì‡¼í•‘ëª°
-        if (subCategoryValue == 207) return 15; //ë¡œê³ 
-        if (subCategoryValue == 209) return 16; //ì˜ìƒ
-        if (subCategoryValue == 208) return 17; //ê·¸ë˜í”½
-        if (subCategoryValue == 211) return 18; //ê¸°íƒ€
-        if (subCategoryValue == 107) return 19; //ê²Œì„
-        if (subCategoryValue == 210) return 20; //ê²Œì„
+        if (subCategoryValue == 201) return 9; //À¥
+        if (subCategoryValue == 202) return 10; //¾ÖÇÃ¸®ÄÉÀÌ¼Ç
+        if (subCategoryValue == 203) return 11; //Á¦Ç°
+        if (subCategoryValue == 204) return 12; //ÇÁ·¹Á¨Å×ÀÌ¼Ç
+        if (subCategoryValue == 205) return 13; //ÀÎ¼â¹°
+        if (subCategoryValue == 206) return 14; //Ä¿¸Ó½º, ¼îÇÎ¸ô
+        if (subCategoryValue == 207) return 15; //·Î°í
+        if (subCategoryValue == 209) return 16; //¿µ»ó
+        if (subCategoryValue == 208) return 17; //±×·¡ÇÈ
+        if (subCategoryValue == 211) return 18; //±âÅ¸
+        if (subCategoryValue == 107) return 19; //°ÔÀÓ
+        if (subCategoryValue == 210) return 20; //°ÔÀÓ
     }
 
     function notInValue(formID) {
@@ -593,19 +1131,26 @@ width: 30%;
             $('#'+formID).parent().addClass("has-error");
             //$('#'+formID).css('border-color', '#f33d12');
             $('#'+formID).addClass('error');
-            $('#'+formID).parent().children('#form-error').remove();
-            $('#'+formID).parent().append('<span id="form-error"><i class="fa fa-exclamation-circle"></i> ì´ í•­ëª©ì€ í•„ìˆ˜ì…ë‹ˆë‹¤.</span>');
+            $('#'+formID).parent().children('.form-error').remove();
+            $('#'+formID).parent().append('<span class="help-block form-error"><i class="fa fa-exclamation-circle"></i> ÀÌ Ç×¸ñÀº ÇÊ¼öÀÔ´Ï´Ù.</span>');
             return true;
         } else {
             $('#'+formID).parent().removeClass("has-error");
             //$('#'+formID).css('border-color', '#f33d12');
             $('#'+formID).removeClass('error');
-            $('#'+formID).parent().children('#form-error').remove();
+            $('#'+formID).parent().children('.form-error').remove();
             return false;
         }
     }
 </script>
-<script>
+	<script type="text/javascript">
+  $(function() {
+    wishket.init();
+    
+    svgeezy.init(false, 'png');
+  });
+</script>
+	<script>
 
 $( document ).ready(function($) {
     var p5TotalSubNavigationFlag = 0;
@@ -650,5 +1195,6 @@ $( document ).ready(function($) {
 });
 
 </script>
+
 </body>
 </html>
