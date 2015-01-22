@@ -186,7 +186,7 @@ public class mylist implements Command {
 					dto.setSchoolmajor(rs.getString("school_major"));
 					dto.setSchoolstate(rs.getString("school_state"));
 					dto.setSchoolid(rs.getInt("school_id"));
-					
+					dto.setMyschool_index(rs.getString("myschool_index"));
 					v.add(dto);
 					System.out.println();
 				}
