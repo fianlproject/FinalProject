@@ -12,7 +12,7 @@
 <link href="css/facebook.css" rel="stylesheet">
 <link href="css/floating.css" rel="stylesheet">
 <link href="css/layout_nav.css" rel="stylesheet">
-
+<script src="js/jquery-2.1.1.js"></script>
 <style type="text/css">
 .btn-lg, .btn-group-lg > .btn {
 padding: 7px 7px;
@@ -30,6 +30,7 @@ border-radius: 5px;
 	<%
 		String longitude = (String) session.getAttribute("longitude");
 		String latitude = (String) session.getAttribute("latitude");
+		String c_name = (String) session.getAttribute("c_name");
 	%>
 	<jsp:useBean id="dto" class="dto.listDto" />
 
@@ -111,40 +112,59 @@ border-radius: 5px;
 
 								<script type="text/javascript"
 									src="//apis.daum.net/maps/maps3.js?apikey=3d9835e43d08f616d89784b77f22a468&libraries=services"></script>
-								<script>
+									<!-- 3d9835e43d08f616d89784b77f22a468 -->
+									<!-- a34d02ece8c5eef0e1ec0707707e38f0 내꺼 -->
+									<script>
+											var mapContainer = document.getElementById('staticMap'), // 지도를 표시할 div 
+										    mapOption = {
+										            center: new daum.maps.LatLng(<%=longitude%>,<%=latitude%>), // 지도의 중심좌표
+										            level: 3 // 지도의 확대 레벨
+										        };
+	
+											var map = new daum.maps.Map(mapContainer, mapOption);
+			
+											// 마커가 표시될 위치입니다
+											var markerPosition  = new daum.maps.LatLng(<%=longitude%>,<%=latitude%>); 
+			
+											// 마커를 생성합니다
+											var marker = new daum.maps.Marker({
+											    position: markerPosition
+											});
+			
+											// 마커가 지도 위에 표시되도록 설정합니다
+											marker.setMap(map);
+											
+											
+											var iwContent = '<div style="padding:5px;">${c_name}<br><a href="http://map.daum.net/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="http://map.daum.net/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', 
+											// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+											    iwPosition = new daum.maps.LatLng(<%=longitude%>,<%=latitude%>); //인포윈도우 표시 위치입니다
+			
+											// 인포윈도우를 생성합니다
+											var infowindow = new daum.maps.InfoWindow({
+											    position : iwPosition,
+										    content : iwContent 
+										});
+										  
+										// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+										infowindow.open(map, marker);        
+									</script>
+								<%-- <script>
 									var markers = [
-											{
-												position : new daum.maps.LatLng(
-								<%=longitude%>
-									,
-								<%=latitude%>
-									)
-											},
-											{
-												position : new daum.maps.LatLng(
-								<%=longitude%>
-									,
-								<%=latitude%>
-									)
-											} ];
-									var staticMapContainer = document
-											.getElementById('staticMap'), // 이미지 지도를 표시할 div  
+											{position : new daum.maps.LatLng(<%=longitude%>,<%=latitude%>)},
+											{position : new daum.maps.LatLng(<%=longitude%>,<%=latitude%>)} ];
+									var staticMapContainer = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
 									staticMapOption = {
 										// 위도, 경도 정보는 다음 PC 웹 지도 서비스(http://map.daum.net)에서 마우스 오른쪽 클릭 메뉴의 "여기 정보 보기"를 클릭하시면 확인할 수 있습니다
-										center : new daum.maps.LatLng(
-								<%=longitude%>
-									,
-								<%=latitude%>
-									), // 이미지 지도의 중심좌표
+										center : new daum.maps.LatLng(<%=longitude%>,<%=latitude%>), 
+										// 이미지 지도의 중심좌표
 										level : 4, // 이미지 지도의 확대 레벨
 										marker : markers
 									// 이미지 지도에 표시할 마커 
 									};
-
-									// 이미지 지도를 생성합니다
+																									
 									var staticMap = new daum.maps.StaticMap(
 											staticMapContainer, staticMapOption);
-								</script>
+								</script> --%>
 							</div>
 						</div>
 					</div>

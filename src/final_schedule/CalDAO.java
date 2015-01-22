@@ -31,6 +31,7 @@ public class CalDAO {
 		int check=0;
 		
 		try{
+			
 			con=pool.getConnection();
 			sql="insert into diary(id,title,date) values(?,?,?)";
 			pstmt=con.prepareStatement(sql);
