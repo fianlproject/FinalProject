@@ -39,7 +39,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>FREE BEST</title>
 	<!-- 달력!!! -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -80,7 +80,7 @@ function fnCal() {
 }
 function fnMedia() {
 	window.open("/pfinal/pfinal.do?command=m_media", "",
-			"width=570, height=370");
+			"width=570, height=325");
 }	
 </script>
 <style type="text/css">
@@ -334,7 +334,7 @@ function fnMedia() {
 
                 	 <h2 class="section-heading btn-xl2">오늘의 뉴스(${media_name}) <button class="btn btn-xl3" onclick="fnMedia()">신문사 변경</button></h2>
                 	
-                <table class="table">                	
+                <table class="table table-bordered">                	
 					<%
 					    if(list!=null){
 					        for(int i=0; i<list.size(); i++){
