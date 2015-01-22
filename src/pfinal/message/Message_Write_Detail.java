@@ -54,7 +54,7 @@ public class Message_Write_Detail implements Command {
 		
 		System.out.println("메시지 쓰기 통과");
 		
-		return "/pr_message/Message_Write_Detail.jsp";
+		return "/pr_message/Message_Write.jsp";
 	}
 
 }

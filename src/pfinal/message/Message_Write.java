@@ -61,7 +61,7 @@ public class Message_Write implements Command {
 		req.setAttribute("vDto", v);
 		System.out.println("메시지 쓰기 통과");
 		
-		return "/pr_message/Message_Write.jsp";
+		return "/pr_message/Message_Write_Detail.jsp";
 	}
 
 }
