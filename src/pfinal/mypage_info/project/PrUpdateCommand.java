@@ -5,7 +5,6 @@ import java.rmi.ServerException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import kit.Command;
 
@@ -20,8 +19,7 @@ public class PrUpdateCommand implements Command {
 		String pr_subject = req.getParameter("pr_subject");
 		String pr_content = req.getParameter("pr_content");
 		String pr_photo = req.getParameter("pr_photo");
-		HttpSession session = req.getSession();
-		String pr_id = (String)session.getAttribute("id");
+		String pr_id = req.getParameter("pr_id");
 		String pr_needman = req.getParameter("pr_needman");
 		String pr_price = req.getParameter("pr_price");
 		String pr_end = req.getParameter("pr_end");

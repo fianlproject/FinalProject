@@ -12,10 +12,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
-
-
+import javax.servlet.http.HttpSession;
 
 import kit.Command;
 import kit.DBConnectionMgr;
@@ -66,6 +63,8 @@ public class ProjectCommand implements Command {
 //			}
 		}
 		System.out.println("c");
+//		HttpSession session = req.getSession();
+//		String id = session.getAttribute("id");
 		String id = multi.getParameter("id");
 		System.out.println("id" + id);
 		String title = multi.getParameter("title");

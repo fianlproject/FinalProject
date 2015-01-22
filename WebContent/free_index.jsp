@@ -203,7 +203,7 @@ function fnMedia() {
                     <h4 class="service-heading">쪽지함</h4>
                     <form method="post" action="/pfinal/pfinal.do">
                    	 <button class="btn btn-link pl text-muted" name="command" value="message" >보관함</button>
-                   	 <c:if test="${msg != 0 }" >
+                   	 <c:if test="${msg != 0 || msg != null }" >
                    	 <span id="newMsg" >${msg}</span>
                    	 </c:if>
                     </form>
