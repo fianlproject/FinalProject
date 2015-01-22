@@ -19,7 +19,8 @@ public class m_sogae implements Command {
 	@Override
 	public Object processCommand(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-	
+
+		
 		return "pr_mypage/info/sogae.jsp";
 
 	}

@@ -75,6 +75,7 @@ import pfinal.mypage_info.quali;
 import pfinal.mypage_info.skill;
 import pfinal.mypage_info.sogaeProc;
 import pfinal.mypage_info.delete.career_delete;
+import pfinal.mypage_info.delete.m_sogaeDelete;
 import pfinal.mypage_info.delete.quali_delete;
 import pfinal.mypage_info.delete.skill_delete;
 import pfinal.mypage_info.project.PrDeleteProcCommand;
@@ -84,6 +85,7 @@ import pfinal.mypage_info.project.ProjectCommand;
 import pfinal.mypage_info.project.ProjectUpdate;
 import pfinal.mypage_info.update.career_up_in;
 import pfinal.mypage_info.update.career_up_out;
+import pfinal.mypage_info.update.m_sogaeUpdate;
 import pfinal.mypage_info.update.quali_up_in;
 import pfinal.mypage_info.update.quali_up_out;
 import pfinal.mypage_info.update.skill_up_in;
@@ -277,6 +279,10 @@ public class CommandFactory {
 			return new skill_delete();
 		else if(cmd.equals("career_delete"))
 			return new career_delete();
+		else if(cmd.equals("m_sogaeUpdate"))
+			return new m_sogaeUpdate();
+		else if(cmd.equals("m_sogaeDelete"))
+			return new m_sogaeDelete();
 		
 		
 		//회원가입
