@@ -61,34 +61,7 @@ public class WriteProcCommand implements Command {
 			saveFiles.add(multi.getFilesystemName(name)); // 저장될 파일명
 		}
 
-		String pr_skill = "";
-		String[] pr_skills = multi.getParameterValues("pr_skills");
-
-		for (int i = 0; i < pr_skills.length; i++) {
-			pr_skill += pr_skills[i];
-			if (i < pr_skills.length - 1) {
-				pr_skill += ',';
-			}
-		}
-		//기술, 기준으러 넣기.
-		
-		
-		/*
-		String friend_id="";
-		String []friends_id = multi.getParameterValues("friend_id");
-	
-		for (int i = 0; i < friends_id.length; i++) {
-			friend_id += friends_id[i];
-			if (i < friends_id.length - 1) {
-				friend_id += ',';
-			}
-		}
-		//친구넣기
-		 
-		
-		
-		System.out.println("친구목록: "+friend_id.trim());
-		 보류*/
+		String pr_skill = multi.getParameter("pr_skill");
 
 		System.out.println("걍 변수 기술들" + pr_skill.trim());
 

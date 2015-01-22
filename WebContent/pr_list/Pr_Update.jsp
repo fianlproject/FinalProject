@@ -72,8 +72,7 @@
 								type="hidden" id="latitude" name="latitude"> <input
 									type="hidden" name="pr_id" value="${pr_id }"> <input
 										type="hidden" name="uppr_photo" value="${pr_photo }">
-											<input type="hidden" name="pr_nowskill"
-											value="${pr_nowskill }">
+										
 
 
 
@@ -154,7 +153,7 @@
 														<div class="control-wrapper">
 															<textarea autocomplete="off" class="form-control"
 																cols="40" id="pr_content" name="pr_content" required=""
-																rows="30">${pr_content }</textarea>
+																rows="15">${pr_content }</textarea>
 															<span class="help-block"><p class="text-danger">
 																	<span class="label label-danger">주의</span> 이메일, 전화번호 등을
 																	게시하는 경우 서비스 이용에 제재를 받을 수 있습니다.
@@ -162,25 +161,7 @@
 														</div>
 													</div>
 
-													<div class="form-group ">
-														<label class="control-label required" for="skill_required"><span>*</span>관련
-															기술</label>
-														<div class="control-wrapper">
-															<input class="tagit-hidden-field" id="skill_required"
-																name="skill_required" type="text">
-																<div>
-																	<input type="checkbox" name="pr_skills" id="pr_skills"
-																		value="java" size=40>java <input
-																		type="checkbox" name="pr_skills" id="pr_skills"
-																		value="jsp" size=40>jsp <input type="checkbox"
-																			name="pr_skills" id="pr_skills" value="android"
-																			size=40>android <input type="checkbox"
-																				name="pr_skills" id="pr_skills" value="html" size=40>html
 
-																			
-																</div> <span class="help-block">(최대 5개) </span>
-														</div>
-													</div>
 
 													<div class="form-group ">
 														<label class="control-label required" for="skill_required"><span>*</span>공개여부</label>

@@ -15,7 +15,7 @@ public class WriteCommand implements Command {
 		
 		
 		
-		return "pr_list/Pr_Write.jsp";
+		return "pr_list/Pr_Skill.jsp";
 	}
 
 }

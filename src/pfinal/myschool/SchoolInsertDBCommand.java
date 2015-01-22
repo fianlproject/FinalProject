@@ -78,7 +78,7 @@ public class SchoolInsertDBCommand implements Command {
 			e.printStackTrace();
 		}
 
-		return "school/school_Ok.jsp";
+		return "/pfinal.do?command=mylist";
 
 	}
 }

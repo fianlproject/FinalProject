@@ -169,6 +169,13 @@ border-radius: 5px;
 				 <input type="hidden" value="${dtoGetBoard.pr_private }" name="pr_private" />
 				  <input type="hidden" value="${dtoGetBoard.pr_exday }" name="pr_exday" />
 		</form>
+		
+			<form method="post" action="/pfinal/pfinal.do">
+			<button class="btn btn-link pl" name="command" value="prskillupdate">기술수정</button>
+		 <input type="hidden" value="	${dtoGetBoard.pr_id }" name="pr_id" />
+		 <input type="hidden" value="${dtoGetBoard.pr_skill }" name="pr_nowskill" />
+				
+		</form>
 
 
 

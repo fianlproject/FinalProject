@@ -17,9 +17,12 @@ import pfinal.board.Info.ImgUploadCommand;
 import pfinal.board.Info.mup;
 import pfinal.board.Info.up;
 import pfinal.board.List.ListCommand;
+import pfinal.board.List.Pr_SkillInsert;
+import pfinal.board.List.Pr_SkillUpdateProc;
 import pfinal.board.List.PrivateListCommand;
 import pfinal.board.List.WriteCommand;
 import pfinal.board.List.WriteProcCommand;
+import pfinal.board.List.prskillupdate;
 import pfinal.board.interest.InterListCommand;
 import pfinal.board.interest.inter;
 import pfinal.cl_Project.RF.cl_Evaluate_Project;
@@ -138,7 +141,14 @@ public class CommandFactory {
 		else if(cmd.equals("img"))
 			return new ImgUploadCommand();	
 		else if(cmd.equals("prdelete"))
-			return new PrDeleteProcCommand();		
+			return new PrDeleteProcCommand();
+		else if(cmd.equals("Pr_SkillInsert"))
+			return new Pr_SkillInsert();
+		else if(cmd.equals("prskillupdate"))
+			return new prskillupdate();
+		else if(cmd.equals("Pr_SkillUpdateProc"))
+			return new Pr_SkillUpdateProc();
+		
 		
 		//자세히보기
 		else if(cmd.equals("getboard"))
