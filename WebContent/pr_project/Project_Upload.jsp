@@ -210,12 +210,14 @@ width: 30%;
 		</span>
 	</div><br/>
 	<span ><button class="btn btn-lg btn-client" id="p5-portfolio-cancel-btn">추가</button>
-		 <a href="/pfinal/pfinal.do?command=free_index"
-				class="btn btn-lg btn-default js-disable-on-click">메인으로</a>
 	</span>
-	</div>
-	</div>
-</form>
+	
+</form><br/><br/>
+<form method="post" action="/pfinal/pfinal.do">
+			<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="free_index">홈으로</button>
+	</form>
+</div>
+</div>
 </div>
 </div>
 </div>

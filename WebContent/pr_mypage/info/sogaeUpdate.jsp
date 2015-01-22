@@ -67,18 +67,19 @@
 									</div>
 								</div>
 
+		
 								<div class="form-group">
 									<div class="btn-wrapper">
 										<input
 											class="btn btn-lg btn-client js-disable-on-click btn-submit"
-											value="등록" type="submit"><input
-											class="btn btn-lg btn-default js-disable-on-click"
-											name="save_for_later" value="취소" type="button" >
+											value="등록" type="submit">
+
+							</form><br/><br/>
+							<form method="post" action="/pfinal/pfinal.do">
+									<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="mylist">마이리스트</button>
+							</form>
 									</div>
 								</div>
-
-
-							</form>
 						</div>
 					</div>
 

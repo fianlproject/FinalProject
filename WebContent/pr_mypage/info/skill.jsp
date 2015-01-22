@@ -76,12 +76,12 @@
 							<option value="5">특급</option>
 						</select>
 						</div>
-						<br/><br/><br/> <input type="submit" value="전송" class="btn btn-lg btn-client js-disable-on-click btn-submit" > <a
-							href="/pfinal/pfinal.do?command=free_index"
-							class="btn btn-lg btn-default js-disable-on-click">메인으로</a>
-					</div>
-
-				</form>
+						<br/><br/><br/> <input type="submit" value="추가" class="btn btn-lg btn-client js-disable-on-click btn-submit" >
+				</form><br/><br/>
+				<form method="post" action="/pfinal/pfinal.do">
+					<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="mylist">마이리스트</button>
+			</form>
+			</div>
 			</div>
 		</div>
 	</div>

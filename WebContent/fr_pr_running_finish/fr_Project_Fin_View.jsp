@@ -116,10 +116,12 @@
 				</div>
 			</div>
 		</div>
+		<div align="center">
 		<form method="post" action="/pfinal/pfinal.do">
-			<button class="btn btn-link pl" name="command" value="frback">돌아가기</button>
+			<button class="btn btn-default active" name="command" value="frback">돌아가기</button>
 			<input type="text" value="${pr_id }" name="pr_id" />
 		</form>
+		</div>
 	</div>
 	<script>
 		$(function() {

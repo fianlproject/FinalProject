@@ -72,7 +72,7 @@
 					
 	                    </li>
 	                    <li>
-	                    	<a class="btn btn-link pl" href="/pfinal/pfinal.do?command=evaluate">프로젝트임시2</a>
+	                    	<button class="btn btn-link pl" name="command" value="evaluate" >프로젝트임시2</button>
 					
 	                    </li>
 	                    <li>
