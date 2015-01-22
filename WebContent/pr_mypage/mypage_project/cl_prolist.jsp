@@ -142,8 +142,9 @@
 							</tbody>
 						</table>
 						<br />
-						<a href="/pfinal/pfinal.do?command=client_index" 
-						class="btn btn-lg btn-client js-disable-on-click btn-submit">홈으로</a>
+						<form method="post" action="/pfinal/pfinal.do">
+					<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="client_index">홈으로</button>
+			</form>
 					</div>
 				</div>
 			</div>

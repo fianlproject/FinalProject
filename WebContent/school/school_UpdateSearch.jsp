@@ -36,7 +36,7 @@
 			</tr>
 			<tr>
 				<td><input type="text" name="schoolname" size="20" /></td>
-				<input type="hidden" name="nowschoolnumber" value="<%=schoolid%>">
+				<input type="hidden" name="nowschoolnumber" value="${schoolid }">
 				<td><input type="button" value="검색" onclick="checkfrm()" /></td>
 			</tr>
 		</table>

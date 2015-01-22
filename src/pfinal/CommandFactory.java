@@ -101,6 +101,8 @@ import pfinal.myschool.SchoolResultCommand;
 import pfinal.myschool.SchoolUpdateDBCommand;
 import pfinal.myschool.SchoolUpdateInsertCommand;
 import pfinal.myschool.SchoolUpdateResultCommand;
+import pfinal.myschool.myschoolupdatesearch;
+import pfinal.myschool.schoolsearch;
 
 
 public class CommandFactory {
@@ -362,7 +364,11 @@ public class CommandFactory {
 			return new SchoolUpdateResultCommand();
 		}else if(cmd.equals("myschoolupdateenter")){
 			return new SchoolUpdateInsertCommand();
-		}
+		}else if(cmd.equals("myschoolupdatesearch")){
+			return new myschoolupdatesearch();
+		}else if(cmd.equals("schoolsearch"))
+		return new schoolsearch();
+		
 	
 	
 

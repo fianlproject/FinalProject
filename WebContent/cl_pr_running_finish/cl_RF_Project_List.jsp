@@ -134,14 +134,15 @@
 						완료된 프로젝트가 없습니다.
 					</h3>
 				</c:if>
-				</section>
+			<br/><br/>
+			<div>
+				<form method="post" action="/pfinal/pfinal.do">
+				<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="client_index" >홈으로</button>
+				</form>
+					</section>
 			</div>
 		</div>
 	</div>
-			<div align="center">
-				<form method="post" action="/pfinal/pfinal.do">
-				<button class="btn btn-default pl" name="command" value="home" >홈으로</button>
-				</form>
 				</div>
 	<script>
 	function KeyWordCheck() {

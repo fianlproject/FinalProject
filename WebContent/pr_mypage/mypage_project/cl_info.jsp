@@ -230,6 +230,7 @@
 						<h4>
 							<font color="#3DB7CC"> 자기소개 </font>
 						</h4>
+						<hr/>
 						<c:if test="${sogae!=null }">
 							<b>${sogae }</b>
 							</c:if>
@@ -239,6 +240,10 @@
 					<br />
 
 					<!-- Portfolio Grid Section -->
+					
+					<h4>
+							<font color="#3DB7CC"> 프로젝트</font>
+						</h4>
 					<section id="portfolio" class="bg-light-gray">
 					<div class="row">
 						<c:forEach items="${vector}" var="pDto">
@@ -265,7 +270,7 @@
 						</c:forEach>
 
 					</div>
-				</div>
+				
 				</section>
 
 				<c:forEach items="${vector}" var="pDto">
@@ -385,9 +390,14 @@
 
 				<!-- Custom Theme JavaScript -->
 				<script src="js/agency.js"></script>
+				<br/><br/>
+				<form method="post" action="/pfinal/pfinal.do">
+					<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="client_index">홈으로</button>
+			</form>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>
 

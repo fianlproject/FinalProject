@@ -25,6 +25,7 @@ public class SchoolDeleteDBCommand implements Command {
 		String id = (String) session.getAttribute("id");
 
 		int schoolid =Integer.parseInt(req.getParameter("schoolid"));
+		String myschool_index =req.getParameter("myschool_index");
 
 		System.out.println("삭제 아이디:" + id + "삭제 학교 번호" + schoolid);
 
@@ -35,7 +36,7 @@ public class SchoolDeleteDBCommand implements Command {
 		String sql;
 
 		sql = "delete from myschool where id='" + id + "' and school_id="
-				+ schoolid;
+				+ schoolid+" and myschool_index= "+myschool_index;
 		System.out.println("삭제 sql : " + sql);
 
 		try {

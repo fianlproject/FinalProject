@@ -111,11 +111,13 @@
 							</div>
 							<br/> 
 							<input class="btn btn-lg btn-client js-disable-on-click btn-submit" value="수정" type="submit">							
-							<a href="/pfinal/pfinal.do?command=career_delete" class="btn btn-lg btn-default js-disable-on-click">메인으로</a>
-							<a href="/pfinal/pfinal.do?command=free_index" class="btn btn-lg btn-default js-disable-on-click">메인으로</a>
-						</div>
+						
+				</form><br/><br/>
+				<form method="post" action="/pfinal/pfinal.do">
+					<button class="btn btn-lg btn-default js-disable-on-click" name="command" value="mylist">마이리스트</button>
+			</form>
+			</div>
 					</div>
-				</form>
 			</div>
 		</div>
 	</div>
