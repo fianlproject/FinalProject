@@ -52,6 +52,7 @@ border-radius: 5px;
 												<th align="left">등록일 :${dtoGetBoard.pr_start}</th>
 												<th>마감날짜 :${dtoGetBoard.pr_end}</th>
 												<th></th>
+												<c:if test="${cpcheck != 1}">
 												<form method="post" action="/pfinal/pfinal.do">
 													<input type="hidden" name="pr_id"
 														value="${dtoGetBoard.pr_id}">
@@ -59,18 +60,23 @@ border-radius: 5px;
 														<Button type="submit" value="mup" name="command" class="btn btn-lg btn-default js-disable-on-click"> 지원</Button>
 													</th>
 												</form>
+												</c:if>
+												<c:if test="${cpcheck != 0}">												
+													<th> 														
+													</th>												
+												</c:if>
 												<th></th>
 											</tr>
 											<tr>
 												<c:set var="week" value="${week}" />
 												<c:set var="day" value="${day}" />
-												<c:if test="${week!=0&&day!=0&&day>0&&week>0}">
+												<c:if test="${week!=0&&day!=0&&day>0&&week>0 and dtoGetBoard.pr_state != 'Y'}">
 													<th>마감일자 :${week}주 ${day}일</th>
 												</c:if>
-												<c:if test="${week==0&&day!=0&&day>0}">
+												<c:if test="${week==0&&day!=0&&day>0 and dtoGetBoard.pr_state != 'Y'}">
 													<th>마감일자 : ${day}일</th>
 												</c:if>
-												<c:if test="${day==0&&week!=0&&week>0}">
+												<c:if test="${day==0&&week!=0&&week>0 and dtoGetBoard.pr_state != 'Y'}">
 													<th>마감일자 :${week}주</th>
 												</c:if>
 												<c:if test="${day==0&&week==0&&dtoGetBoard.pr_state eq 'X'}">

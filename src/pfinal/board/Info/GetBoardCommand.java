@@ -89,6 +89,14 @@ public class GetBoardCommand implements Command {
 				session.setAttribute("latitude", rs.getString("latitude"));
 			}
 			
+			sql = "select cpcheck from members where id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			int cpcheck = rs.getInt("cpcheck");
+			req.setAttribute("cpcheck", cpcheck);
+			
 			sql="select pr_end<now()+1 as check1 from list where pr_id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, pr_id);
