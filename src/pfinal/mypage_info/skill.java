@@ -64,14 +64,11 @@ public class skill implements Command {
 			rs = pstmt.executeQuery();
 			System.out.println("넣을 때 값 확인"+sql);
 			
-		
-		
 			boolean aaa = false;
 			
 			rs.next();
 			String s = rs.getString("skill");
 	
-			
 			System.out.println(s);
 			
 			if(s.equals("a")){
